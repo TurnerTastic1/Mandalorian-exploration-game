@@ -11,6 +11,7 @@ class StormTrooper {
         int getDifficulty();
         int getHp();
         int getDamage();
+        /// comment
 };
 
 
