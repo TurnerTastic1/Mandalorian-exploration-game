@@ -8,6 +8,7 @@ class StormTrooper {
         int damage;
 
     public:
+        StormTrooper();
         int getDifficulty();
         int getHp();
         int getDamage();

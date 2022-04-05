@@ -1,4 +1,4 @@
-#ifndef Mando_h
+.#ifndef Mando_h
 #define Mando_h
 
 #include <iostream>
