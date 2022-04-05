@@ -19,6 +19,7 @@ class Planet {
         string getType();
         string getRegion();
         int getTravelCost();
+        void displayPlanetMap();
 
 };
 
