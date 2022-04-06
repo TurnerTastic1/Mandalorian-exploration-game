@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "Weapon.h"
-#include "SideCharacter.h"
+#include "NPC.h"
 
 using namespace std;
 
