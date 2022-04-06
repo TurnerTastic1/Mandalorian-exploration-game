@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "Weapon.h"
-#include "SideCharacter.h"
+#include "NPC.h"
 
 using namespace std;
 
@@ -33,6 +33,7 @@ class Mando {
 
         vector<Weapon> sortWeapons(vector<Weapon>); // sort weapons by rarity best to least
         bool addWeapon(Weapon); // call sort function every time add weapon is called!!!
+        vector<Weapon> sortWeapons(vector<Weapon>);
         int fightNPC(SideCharacter dude);
         void displayGalaxyMap();
 

@@ -1,12 +1,12 @@
-#ifndef SideCharacter_h
-#define SideCharacter_h
+#ifndef NPC_h
+#define NPC_h
 
 #include <iostream>
 #include <vector>
 
 #include "Weapon.h"
 
-class SideCharacter { // Use read movies/ read ratings to read sidechar from file
+class NPC { // Use read movies/ read ratings to read sidechar from file
     private:
         string name;
         string species;

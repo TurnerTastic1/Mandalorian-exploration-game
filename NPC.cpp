@@ -2,6 +2,7 @@
 #include <vector>
 
 #include "Weapon.h"
+#include "NPC.h"
 
 #include <cmath>
 #include <iomanip>

@@ -9,12 +9,13 @@
 
 #include "Mando.h"
 #include "Weapon.h"
-#include "SideCharacter.h"
+#include "NPC.h"
 
 #include <cmath>
 #include <iomanip>
 
 using namespace std;
+
 
 // default constructor
 Mando::Mando()
@@ -82,8 +83,8 @@ bool addWeapon(Weapon new_weapon)
 //need more info one how we are going to do this one
 1. Call this function everytime a weapon is add
 2. Sort through the vector of weapons and compare the rarity ranking associated with the next adjacent weapon
-3. Sort the weapons by least rare to most rare
-4. 
+3. Sort the weapons by most rare to least rare
+4. Possible bubble sort method
 */
 
 
@@ -106,7 +107,7 @@ int Mando::vector<Weapon> sortWeapons(vector<Weapon>)
 4. If second step is not true, returns -2
 */
 
-int fightNPC(SideCharacter dude)
+int fightNPC(NPC dude)
 {
 
 }
