@@ -1,5 +1,3 @@
-#ifndef Weapon_h
-#define Weapon_h
 
 #include <iostream>
 #include <vector>
@@ -12,7 +10,7 @@ Weapon::Weapon()
     name = "";
     type = "";
     rarity = 0;
-    damage = 0
+    damage = 0;
     planet = "";
     planetRegion = "";
 }

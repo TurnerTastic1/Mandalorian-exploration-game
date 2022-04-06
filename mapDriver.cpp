@@ -8,12 +8,19 @@ int main(){
     // Map Driver examples 
     Map map;
     cout << "Initial map: " << endl;
-    map.displayMap(); // starting point
-    map.spawnNPC(0, 1);
-    cout<< "Make a move: "<<endl;
-    char move;
-    cin >> move;
-    map.executeMove(move);
+    map.displayMap();
+    while(true) {
+        cout<< "Make a move: "<<endl;
+        char move;
+        cin >> move;
+        if (move == 'x') {
+            
+        }
+        map.displayMap();
+        map.executeMove(move);
+    }
+    //map.displayMap(); // starting point
+    
     map.displayMap();
 
     return 0;
