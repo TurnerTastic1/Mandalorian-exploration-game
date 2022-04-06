@@ -9,12 +9,13 @@
 
 #include "Mando.h"
 #include "Weapon.h"
-#include "SideCharacter.h"
+#include "NPC.h"
 
 #include <cmath>
 #include <iomanip>
 
 using namespace std;
+
 
 // default constructor
 Mando::Mando()
@@ -106,7 +107,7 @@ int Mando::vector<Weapon> sortWeapons(vector<Weapon>)
 4. If second step is not true, returns -2
 */
 
-int fightNPC(SideCharacter dude)
+int fightNPC(NPC dude)
 {
 
 }
