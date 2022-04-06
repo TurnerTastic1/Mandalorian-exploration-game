@@ -20,6 +20,7 @@ class SideCharacter { // Use read movies/ read ratings to read sidechar from fil
         int creditReward;
 
     public:
+        SideCharacter();
         string getName();
         string getSpecies();
         string getPlanet();
