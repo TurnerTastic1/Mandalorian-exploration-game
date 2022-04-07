@@ -20,7 +20,7 @@ class NPC { // Use read movies/ read ratings to read sidechar from file
         int creditReward;
 
     public:
-        SideCharacter();
+        NPC();
         string getName();
         string getSpecies();
         string getPlanet();

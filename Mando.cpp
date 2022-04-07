@@ -4,15 +4,15 @@
 // Recitation: 202 - TA Alexander Ray
 // Project 3
 
-#include <iostream>
-#include<fstream>
-
 #include "Mando.h"
 #include "Weapon.h"
 #include "NPC.h"
 
+#include <iostream>
+#include <fstream>
 #include <cmath>
 #include <iomanip>
+#include <vector>
 
 using namespace std;
 
@@ -22,7 +22,7 @@ Mando::Mando()
 {
     name = "";
     credits = 50;
-    weapons.push_back("gun"); // not sure how to do a default constructor for vectors
+    weapons = weapons; 
     honorLevel = 100;
 }
 
@@ -32,8 +32,11 @@ Mando::Mando(string _name)
     name = _name;
 }
 
+string Mando::getName() {
+    return name;
+}
 // getHp()
-int Mando::getHP()
+int Mando::getHp()
 {
     return hp;
 }
@@ -53,7 +56,7 @@ int Mando::getCredits()
 // setCredits()
 void Mando::setCredits(int credits_)
 {
-    credits = credits_
+    credits = credits_;
 }
 
 // getHonorLevel
@@ -63,21 +66,6 @@ int Mando::getHonorLevel()
 }
 
 // ~~~~personal functions~~~~
-
-// addWeapon
-
-/*
-1. Call this function everytime Mando gains a new weapon
-2. Checks if the weapon being entered is a valid weapon/string
-3. If second step is true, adds the new weapon name(string) to vector<Weapon> vector using weapon.push_back(); Returns 1;
-4. If second step is not true, returns -2
-*/
-
-bool addWeapon(Weapon new_weapon)
-{
-
-}
-
 
 /*
 //need more info one how we are going to do this one
@@ -89,10 +77,25 @@ bool addWeapon(Weapon new_weapon)
 
 
 // sort weapons---not sure how to set up this one
-int Mando::vector<Weapon> sortWeapons(vector<Weapon>)
+int Mando::sortWeapons(vector<Weapon>)
 {
-
+    return 0;
 }
+
+// addWeapon
+
+/*
+1. Call this function everytime Mando gains a new weapon
+2. Checks if the weapon being entered is a valid weapon/string
+3. If second step is true, adds the new weapon name(string) to vector<Weapon> vector using weapon.push_back(); Returns 1;
+4. If second step is not true, returns -2
+*/
+
+bool Mando::addWeapon(Weapon new_weapon)
+{
+    return true;
+}
+
 
 // fightNPC()
 
@@ -107,9 +110,9 @@ int Mando::vector<Weapon> sortWeapons(vector<Weapon>)
 4. If second step is not true, returns -2
 */
 
-int fightNPC(NPC dude)
+int Mando::fightNPC(NPC dude)
 {
-
+    return 0;
 }
 
 // displayGalaxyMap()
@@ -122,11 +125,21 @@ int fightNPC(NPC dude)
 5. Print each line of the file
 */
 
-void displayGalaxyMap()
+void Mando::displayGalaxyMap()
 {
-
+    ifstream fin;
+    fin.open("GalaxyMap.txt");
+    string line = "";
+    if (fin.is_open() == false) {
+        cout<< "Galaxy Map is not available!"<<endl;
+        return;
+    }
+    // Printing the Galaxy map
+    while (!fin.eof()) {
+        getline(fin, line);
+        cout<<line<<endl;
+    }
 }
-
 
 
 

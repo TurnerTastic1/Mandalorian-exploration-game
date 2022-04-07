@@ -8,7 +8,7 @@
 #include <iomanip>
 
 // default constructor
-SideCharacter::SideCharacter()
+NPC::NPC()
 {
     
 }
