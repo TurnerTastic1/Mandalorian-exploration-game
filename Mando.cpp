@@ -4,15 +4,15 @@
 // Recitation: 202 - TA Alexander Ray
 // Project 3
 
-#include <iostream>
-#include<fstream>
-
 #include "Mando.h"
 #include "Weapon.h"
 #include "NPC.h"
 
+#include <iostream>
+#include <fstream>
 #include <cmath>
 #include <iomanip>
+#include <vector>
 
 using namespace std;
 
@@ -22,7 +22,11 @@ Mando::Mando()
 {
     name = "";
     credits = 50;
+<<<<<<< HEAD
     // weapons.push_back("gun"); // not sure how to do a default constructor for vectors
+=======
+    weapons = weapons; 
+>>>>>>> 5a98e9ce0c4b955fa7652a0d75514d4f443ce88d
     honorLevel = 100;
 }
 
@@ -32,8 +36,11 @@ Mando::Mando(string _name)
     name = _name;
 }
 
+string Mando::getName() {
+    return name;
+}
 // getHp()
-int Mando::getHP()
+int Mando::getHp()
 {
     return hp;
 }
@@ -64,6 +71,8 @@ int Mando::getHonorLevel()
 
 // ~~~~personal functions~~~~
 
+<<<<<<< HEAD
+=======
 // addWeapon
 
 /*
@@ -80,6 +89,7 @@ bool addWeapon(Weapon new_weapon)
 }
 */
 
+>>>>>>> 25a51e65d14a56d493739ef65b02f98319da10a6
 /*
 //need more info one how we are going to do this one
 1. Call this function everytime a weapon is add
@@ -90,11 +100,30 @@ bool addWeapon(Weapon new_weapon)
 
 /*
 // sort weapons---not sure how to set up this one
-int Mando::vector<Weapon> sortWeapons(vector<Weapon>)
+int Mando::sortWeapons(vector<Weapon>)
 {
-
+    return 0;
 }
+
+// addWeapon
+
+/*
+1. Call this function everytime Mando gains a new weapon
+2. Checks if the weapon being entered is a valid weapon/string
+3. If second step is true, adds the new weapon name(string) to vector<Weapon> vector using weapon.push_back(); Returns 1;
+4. If second step is not true, returns -2
 */
+
+bool Mando::addWeapon(Weapon new_weapon)
+{
+    return true;
+}
+<<<<<<< HEAD
+*/
+=======
+
+
+>>>>>>> 5a98e9ce0c4b955fa7652a0d75514d4f443ce88d
 // fightNPC()
 
 // ~~ do I have to go into the super specifics of how we are determining if Mando wins or not=-09/8
@@ -108,9 +137,17 @@ int Mando::vector<Weapon> sortWeapons(vector<Weapon>)
 4. If second step is not true, returns -2
 */
 
+<<<<<<< HEAD
 /*int fightNPC(NPC dude)
+=======
+int Mando::fightNPC(NPC dude)
+>>>>>>> 5a98e9ce0c4b955fa7652a0d75514d4f443ce88d
 {
+<<<<<<< HEAD
+    return 0;
+=======
     return -1;
+>>>>>>> 25a51e65d14a56d493739ef65b02f98319da10a6
 }
 */
 // displayGalaxyMap()
@@ -122,12 +159,27 @@ int Mando::vector<Weapon> sortWeapons(vector<Weapon>)
 4. Check if the line is empty
 5. Print each line of the file
 */
+<<<<<<< HEAD
 /*
 void displayGalaxyMap()
-{
+=======
 
+void Mando::displayGalaxyMap()
+>>>>>>> 5a98e9ce0c4b955fa7652a0d75514d4f443ce88d
+{
+    ifstream fin;
+    fin.open("GalaxyMap.txt");
+    string line = "";
+    if (fin.is_open() == false) {
+        cout<< "Galaxy Map is not available!"<<endl;
+        return;
+    }
+    // Printing the Galaxy map
+    while (!fin.eof()) {
+        getline(fin, line);
+        cout<<line<<endl;
+    }
 }
 
 */
-
 

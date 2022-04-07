@@ -12,7 +12,7 @@ using namespace std;
 class Mando {
     private:
         string name;
-        const static int hp = 10;
+        int hp = 10;
         int credits;
         vector<Weapon> weapons;
         int honorLevel;
@@ -31,7 +31,7 @@ class Mando {
         
         // Personal functions
 
-        vector<Weapon> sortWeapons(vector<Weapon>); // sort weapons by rarity best to least
+        int sortWeapons(vector<Weapon>); // sort weapons by rarity best to least
         bool addWeapon(Weapon); // call sort function every time add weapon is called!!!
         int fightNPC(NPC dude);
         void displayGalaxyMap();
