@@ -31,6 +31,11 @@ int Weapon::getRarity()
     return rarity;
 }
 // getDamage
+int Weapon::getDamage()
+{
+    return damage;
+}
+
 string Weapon::getPlanet()
 {
     return planet;

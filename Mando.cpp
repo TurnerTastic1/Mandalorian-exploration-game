@@ -78,7 +78,6 @@ bool addWeapon(Weapon new_weapon)
 
 }
 
-
 /*
 //need more info one how we are going to do this one
 1. Call this function everytime a weapon is add
@@ -109,7 +108,7 @@ int Mando::vector<Weapon> sortWeapons(vector<Weapon>)
 
 int fightNPC(NPC dude)
 {
-
+    return -1;
 }
 
 // displayGalaxyMap()
