@@ -22,7 +22,7 @@ Mando::Mando()
 {
     name = "";
     credits = 50;
-    weapons.push_back("gun"); // not sure how to do a default constructor for vectors
+    // weapons.push_back("gun"); // not sure how to do a default constructor for vectors
     honorLevel = 100;
 }
 
@@ -38,11 +38,11 @@ int Mando::getHP()
     return hp;
 }
 
-// setHp()
-void Mando::setHp(int hp_)
-{
-    hp = hp_;
-}
+// setHp()--can't have because we made hp a static int
+//void Mando::setHp(int hp_)
+//{
+//    hp = hp_;
+//}
 
 // getCredits()
 int Mando::getCredits()
@@ -53,7 +53,7 @@ int Mando::getCredits()
 // setCredits()
 void Mando::setCredits(int credits_)
 {
-    credits = credits_
+    credits = credits_;
 }
 
 // getHonorLevel
@@ -72,11 +72,13 @@ int Mando::getHonorLevel()
 3. If second step is true, adds the new weapon name(string) to vector<Weapon> vector using weapon.push_back(); Returns 1;
 4. If second step is not true, returns -2
 */
+/*
 
 bool addWeapon(Weapon new_weapon)
 {
 
 }
+*/
 
 /*
 //need more info one how we are going to do this one
@@ -86,13 +88,13 @@ bool addWeapon(Weapon new_weapon)
 4. Possible bubble sort method
 */
 
-
+/*
 // sort weapons---not sure how to set up this one
 int Mando::vector<Weapon> sortWeapons(vector<Weapon>)
 {
 
 }
-
+*/
 // fightNPC()
 
 // ~~ do I have to go into the super specifics of how we are determining if Mando wins or not=-09/8
@@ -106,11 +108,11 @@ int Mando::vector<Weapon> sortWeapons(vector<Weapon>)
 4. If second step is not true, returns -2
 */
 
-int fightNPC(NPC dude)
+/*int fightNPC(NPC dude)
 {
     return -1;
 }
-
+*/
 // displayGalaxyMap()
 
 /*
@@ -120,12 +122,12 @@ int fightNPC(NPC dude)
 4. Check if the line is empty
 5. Print each line of the file
 */
-
+/*
 void displayGalaxyMap()
 {
 
 }
 
-
+*/
 
 

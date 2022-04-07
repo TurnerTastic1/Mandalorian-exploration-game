@@ -23,8 +23,8 @@ class Mando {
         Mando(); // set credits and first weapons here
         Mando(string name_);
         string getName();
-        int getHp();
-        void setHp(int hp_);
+        int getHP();
+        // void setHp(int hp_);
         int getCredits();
         void setCredits(int credits_);
         int getHonorLevel();
