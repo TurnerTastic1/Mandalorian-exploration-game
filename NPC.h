@@ -26,7 +26,7 @@ class NPC { // Use read movies/ read ratings to read sidechar from file
         string getPlanet();
         string getPlanetRegion();
         Weapon getWeapon();
-        int getHp();
+        int getHP();
         bool getFriendly();
         string getDescription();
         int getDamage();

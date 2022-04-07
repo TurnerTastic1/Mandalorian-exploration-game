@@ -113,13 +113,13 @@ int main()
     // .getType() test
     assert(defNPC.getSpecies()=="");
     // .getRarity() test
-    assert(defNPC.getPlanet() == 0);
+    assert(defNPC.getPlanet() == "");
     // .getDamage() test
-    assert(defNPC.getPlanetRegion() == 0);
+    assert(defNPC.getPlanetRegion() == "");
     // .getPlanet() test
     // assert(defNPC.getWeapon() == "");
     // .getPlanetRegion() test
-    assert(defNPC.getHP() == "");
+    assert(defNPC.getHP() == 0);
     // .getFriendly()
     assert(defNPC.getFriendly() == true);
     // .getDescription()
@@ -128,5 +128,20 @@ int main()
     assert(defNPC.getDamage() == 0);
     // .getCreditReward
     assert(defNPC.getCreditReward() == 0);
+
+    // ~~~~~~~~~~~~~~~ Planet.h test ~~~~~~~~~~~~~~~~~~~~~~~~~
+    // create Planet object with the default constructor
+    Planet defPlanet = Planet();
+    // getName() test
+    assert(defPlanet.getName()=="");
+    // getType() test
+    assert(defPlanet.getType() == "");
+    // getPlanet() test
+    assert(defPlanet.getRegion() == "");
+    // getTravelCost()
+    assert(defPlanet.getTravelCost() == 0);
+
+    // ~~~~~~~~~~~~~~~ Map.h test ~~~~~~~~~~~~~~~~~~~~~~~~~
+    // create Map object with the default constructor
 
 }
