@@ -67,6 +67,23 @@ int Mando::getHonorLevel()
 
 // ~~~~personal functions~~~~
 
+<<<<<<< HEAD
+=======
+// addWeapon
+
+/*
+1. Call this function everytime Mando gains a new weapon
+2. Checks if the weapon being entered is a valid weapon/string
+3. If second step is true, adds the new weapon name(string) to vector<Weapon> vector using weapon.push_back(); Returns 1;
+4. If second step is not true, returns -2
+*/
+
+bool addWeapon(Weapon new_weapon)
+{
+
+}
+
+>>>>>>> 25a51e65d14a56d493739ef65b02f98319da10a6
 /*
 //need more info one how we are going to do this one
 1. Call this function everytime a weapon is add
@@ -112,7 +129,11 @@ bool Mando::addWeapon(Weapon new_weapon)
 
 int Mando::fightNPC(NPC dude)
 {
+<<<<<<< HEAD
     return 0;
+=======
+    return -1;
+>>>>>>> 25a51e65d14a56d493739ef65b02f98319da10a6
 }
 
 // displayGalaxyMap()

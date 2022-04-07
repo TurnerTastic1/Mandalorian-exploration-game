@@ -3,7 +3,7 @@
 #include "Mando.h"
 #include "Weapon.h"
 #include "StormTrooper.h"
-#include "SideCharacter.h"
+#include "NPC.h"
 #include "Planet.h"
 #include <cassert>
 
@@ -41,4 +41,20 @@ int main()
 
     // ~~~~~~~~~~~~~~~ Mando.h test ~~~~~~~~~~~~~~~~~~~~~~~~~
     // create Weapon object with the default constructor
+    Mando defMando;
+    // test getters:
+    // .getName() test
+    assert(defMando.getName()=="");
+    // .getType() test
+    assert(defMando.getHP()==10);
+    // .getRarity() test
+    assert(defWeapon.getCredits() == 50);
+    // .getDamage() test
+    assert(defWeapon.getHonorLevel() == 0);
+    // .getPlanet() test
+    assert(defWeapon.setHp(50) == 50);
+    // .getPlanetRegion() test
+    assert(defWeapon.setCredits(100) == 100);
+
+
 }
