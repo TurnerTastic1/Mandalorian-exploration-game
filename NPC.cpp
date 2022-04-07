@@ -10,5 +10,12 @@
 // default constructor
 NPC::NPC()
 {
+    name = "";
+    species = "";
+    planet = "";
+    planetRegion = "";
+    // weapon
+    hp = 0;
+    friendly = true;
     
 }

@@ -13,7 +13,7 @@ using namespace std;
 * 1. Weapon.h
 * 2. Mando.h
 * 3. StormTrooper.h
-* 4. SideCharacter.h
+* 4. NPC.h
 * 5. Planet.h
 * 6. Map.h
 
@@ -95,5 +95,18 @@ int main()
     // ~~~~~~~~~~~~~~~ StormTrooper.h test ~~~~~~~~~~~~~~~~~~~~~~~~~
     // create StormTrooper object with the default constructor
     StormTrooper defTrooper();
+    // getDifficulty() test
+    // test getters:
+    // getDifficulty() test
+    assert(defTrooper.getDifficulty()==3);
+    // .getHp() test
+    assert(defTrooper.getHP()==10);
+    // .getDamage() test
+    assert(defTrooper.getDamage() == 0);
+
+    // ~~~~~~~~~~~~~~~ NPC.h test ~~~~~~~~~~~~~~~~~~~~~~~~~
+    // create NPC object with the default constructor
+
+
 
 }

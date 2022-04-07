@@ -10,7 +10,7 @@ class StormTrooper {
     public:
         StormTrooper();
         int getDifficulty();
-        int getHp();
+        int getHP();
         int getDamage();
         /// comment
 };

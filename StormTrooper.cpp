@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
 
-#include "Weapon.h"
+#include "StormTrooper.h"
 
 #include <cmath>
 #include <iomanip>
+
+using namespace std;
 
 // default constructor
 StormTrooper::StormTrooper()
@@ -19,18 +21,18 @@ StormTrooper::StormTrooper()
 }
 
 // getDifficulty()
-StormTrooper::getDifficulty()
+int StormTrooper::getDifficulty()
 {
     return difficulty;
 }
 
 // getHp()
-StormTrooper::getHp()
+int StormTrooper::getHP()
 {
     return hp;
 }
 // getDamage()
-StormTrooper::getDamage()
+int StormTrooper::getDamage()
 {
     return damage;
 }
