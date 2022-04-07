@@ -9,7 +9,7 @@
 
 #include "Mando.h"
 #include "Weapon.h"
-#include "SideCharacter.h"
+#include "Planet.h"
 
 #include <cmath>
 #include <iomanip>
@@ -33,7 +33,7 @@ string Planet::getName()
 
 // getType()
 
-string Planet::getRegion()
+string Planet::getType()
 {
     return type;
 }

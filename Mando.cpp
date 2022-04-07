@@ -22,7 +22,7 @@ Mando::Mando()
 {
     name = "";
     credits = 50;
-    weapons = weapons; 
+    // weapons.push_back("gun"); // not sure how to do a default constructor for vectors
     honorLevel = 100;
 }
 
@@ -36,16 +36,16 @@ string Mando::getName() {
     return name;
 }
 // getHp()
-int Mando::getHp()
+int Mando::getHP()
 {
     return hp;
 }
 
-// setHp()
-void Mando::setHp(int hp_)
-{
-    hp = hp_;
-}
+// setHp()--can't have because we made hp a static int
+//void Mando::setHp(int hp_)
+//{
+//    hp = hp_;
+//}
 
 // getCredits()
 int Mando::getCredits()
@@ -75,7 +75,7 @@ int Mando::getHonorLevel()
 4. Possible bubble sort method
 */
 
-
+/*
 // sort weapons---not sure how to set up this one
 int Mando::sortWeapons(vector<Weapon>)
 {
@@ -90,13 +90,12 @@ int Mando::sortWeapons(vector<Weapon>)
 3. If second step is true, adds the new weapon name(string) to vector<Weapon> vector using weapon.push_back(); Returns 1;
 4. If second step is not true, returns -2
 */
-
+/*
 bool Mando::addWeapon(Weapon new_weapon)
 {
     return true;
 }
-
-
+*/
 // fightNPC()
 
 // ~~ do I have to go into the super specifics of how we are determining if Mando wins or not=-09/8
@@ -110,11 +109,11 @@ bool Mando::addWeapon(Weapon new_weapon)
 4. If second step is not true, returns -2
 */
 
-int Mando::fightNPC(NPC dude)
+/*int fightNPC(NPC dude)
 {
     return 0;
 }
-
+*/
 // displayGalaxyMap()
 
 /*
@@ -124,8 +123,8 @@ int Mando::fightNPC(NPC dude)
 4. Check if the line is empty
 5. Print each line of the file
 */
-
-void Mando::displayGalaxyMap()
+/*
+void displayGalaxyMap()
 {
     ifstream fin;
     fin.open("GalaxyMap.txt");
@@ -141,5 +140,5 @@ void Mando::displayGalaxyMap()
     }
 }
 
-
+*/
 
