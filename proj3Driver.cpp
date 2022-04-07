@@ -23,7 +23,7 @@ int main()
 {
     // ~~~~~~~~~~~~~~~ Weapon.h test ~~~~~~~~~~~~~~~~~~~~~~~~~
     // create Weapon object with the default constructor
-    Weapon defWeapon;
+    Weapon defWeapon = Weapon();
     
     // test getters:
     // .getName() test
@@ -40,7 +40,7 @@ int main()
     assert(defWeapon.getPlanetRegion() == "");
 
     // parameterized constructor tests
-    Weapon paramWeapon("knife", "short-range", 1, 3, "tatooine", "1");
+    Weapon paramWeapon = Weapon("knife", "short-range", 1, 3, "tatooine", "1");
     // test getters:
     // .getName() test
     assert(paramWeapon.getName()=="knife");
@@ -58,7 +58,7 @@ int main()
 
     // ~~~~~~~~~~~~~~~ Mando.h test ~~~~~~~~~~~~~~~~~~~~~~~~~
     // create Mando object with the default constructor
-    Mando defMando;
+    Mando defMando = Mando();
     // test getters:
     // .getName() test
     assert(defMando.getName()=="");
@@ -75,7 +75,7 @@ int main()
     assert(defMando.getCredits() == 100);
 
     // parameterized constructor
-    Mando paramMando("cassie");
+    Mando paramMando = Mando("cassie");
     // test getters:
     // .getName() test
     assert(paramMando.getName()=="cassie");
@@ -94,7 +94,7 @@ int main()
 
     // ~~~~~~~~~~~~~~~ StormTrooper.h test ~~~~~~~~~~~~~~~~~~~~~~~~~
     // create StormTrooper object with the default constructor
-    StormTrooper defTrooper();
+    StormTrooper defTrooper = StormTrooper();
     // getDifficulty() test
     // test getters:
     // getDifficulty() test
@@ -106,7 +106,27 @@ int main()
 
     // ~~~~~~~~~~~~~~~ NPC.h test ~~~~~~~~~~~~~~~~~~~~~~~~~
     // create NPC object with the default constructor
-
-
+    NPC defNPC = NPC();
+    // test getters:
+    // .getName() test
+    assert(defNPC.getName()=="");
+    // .getType() test
+    assert(defNPC.getSpecies()=="");
+    // .getRarity() test
+    assert(defNPC.getPlanet() == 0);
+    // .getDamage() test
+    assert(defNPC.getPlanetRegion() == 0);
+    // .getPlanet() test
+    // assert(defNPC.getWeapon() == "");
+    // .getPlanetRegion() test
+    assert(defNPC.getHP() == "");
+    // .getFriendly()
+    assert(defNPC.getFriendly() == true);
+    // .getDescription()
+    assert(defNPC.getDescription() == "");
+    // .getDamage()
+    assert(defNPC.getDamage() == 0);
+    // .getCreditReward
+    assert(defNPC.getCreditReward() == 0);
 
 }
