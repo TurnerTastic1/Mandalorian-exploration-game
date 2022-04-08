@@ -1,3 +1,9 @@
+// NPC.h
+// CSCI 1300 Spring 2022
+// Author: Caroline Scheidt, Turner naef
+// Recitation: 202 - TA Alexander Ray
+// Project 3
+
 #ifndef NPC_h
 #define NPC_h
 

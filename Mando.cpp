@@ -1,6 +1,6 @@
 // Mando.cpp
 // CSCI 1300 Spring 2022
-// Author: Caroline Scheidt,
+// Author: Caroline Scheidt, Turner naef
 // Recitation: 202 - TA Alexander Ray
 // Project 3
 

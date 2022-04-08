@@ -1,3 +1,9 @@
+// Weapon.h
+// CSCI 1300 Spring 2022
+// Author: Caroline Scheidt, Turner Naef
+// Recitation: 202 - TA Alexander Ray
+// Project 3
+
 #ifndef Weapon_h
 #define Weapon_h
 
