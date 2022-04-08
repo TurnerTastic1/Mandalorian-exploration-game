@@ -56,6 +56,7 @@ int main()
     assert(paramWeapon.getPlanetRegion() == "1");
 
 
+
     // ~~~~~~~~~~~~~~~ Mando.h test ~~~~~~~~~~~~~~~~~~~~~~~~~
     // create Mando object with the default constructor
     Mando defMando = Mando();
@@ -67,7 +68,7 @@ int main()
     // .getRarity() test
     assert(defMando.getCredits() == 50);
     // .getDamage() test
-    assert(defMando.getHonorLevel() == 0);
+    assert(defMando.getHonorLevel() == 100);
     // .getPlanet() test
     // assert(defMando.setHP(50) == 50);
     // .getPlanetRegion() test
@@ -81,8 +82,6 @@ int main()
     assert(paramMando.getName()=="cassie");
     // .getHP() test
     assert(paramMando.getHP()==10);
-    // .getCredits() test
-    assert(paramMando.getCredits() == 50);
     // .getHonorLevel() test
     assert(paramMando.getHonorLevel() == 0);
     // .setHP() test

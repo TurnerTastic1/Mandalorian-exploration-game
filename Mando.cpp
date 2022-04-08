@@ -75,7 +75,7 @@ int Mando::getHonorLevel()
 4. Possible bubble sort method
 */
 
-/*
+
 // sort weapons---not sure how to set up this one
 int Mando::sortWeapons(vector<Weapon>)
 {
@@ -90,12 +90,12 @@ int Mando::sortWeapons(vector<Weapon>)
 3. If second step is true, adds the new weapon name(string) to vector<Weapon> vector using weapon.push_back(); Returns 1;
 4. If second step is not true, returns -2
 */
-/*
+
 bool Mando::addWeapon(Weapon new_weapon)
 {
     return true;
 }
-*/
+
 // fightNPC()
 
 // ~~ do I have to go into the super specifics of how we are determining if Mando wins or not=-09/8
@@ -109,11 +109,11 @@ bool Mando::addWeapon(Weapon new_weapon)
 4. If second step is not true, returns -2
 */
 
-/*int fightNPC(NPC dude)
+int fightNPC(NPC dude)
 {
     return 0;
 }
-*/
+
 // displayGalaxyMap()
 
 /*
@@ -123,7 +123,8 @@ bool Mando::addWeapon(Weapon new_weapon)
 4. Check if the line is empty
 5. Print each line of the file
 */
-/*
+
+
 void displayGalaxyMap()
 {
     ifstream fin;
@@ -140,5 +141,4 @@ void displayGalaxyMap()
     }
 }
 
-*/
 
