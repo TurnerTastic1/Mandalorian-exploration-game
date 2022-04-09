@@ -6,6 +6,8 @@
 
 #include "Weapon.h"
 #include "NPC.h"
+#include "Planet.h"
+#include "StormTrooper.h"
 
 using namespace std;
 

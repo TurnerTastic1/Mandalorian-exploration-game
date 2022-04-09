@@ -5,7 +5,7 @@
 // Project 3
 
 #include "Mando.h"
-#include "Weapon.h"
+//#include "Weapon.h"
 #include "NPC.h"
 
 #include <iostream>

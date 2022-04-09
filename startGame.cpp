@@ -4,11 +4,11 @@
 #include <chrono>
 
 #include "Mando.h"
-#include "Map.h"
-#include "NPC.h"
-#include "Planet.h"
-#include "StormTrooper.h"
-#include "Weapon.h"
+//#include "Map.h"
+//#include "NPC.h"
+//#include "Planet.h"
+//#include "StormTrooper.h"
+//#include "Weapon.h"
 
 using namespace std;
 using std::this_thread::sleep_for;

@@ -5,6 +5,9 @@
 #include <vector>
 
 #include "Weapon.h"
+#include "Mando.h"
+#include "Planet.h"
+#include "StormTrooper.h"
 
 class NPC { // Use read movies/ read ratings to read sidechar from file
     private:

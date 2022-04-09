@@ -4,6 +4,11 @@
 #include <iostream>
 #include <vector>
 
+#include "Weapon.h"
+#include "NPC.h"
+#include "Mando.h"
+#include "StormTrooper.h"
+
 using namespace std;
 
 class Planet {
