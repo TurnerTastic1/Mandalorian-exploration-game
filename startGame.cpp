@@ -8,6 +8,7 @@
 #include <fstream>
 #include <thread>
 #include <chrono>
+#include <string>
 
 #include "Mando.h"
 //#include "Map.h"
@@ -41,7 +42,23 @@ void startGame() {
         sleep_for(1000ms);
 
         myMando.displayGalaxyMap();
+        cout<<"GAME STORY INTRO HERE"<<endl;
         // cout<<guy.getName()<<endl;
+    }
+
+    while(true) {
+        int planetCode = 000;
+        cout<<"Enter your choice(Planet #/code)"<<endl<<"or enter 0 to quit";
+        cin >> choice;
+
+        switch (choice) {
+            case 145:
+                cout<<"Welcome to Tattoine - test"<<endl;
+                return;
+            case 0:
+                cout<<"Quitting the game"<<endl;
+                return;
+        }
     }
     return;
 }

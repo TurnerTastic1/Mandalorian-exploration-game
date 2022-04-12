@@ -109,7 +109,7 @@ bool Mando::addWeapon(Weapon new_weapon)
 4. If second step is not true, returns -2
 */
 
-int fightNPC(NPC dude)
+int Mando::fightNPC(NPC dude)
 {
     return 0;
 }
@@ -125,7 +125,7 @@ int fightNPC(NPC dude)
 */
 
 
-void displayGalaxyMap()
+void Mando::displayGalaxyMap()
 {
     ifstream fin;
     fin.open("GalaxyMap.txt");
