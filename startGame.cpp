@@ -47,11 +47,11 @@ void startGame() {
     }
 
     while(true) {
-        int planetCode = 000;
-        cout<<"Enter your choice(Planet #/code)"<<endl<<"or enter 0 to quit";
-        cin >> choice;
+        int planetCode = 0;
+        cout<<"Enter your choice(Planet #/code)"<<endl<<"or enter 0 to quit"<<endl;
+        cin >> planetCode;
 
-        switch (choice) {
+        switch (planetCode) {
             case 145:
                 cout<<"Welcome to Tattoine - test"<<endl;
                 return;
@@ -62,6 +62,10 @@ void startGame() {
     }
     return;
 }
+
+// functions to go to differtent planets
+
+
 
 int main(){
     // Testing use of a wait/period/delay between print statements
