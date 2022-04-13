@@ -8,13 +8,14 @@
 #include <fstream>
 #include <thread>
 #include <chrono>
+#include <string>
 
 #include "Mando.h"
-#include "Map.h"
-#include "NPC.h"
-#include "Planet.h"
-#include "StormTrooper.h"
-#include "Weapon.h"
+//#include "Map.h"
+//#include "NPC.h"
+//#include "Planet.h"
+//#include "StormTrooper.h"
+//#include "Weapon.h"
 
 using namespace std;
 using std::this_thread::sleep_for;
@@ -41,10 +42,30 @@ void startGame() {
         sleep_for(1000ms);
 
         myMando.displayGalaxyMap();
+        cout<<"GAME STORY INTRO HERE"<<endl;
         // cout<<guy.getName()<<endl;
+    }
+
+    while(true) {
+        int planetCode = 0;
+        cout<<"Enter your choice(Planet #/code)"<<endl<<"or enter 0 to quit"<<endl;
+        cin >> planetCode;
+
+        switch (planetCode) {
+            case 145:
+                cout<<"Welcome to Tattoine - test"<<endl;
+                return;
+            case 0:
+                cout<<"Quitting the game"<<endl;
+                return;
+        }
     }
     return;
 }
+
+// functions to go to differtent planets
+
+
 
 int main(){
     // Testing use of a wait/period/delay between print statements

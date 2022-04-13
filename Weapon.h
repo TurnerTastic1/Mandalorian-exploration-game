@@ -10,6 +10,11 @@
 #include <iostream>
 #include <vector>
 
+#include "Mando.h"
+#include "NPC.h"
+#include "Planet.h"
+#include "StormTrooper.h"
+
 using namespace std;
 
 class Weapon {
