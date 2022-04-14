@@ -53,7 +53,20 @@ void startGame() {
 
         switch (planetCode) {
             case 145:
-                cout<<"Welcome to Tattoine - test"<<endl;
+                int continue1 = 0;
+                cout<<"Welcome to Tattoine!"<<endl;
+                cout<<"Your ship sustained heavy damage from your battle with the stormtrooper."<<endl;
+                cout<<"Luckily, you landed in Region 1, and you can repair your ship for a certain amount of credits." <<endl;
+                cout<<"Would you like to continue? yes = 1; no = 2" << endl;
+                cin >> continue1;
+
+                if (continue1 == 1)
+                {
+                    tattoine
+                }
+                // automatically go into region 1
+                // should we make a function for each region?
+
                 return;
             case 0:
                 cout<<"Quitting the game"<<endl;
@@ -64,6 +77,16 @@ void startGame() {
 }
 
 // functions to go to differtent planets
+/*
+-maybe we should send credits in? otherwise does it have a certain value for credits?
+void PlanetTatooine()
+{
+    
+
+}
+
+
+*/
 
 
 
