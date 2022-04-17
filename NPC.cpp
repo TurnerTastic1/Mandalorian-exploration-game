@@ -26,6 +26,7 @@ NPC::NPC()
     damage = 0;
     creditReward = 0;
     description = "";
+    skillLevel = 0;
 
 }
 // getName()
@@ -72,4 +73,10 @@ int NPC::getDamage()
 int NPC::getCreditReward()
 {
     return creditReward;
+}
+
+// getSkillLevel()
+int NPC::getSkillLevel()
+{
+    return skillLevel;
 }

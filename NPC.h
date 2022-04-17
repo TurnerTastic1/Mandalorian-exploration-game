@@ -27,6 +27,7 @@ class NPC { // Use read movies/ read ratings to read sidechar from file
         string description;
         int damage;
         int creditReward;
+        int skillLevel;
 
     public:
         NPC();
@@ -37,9 +38,10 @@ class NPC { // Use read movies/ read ratings to read sidechar from file
         //Weapon getWeapon();
         int getHP();
         bool getFriendly();
-        string getDescription();
+        string getDescription();// player can pass this info
         int getDamage();
         int getCreditReward();
+        int getSkillLevel();
 
 
 };

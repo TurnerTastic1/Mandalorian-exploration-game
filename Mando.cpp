@@ -25,6 +25,7 @@ Mando::Mando()
     credits = 50;
     // weapons.push_back("gun"); // not sure how to do a default constructor for vectors
     honorLevel = 100;
+    skillLevel = 10;
 }
 
 // parameterized constructor

@@ -24,6 +24,7 @@ class Mando {
         int credits;
         vector<Weapon> weapons;
         int honorLevel;
+        int skillLevel;
 
     public:
         // Standard Functions
@@ -36,6 +37,7 @@ class Mando {
         int getCredits();
         void setCredits(int credits_);
         int getHonorLevel();
+        int getSkillLevel();
         
         // Personal functions
 
