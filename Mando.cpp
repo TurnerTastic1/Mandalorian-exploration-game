@@ -67,6 +67,11 @@ int Mando::getHonorLevel()
     return honorLevel;
 }
 
+int Mando::getSkillLevel()
+{
+    return skillLevel;
+}
+
 // ~~~~personal functions~~~~
 
 /*
@@ -79,10 +84,10 @@ int Mando::getHonorLevel()
 
 
 // sort weapons---not sure how to set up this one
-int Mando::sortWeapons(vector<Weapon>)
-{
+//int Mando::sortWeapons(vector<Weapon>)
+/*{
     return 0;
-}
+}*/
 
 // addWeapon
 
@@ -93,10 +98,10 @@ int Mando::sortWeapons(vector<Weapon>)
 4. If second step is not true, returns -2
 */
 
-bool Mando::addWeapon(Weapon new_weapon)
+/*bool Mando::addWeapon(Weapon new_weapon)
 {
     return true;
-}
+} */
 
 // fightNPC()
 

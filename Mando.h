@@ -22,7 +22,7 @@ class Mando {
         string name;
         int hp = 10;
         int credits;
-        vector<Weapon> weapons;
+        // vector<Weapon> weapons;
         int honorLevel;
         int skillLevel;
 
@@ -41,8 +41,8 @@ class Mando {
         
         // Personal functions
 
-        int sortWeapons(vector<Weapon>); // sort weapons by rarity best to least
-        bool addWeapon(Weapon); // call sort function every time add weapon is called!!!
+       // int sortWeapons(vector<Weapon>); // sort weapons by rarity best to least
+       // bool addWeapon(Weapon); // call sort function every time add weapon is called!!!
         int fightNPC(NPC dude);
         void displayGalaxyMap();
 
