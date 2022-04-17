@@ -76,6 +76,19 @@ void startGame() {
     return;
 }
 
+void tatooine() {
+    cout<<"Welcome to Tatooine"<<endl;
+    // insert story here/later
+
+    // print a planet map
+
+    // create maps for each planet region
+    // create npcs for each planet region
+
+
+}
+
+
 // functions to go to differtent planets
 /*
 -maybe we should send credits in? otherwise does it have a certain value for credits?
@@ -91,31 +104,12 @@ void PlanetTatooine()
 
 
 int main(){
-    // Testing use of a wait/period/delay between print statements
 
     startGame();
 
-    //Mando myMando = Mando("guy");
-    
-    //myMando.displayGalaxyMap();
 
 
 
 
-
-    // Testing to read from galaxy map(ascii art)
-
-    // ifstream fin;
-    // fin.open("RegionMap2.txt");
-    // string line = "";
-    // if (fin.is_open() == false) {
-    //     cout<< "Nah"<<endl;
-    //     return 0;
-    // }
-    // cout<<"THE MAP"<<endl;
-    // while (!fin.eof()) {
-    //     getline(fin, line);
-    //     cout<<line<<endl;
-    // }
     return 0;
 }
