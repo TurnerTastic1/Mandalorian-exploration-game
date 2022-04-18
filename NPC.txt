@@ -1,4 +1,5 @@
 // name, species, planet, planet region, hp, friendly, damage, credit reward
+
 Stormtrooper, human, Navarro, region 1, 10, false, 5, 0
 Peli Motto, human, Tatooine, region 1, 10, true, 0, 0
 Soli Mel, human, Tatooine, region 2, 10, true, 0, 0

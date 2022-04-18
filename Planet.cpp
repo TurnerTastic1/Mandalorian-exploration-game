@@ -60,7 +60,19 @@ int Planet::getTravelCost()
 5. Print each line of the file
 */
 
-void Planet::displayPlanetMap()
+void Planet::displayPlanetMap(string filename)
 {
+    ifstream fin;
+    fin.open(filename);
+    string line = "";
+    if (fin.is_open() == false) {
+        cout<< "Galaxy Map is not available!"<<endl;
+        return;
+    }
+    // Printing the Galaxy map
+    while (!fin.eof()) {
+        getline(fin, line);
+        cout<<line<<endl;
+    }
 
 }
