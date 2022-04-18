@@ -6,6 +6,7 @@
 
 
 #include "Mando.h"
+#include "Planet.h"
 //#include "Weapon.h"
 #include "NPC.h"
 
@@ -22,7 +23,8 @@ using namespace std;
 Mando::Mando()
 {
     name = "";
-    credits = 50;
+    credits = 100;
+    hp = 10;
     // weapons.push_back("gun"); // not sure how to do a default constructor for vectors
     honorLevel = 100;
     skillLevel = 10;
@@ -44,10 +46,10 @@ int Mando::getHP()
 }
 
 // setHp()--can't have because we made hp a static int
-//void Mando::setHp(int hp_)
-//{
-//    hp = hp_;
-//}
+void Mando::setHp(int hp_)
+{
+   hp = hp_;
+}
 
 // getCredits()
 int Mando::getCredits()

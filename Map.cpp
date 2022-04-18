@@ -4,7 +4,7 @@
 // Recitation: 202 - TA Alexander Ray
 // Project 3
 
-#include "Map.h"
+#include "map.h"
 
 using namespace std; 
 
