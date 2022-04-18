@@ -8,7 +8,7 @@
 #include<fstream>
 
 #include "Mando.h"
-#include "Weapon.h"
+//#include "Weapon.h"
 #include "Planet.h"
 
 #include <cmath>
@@ -21,8 +21,13 @@ Planet::Planet()
 {
     name = "";
     type = "";
-    region = "";
     travelCost = 0;
+}
+
+Planet::Planet(string name_, string type_, int travelCost_) {
+    name = name_;
+    type = type_;
+    travelCost = travelCost_;
 }
 
 // getName()
@@ -38,16 +43,27 @@ string Planet::getType()
     return type;
 }
 
-// getRegion()
-string Planet::getRegion()
-{
-    return region;
-}
-
 // getTravelCost
 int Planet::getTravelCost()
 {
     return travelCost;
+}
+
+
+
+bool planetTravel(Mando myMando) {
+    char choice;
+    cout<<"Hello "<<myMando.getName()<<"."<<endl;
+    cout<<"You currently have "<<myMando.getCredits()<<" credits. Travel cost will be "<<travelCost<<" credits."<<endl;
+    cout<<"Do you wish to travel to "<<name<<"? (y/n)"<<endl;
+    cin >> choice;
+    if ((choice == 'y') && (myMando.getCredits() >= travelCost)) {
+        myMando.setCredits(myMando.getCredits() - travelCost);
+        cout<<"Making the jump to hyperspace!"<<endl;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // displayPlanetMap

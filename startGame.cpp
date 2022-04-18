@@ -36,8 +36,8 @@ using namespace std::chrono_literals;
 // Helper functions, no story included
 
 // Allows us to condense code and for the player to have access to a menu of their mando functions
-void mandoMenu(mando myMando) {
-    
+void mandoMenu(Mando myMando) {
+
     return;
 }
 
@@ -69,10 +69,18 @@ bool exploreRegion(Map myMap) {
 // DO NOT ADD STORY
 // BASELINE FUNCTION FOR ALL PLANETS NO STORY YET
 
-void tatooine() {
-    cout<<"Welcome to Tatooine!"<<endl;
+void tatooine(Mando myMando) {
+    Planet tatooine = Planet("Tatooine", "Terrestrial", 50);
+    if(tatooine.planetTravel(myMando)) {
+        cout<<"Welcome to Tatooine!"<<endl;
+        cout<<"You currently have "<<myMando.getCredits()<<" remaining."<<endl;
+    } else {
+        cout<<"Returning to the galaxy map."<<endl;
+        return;
+    }
 
-    Planet tatooine = Planet();
+    //cout<<"Welcome to Tatooine!"<<endl;
+
 
     cout<<"Story goes here"<<endl; // must come after region map!
     // Region maps
@@ -228,7 +236,12 @@ void startGame() {
     // }
 
     srand(time(NULL));
-    Mando myMando = Mando();
+    string name;
+    cout<<"Greetings mandalorian!"<<endl;
+    cout<<"What should we call you?"<<endl;
+    cin >> name;
+    // add a name for the mando later
+    Mando myMando = Mando(name);
         // Will change later for development of the story
     cout<<"Welcome! Printing the map of the Galaxy!"<<endl;
     sleep_for(1000ms);
@@ -243,7 +256,7 @@ void startGame() {
 
         switch (planetCode) {
             case 145:
-                tatooine();
+                tatooine(myMando);
 
                 cout<<"Welcome back to space!"<<endl;
                 cout<<"Loading Galaxy Map..."<<endl;
