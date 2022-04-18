@@ -22,4 +22,4 @@ Ludduuj Duurd, mandalorian, Navarro, region 1, 10, true, 80, 0
 Krod Trehl, mandalorian, Navarro, region 1, 10, true, 70, 0
 Click, clone, Navarro, region 2, 10, true, 50, 0
 Moff Gideon, human, Navarro, region 3, 10, false, 100, 0
-Kai Tu'Sei, human, Navarro, region 4, 10 true, 0, 0, 
+Kai Tu'Sei, human, Navarro,]] region 4, 10 true, 0, 0, 
