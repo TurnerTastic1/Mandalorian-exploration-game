@@ -4,8 +4,8 @@
 // Recitation: 202 - TA Alexander Ray
 // Project 3
 
-#ifndef StormTrooper_h
-#define StormTrooper_h
+#ifndef STORMTROOPER_H
+#define STORMTROOPER_H
 
 #include <iostream>
 

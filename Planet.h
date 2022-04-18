@@ -4,8 +4,8 @@
 // Recitation: 202 - TA Alexander Ray
 // Project 3
 
-#ifndef Planet_h
-#define Planet_h
+#ifndef PLANET_H
+#define PLANET_H
 
 #include <iostream>
 #include <vector>
@@ -18,8 +18,7 @@
 using namespace std;
 
 class Planet {
-    extern:
-        bool planetTravel(Mando myMando);
+    // extern bool planetTravel(Mando myMando);
 
     private:
         string name;

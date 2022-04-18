@@ -4,15 +4,14 @@
 // Recitation: 202 - TA Alexander Ray
 // Project 3 
 
-#ifndef Mando_h
-#define Mando_h
+#ifndef MANDO_H
+#define MANDO_H
 
 #include <iostream>
 #include <vector>
 
 #include "Weapon.h"
 #include "NPC.h"
-#include "Planet.h"
 #include "StormTrooper.h"
 
 using namespace std;
@@ -22,7 +21,7 @@ class Mando {
         string name;
         int hp;
         int credits;
-        // vector<Weapon> weapons;
+        vector <Weapon> weapons;
         int honorLevel;
         int skillLevel;
 
@@ -41,8 +40,8 @@ class Mando {
         
         // Personal functions
 
-       // int sortWeapons(vector<Weapon>); // sort weapons by rarity best to least
-       // bool addWeapon(Weapon); // call sort function every time add weapon is called!!!
+        int sortWeapons(vector<Weapon>); // sort weapons by rarity best to least
+        bool addWeapon(Weapon); // call sort function every time add weapon is called!!!
         int fightNPC(NPC dude);
         void displayGalaxyMap();
 

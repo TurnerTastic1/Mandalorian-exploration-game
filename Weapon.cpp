@@ -84,4 +84,3 @@ void Weapon::setPlanetRegion(string planetRegion_)
 {
     planetRegion = planetRegion_;
 }
-

@@ -49,7 +49,7 @@ bool exploreRegion(Map myMap) {
         if (myMap.isNPCLocation()) {
             cout<<"You approach a stranger... Do you want to interact?(y/n)"<<endl;
             char choice;
-            cin >>choice;
+            cin >> choice;
             if (choice == 'y') {
                 return true;
             }

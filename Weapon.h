@@ -4,8 +4,6 @@
 // Recitation: 202 - TA Alexander Ray
 // Project 3
 
-#ifndef Weapon_h
-#define Weapon_h
 
 #include <iostream>
 #include <vector>
@@ -15,9 +13,12 @@
 #include "Planet.h"
 #include "StormTrooper.h"
 
+#ifndef WEAPON_H
+#define WEAPON_H
+
 using namespace std;
 
-class Weapon {
+class Weapon{
     private:
         string name;
         string type;

@@ -4,8 +4,8 @@
 // Recitation: 202 - TA Alexander Ray
 // Project 3
 
-#ifndef NPC_h
-#define NPC_h
+#ifndef NPC_H
+#define NPC_H
 
 #include <iostream>
 #include <vector>
