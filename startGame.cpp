@@ -33,9 +33,15 @@ using std::this_thread::sleep_for;
 using namespace std::chrono_literals;
 
 
-// Helper function, no story included
-// Allows us to condense code and for the player to move freely around a region map
+// Helper functions, no story included
 
+// Allows us to condense code and for the player to have access to a menu of their mando functions
+void mandoMenu(mando myMando) {
+    
+    return;
+}
+
+// Allows us to condense code and for the player to move freely around a region map
 bool exploreRegion(Map myMap) {
     char move;
     while(true) {
