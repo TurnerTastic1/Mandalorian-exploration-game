@@ -102,11 +102,11 @@ void tatooine(Mando myMando) {
 
         switch(regionChoice) {
             case '0':
-                cout<<"Now leaving tattooine!"<<endl;
+                cout<<"Now leaving Tattooine!"<<endl;
                 return;
             case '1': {
                 // Rename regions possibly?/create diff maps?
-                cout<<"Welcome to region1!"<<endl;
+                cout<<"Welcome to Region 1!"<<endl;
                 sleep_for(1000ms);
 
                 // stuff for each region here
@@ -121,6 +121,7 @@ void tatooine(Mando myMando) {
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
                     cout<<"Have an interaction ... "<<endl;
+                    // spawn NPC here and complete challenge *gulp*
                 } else {
                     cout<<"No interaction"<<endl;
                 }
@@ -130,7 +131,7 @@ void tatooine(Mando myMando) {
             }
             case '2': {
                 // Rename regions possibly?/create diff maps?
-                cout<<"Welcome to region2!"<<endl;
+                cout<<"Welcome to Region 2!"<<endl;
                 sleep_for(1000ms);
 
                 // stuff for each region here
@@ -154,7 +155,7 @@ void tatooine(Mando myMando) {
             }
             case '3': {
                 // Rename regions possibly?/create diff maps?
-                cout<<"Welcome to region3!"<<endl;
+                cout<<"Welcome to Region 3!"<<endl;
                 sleep_for(1000ms);
 
                 // stuff for each region here
@@ -178,7 +179,7 @@ void tatooine(Mando myMando) {
             }
             case '4': {
                 // Rename regions possibly?/create diff maps?
-                cout<<"Welcome to region4!"<<endl;
+                cout<<"Welcome to Region 4!"<<endl;
                 sleep_for(1000ms);
 
                 // stuff for each region here
@@ -237,7 +238,7 @@ void startGame() {
 
     srand(time(NULL));
     string name;
-    cout<<"Greetings mandalorian!"<<endl;
+    cout<<"Greetings Mandalorian!"<<endl;
     cout<<"What should we call you?"<<endl;
     cin >> name;
     // add a name for the mando later
