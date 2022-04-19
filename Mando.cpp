@@ -8,7 +8,7 @@
 #include "Mando.h"
 #include "Planet.h"
 #include "Weapon.h"
-#include "NPC.h"
+//#include "NPC.h"
 
 #include <iostream>
 #include <fstream>
@@ -93,26 +93,25 @@ int Mando::getSkillLevel()
 
 // I set this to void for now
 
-void Mando::sortWeapons(vector<Weapon> weapon)
+vector<Weapon> Mando::sortWeapons(vector<Weapon> weapon)
 {
-//     int max = 0;
-//     int min = 0;
-//     int k = 0;
-//     vector<Weapon> temp1;
-//     vector<Weapon> temp2;
-//    for (int i = 0; i < weapon.size() / 2; i++)
-//    {
-//        if (weapon[i].getRarity() > weapon[i+1].getRarity())
-//        {
-//            temp1[k] = weapon[i];
-//            temp2[k] = weapon[i+1];
-//            weapon[i] = temp2[k];
-//            weapon[i+2] = temp1[k];
-//            k++; 
-//        }
-//    }
-//    return weapon;
-    return;
+    int max = 0;
+    int min = 0;
+    int k = 0;
+    vector<Weapon> temp1;
+    vector<Weapon> temp2;
+   for (int i = 0; i < weapon.size() / 2; i++)
+   {
+       if (weapon[i].getRarity() > weapon[i+1].getRarity())
+       {
+           temp1[k] = weapon[i];
+           temp2[k] = weapon[i+1];
+           weapon[i] = temp2[k];
+           weapon[i+2] = temp1[k];
+           k++; 
+       }
+   }
+   return weapon;
 }
 
 // addWeapon
@@ -174,29 +173,4 @@ void Mando::displayGalaxyMap()
     }
 }
 
-// int main()
-// {
-//     Mando myMando = Mando();
-//     Weapon gun = Weapon("gun", "long-range", 2, 3, "tatooine", "region 1");
-//     vector<Weapon> weapons;
-//     vector<Weapon> weapons2;
-//     weapons.push_back(gun);
-//     Weapon jetpack = Weapon("jetpack", "flight", 1, 0, "tatooine", "region 1");
-//     weapons.push_back(jetpack);
-//     Weapon flamethrower = Weapon("flamethrower", "mid-range", 3, 5, "tatooine", "region 4" );
-//     weapons.push_back(flamethrower);
-//     Weapon spear = Weapon("Beskar spear", "short-range", 4, 4, "trask", "region 2" );
-//     weapons.push_back(spear);
-//     Weapon w_birds = Weapon("whistling birds", "short-range", 5, 7, "tython", "region 3" );
-//     weapons.push_back(w_birds);
-//     Weapon saber = Weapon("dark saber", "mid-range", 6, 10, "navarro", "region 3" );
-//     weapons.push_back(saber);
 
-//     // TEST SORT FUNCTION
-//     weapons2 = myMando.sortWeapons(weapons);
-//     for (int k = 0; k < weapons.size(); k++)
-//     { 
-//         cout<< weapons2[k].getName()<< " ";
-//     }
-
-// }
