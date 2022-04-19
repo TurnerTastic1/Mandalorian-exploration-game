@@ -1,11 +1,3 @@
-// Planet.h
-// CSCI 1300 Spring 2022
-// Author: Caroline Scheidt, Turner Naef
-// Recitation: 202 - TA Alexander Ray
-// Project 3
-
-#ifndef PLANET_H
-#define PLANET_H
 
 #include <iostream>
 #include <vector>
@@ -14,23 +6,31 @@
 #include "NPC.h"
 #include "Mando.h"
 #include "StormTrooper.h"
+#include "map.h"
+
+#ifndef PLANET_H
+#define PLANET_H
 
 using namespace std;
 
 class Planet {
-    // extern bool planetTravel(Mando myMando);
+
+    extern Mando myMando;
 
     private:
         string name;
         string type;
         int travelCost;
+        
+
 
     public:
         Planet();
-        Planet(string name_, string type_, int travelCost_);
+        Planet(string name_, string type_, int travelCost_, Mando myMando_;
         string getName();
         string getType();
         int getTravelCost();
+        bool planetTravel();
         void displayPlanetMap(string filename);
 
 };

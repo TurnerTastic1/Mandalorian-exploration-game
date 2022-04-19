@@ -1,15 +1,11 @@
-// Planet.cpp
-// CSCI 1300 Spring 2022
-// Author: Caroline Scheidt, Turner Naef
-// Recitation: 202 - TA Alexander Ray
-// Project 3
 
 #include <iostream>
-#include<fstream>
+#include <fstream>
 
 #include "Mando.h"
 //#include "Weapon.h"
 #include "Planet.h"
+#include "map.h"
 
 #include <cmath>
 #include <iomanip>
@@ -51,19 +47,19 @@ int Planet::getTravelCost()
 
 
 
-bool planetTravel(Mando myMando) {
-    char choice;
-    cout<<"Hello "<<myMando.getName()<<"."<<endl;
-    cout<<"You currently have "<<myMando.getCredits()<<" credits. Travel cost will be "<<travelCost<<" credits."<<endl;
-    cout<<"Do you wish to travel to "<<name<<"? (y/n)"<<endl;
-    cin >> choice;
-    if ((choice == 'y') && (myMando.getCredits() >= travelCost)) {
-        myMando.setCredits(myMando.getCredits() - travelCost);
-        cout<<"Making the jump to hyperspace!"<<endl;
-        return true;
-    } else {
-        return false;
-    }
+bool Planet::planetTravel() {
+    // char choice;
+    // cout<<"Hello "<<myMando.getName()<<"."<<endl;
+    // cout<<"You currently have "<<myMando.getCredits()<<" credits. Travel cost will be "<<travelCost<<" credits."<<endl;
+    // cout<<"Do you wish to travel to "<<name<<"? (y/n)"<<endl;
+    // cin >> choice;
+    // if ((choice == 'y') && (myMando.getCredits() >= travelCost)) {
+    //     myMando.setCredits(myMando.getCredits() - travelCost);
+    //     cout<<"Making the jump to hyperspace!"<<endl;
+    //     return true;
+    // } else {
+    //     return false;
+    // }
 }
 
 // displayPlanetMap
