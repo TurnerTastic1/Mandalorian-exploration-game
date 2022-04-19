@@ -1,3 +1,6 @@
+#ifndef PLANET_H
+#define PLANET_H
+
 
 #include <iostream>
 #include <vector>
@@ -8,15 +11,11 @@
 #include "StormTrooper.h"
 #include "map.h"
 
-#ifndef PLANET_H
-#define PLANET_H
-
 using namespace std;
 
+class Mando;
+
 class Planet {
-
-    extern Mando myMando;
-
     private:
         string name;
         string type;
@@ -26,11 +25,11 @@ class Planet {
 
     public:
         Planet();
-        Planet(string name_, string type_, int travelCost_, Mando myMando_;
+        Planet(string name_, string type_, int travelCost_);
         string getName();
         string getType();
         int getTravelCost();
-        bool planetTravel();
+        bool planetTravel(Mando &myMando);
         void displayPlanetMap(string filename);
 
 };

@@ -9,7 +9,9 @@
 				"-fdiagnostics-color=always",
 				"-std=c++17",
 				"-g",
-				"Vec.cpp"
+				"planetTest.cpp",
+				"Mando.cpp",
+				"Planet.cpp"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"

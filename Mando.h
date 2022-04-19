@@ -24,6 +24,7 @@ class Mando {
         vector <Weapon> weapons;
         int honorLevel;
         int skillLevel;
+        void setDefaultValues();
 
     public:
         // Standard Functions

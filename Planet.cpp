@@ -47,7 +47,7 @@ int Planet::getTravelCost()
 
 
 
-bool Planet::planetTravel() {
+bool Planet::planetTravel(Mando &myMando) {
     // char choice;
     // cout<<"Hello "<<myMando.getName()<<"."<<endl;
     // cout<<"You currently have "<<myMando.getCredits()<<" credits. Travel cost will be "<<travelCost<<" credits."<<endl;
@@ -60,6 +60,7 @@ bool Planet::planetTravel() {
     // } else {
     //     return false;
     // }
+    return true;
 }
 
 // displayPlanetMap

@@ -22,18 +22,23 @@ using namespace std;
 // default constructor
 Mando::Mando()
 {
+    setDefaultValues();
+}
+
+// parameterized constructor
+Mando::Mando(string _name)
+{
+    setDefaultValues();
+    name = _name;
+}
+
+void Mando::setDefaultValues() {
     name = "";
     credits = 100;
     hp = 10;
     // weapons.push_back("gun"); // not sure how to do a default constructor for vectors
     honorLevel = 100;
     skillLevel = 10;
-}
-
-// parameterized constructor
-Mando::Mando(string _name)
-{
-    name = _name;
 }
 
 string Mando::getName() {
