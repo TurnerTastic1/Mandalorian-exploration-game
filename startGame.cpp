@@ -30,7 +30,7 @@ In order to run this code, compile startGame.cpp and all the prospective .cpp fi
 
 using namespace std;
 using std::this_thread::sleep_for;
-using namespace std::chrono_literals;
+using namespace std::literals::chrono_literals;
 
 
 // Helper functions, no story included

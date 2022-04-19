@@ -48,19 +48,19 @@ int Planet::getTravelCost()
 
 
 bool Planet::planetTravel(Mando &myMando) {
-    // char choice;
-    // cout<<"Hello "<<myMando.getName()<<"."<<endl;
-    // cout<<"You currently have "<<myMando.getCredits()<<" credits. Travel cost will be "<<travelCost<<" credits."<<endl;
-    // cout<<"Do you wish to travel to "<<name<<"? (y/n)"<<endl;
-    // cin >> choice;
-    // if ((choice == 'y') && (myMando.getCredits() >= travelCost)) {
-    //     myMando.setCredits(myMando.getCredits() - travelCost);
-    //     cout<<"Making the jump to hyperspace!"<<endl;
-    //     return true;
-    // } else {
-    //     return false;
-    // }
-    return true;
+    char choice;
+    cout<<"Hello "<<myMando.getName()<<"."<<endl;
+    cout<<"You currently have "<<myMando.getCredits()<<" credits. Travel cost will be "<<travelCost<<" credits."<<endl;
+    cout<<"Do you wish to travel to "<<name<<"? (y/n)"<<endl;
+    cin >> choice;
+    if ((choice == 'y') && (myMando.getCredits() >= travelCost)) {
+        myMando.setCredits(myMando.getCredits() - travelCost);
+        cout<<"Making the jump to hyperspace!"<<endl;
+        return true;
+    } else {
+        return false;
+    }
+    //return true;
 }
 
 // displayPlanetMap

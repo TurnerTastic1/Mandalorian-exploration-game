@@ -93,25 +93,25 @@ int Mando::getSkillLevel()
 
 // I set this to void for now
 
-vector<Weapon> Mando::sortWeapons(vector<Weapon> weapon)
+void Mando::sortWeapons(vector<Weapon> weapon)
 {
-    int max = 0;
-    int min = 0;
-    int k = 0;
-    vector<Weapon> temp1;
-    vector<Weapon> temp2;
-   for (int i = 0; i < weapon.size() / 2; i++)
-   {
-       if (weapon[i].getRarity() > weapon[i+1].getRarity())
-       {
-           temp1[k] = weapon[i];
-           temp2[k] = weapon[i+1];
-           weapon[i] = temp2[k];
-           weapon[i+2] = temp1[k];
-           k++; 
-       }
-   }
-   return weapon;
+//     int max = 0;
+//     int min = 0;
+//     int k = 0;
+//     vector<Weapon> temp1;
+//     vector<Weapon> temp2;
+//    for (int i = 0; i < weapon.size() / 2; i++)
+//    {
+//        if (weapon[i].getRarity() > weapon[i+1].getRarity())
+//        {
+//            temp1[k] = weapon[i];
+//            temp2[k] = weapon[i+1];
+//            weapon[i] = temp2[k];
+//            weapon[i+2] = temp1[k];
+//            k++; 
+//        }
+//    }
+   return;
 }
 
 // addWeapon
