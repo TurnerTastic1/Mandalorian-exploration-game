@@ -12,8 +12,8 @@
 
 #include "Weapon.h"
 #include "Mando.h"
-#include "Planet.h"
-#include "StormTrooper.h"
+//#include "Planet.h"
+//#include "StormTrooper.h"
 
 class NPC { // Use read movies/ read ratings to read sidechar from file
     private:
@@ -31,6 +31,7 @@ class NPC { // Use read movies/ read ratings to read sidechar from file
 
     public:
         NPC();
+        NPC(string name_, string species_, string planet_, string planetRegion_, int hp_, bool friendly_, int damage_, int creditReward_, int skillLevel_, Weapon npcWeapon_);
         string getName();
         string getSpecies();
         string getPlanet();
@@ -42,6 +43,7 @@ class NPC { // Use read movies/ read ratings to read sidechar from file
         int getDamage();
         int getCreditReward();
         int getSkillLevel();
+        vector<NPC> readNPC(string fileName);
 
 
 };

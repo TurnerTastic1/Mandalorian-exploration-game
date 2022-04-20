@@ -11,7 +11,7 @@
 #include "Mando.h"
 #include "NPC.h"
 //#include "Planet.h"
-#include "StormTrooper.h"
+//#include "StormTrooper.h"
 
 #ifndef WEAPON_H
 #define WEAPON_H

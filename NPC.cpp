@@ -29,6 +29,20 @@ NPC::NPC()
     skillLevel = 0;
 
 }
+NPC::NPC(string name_, string species_, string planet_, string planetRegion_, int hp_, bool friendly_, int skillLevl_, int creditReward_, Weapon npcWeapon_)
+{
+    name = name_;
+    species = species_;
+    planet = planet_;
+    planetRegion = planetRegion_;
+    hp = hp_;
+    friendly = friendly_;
+    damage = damage_;
+    creditReward = creditReward_;
+    description = "temp description";
+    skillLevel = skillLevel_;
+    Weapon npcWeapon = npcWeapon_;
+}   
 // getName()
 string NPC::getName()
 {
