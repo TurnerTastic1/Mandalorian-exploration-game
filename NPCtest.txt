@@ -1,0 +1,2 @@
+Stormtrooper, human, Navarro, region 1, 10, true, 5, 30, 5
+Peli Motto, human, Tatooine, region 1, 10, false, 0, 0, 2

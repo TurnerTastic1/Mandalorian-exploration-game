@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 #include "Weapon.h"
 #include "NPC.h"
@@ -24,8 +25,7 @@ NPC::NPC()
     friendly = true;
     creditReward = 0;
     skillLevel = 0;
-    Weapon weapon = Weapon("Gun", "Gun", 2, 3);
-
+    weapon = Weapon("Gun", "Gun", 2, 3);
 }
 NPC::NPC(string name_, string species_, string planet_, string planetRegion_, int hp_, bool friendly_, int creditReward_, int skillLevel_, Weapon weapon_)
 {
@@ -38,7 +38,7 @@ NPC::NPC(string name_, string species_, string planet_, string planetRegion_, in
     creditReward = creditReward_;
     //description = "temp description";
     skillLevel = skillLevel_;
-    Weapon weapon = Weapon("Gun", "Gun", 2, 3);;
+    weapon = weapon_;
 }   
 // getName()
 string NPC::getName()
@@ -83,7 +83,7 @@ int NPC::getSkillLevel()
     return skillLevel;
 }
 
-void NPC::getWeapon() {
+void NPC::printWeapon() {
     weapon.printWeapon();
     return;
 }

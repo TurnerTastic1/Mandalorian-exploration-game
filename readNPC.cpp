@@ -68,7 +68,7 @@ int split(string inputString, char separator, string arr[], int size) {
     return 0;
 }
 
-vector<NPC> NPC::readNPC(string fileName)
+vector<NPC> readNPC(string fileName)
 {
     // initialize variables
     ifstream fin(fileName);
@@ -117,8 +117,8 @@ vector<NPC> NPC::readNPC(string fileName)
                     string stringSkill = arr[8];
                     int intSkill = stoi(stringSkill);
                     // create new NPC
-                    Weapon gun = Weapon("gun", "long-range", 2, 3, "tatooine", "region 1" );
-                    NPC newNPC = NPC(arr[0], arr[1], arr[2], arr[3], intHP, boolFriendly, intDamage, intCredit, intSkill, gun);
+                    Weapon gun = Weapon("gun", "long-range", 2, 3);
+                    NPC newNPC = NPC(arr[0], arr[1], arr[2], arr[3], intHP, boolFriendly, intCredit, intSkill, gun);
                     npcs.push_back(newNPC);
                 }
             }
