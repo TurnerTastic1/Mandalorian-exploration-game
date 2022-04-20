@@ -36,7 +36,7 @@ void Mando::setDefaultValues() {
     name = "";
     credits = 100;
     hp = 10;
-    // weapons.push_back("gun"); // not sure how to do a default constructor for vectors
+    vector<Weapon> weapons; // not sure how to do a default constructor for vectors
     honorLevel = 100;
     skillLevel = 10;
 }
@@ -79,6 +79,13 @@ int Mando::getSkillLevel()
     return skillLevel;
 }
 
+void Mando::checkWeapons() {
+    for (int i = 0; i < weapons.size(); i++) {
+        weapons[i].printWeapon();
+    }
+    return;
+}
+
 // ~~~~personal functions~~~~
 
 /*
@@ -93,25 +100,25 @@ int Mando::getSkillLevel()
 
 // I set this to void for now
 
-void Mando::sortWeapons(vector<Weapon> weapon)
+vector<Weapon> Mando::sortWeapons()
 {
-//     int max = 0;
-//     int min = 0;
-//     int k = 0;
-//     vector<Weapon> temp1;
-//     vector<Weapon> temp2;
-//    for (int i = 0; i < weapon.size() / 2; i++)
-//    {
-//        if (weapon[i].getRarity() > weapon[i+1].getRarity())
-//        {
-//            temp1[k] = weapon[i];
-//            temp2[k] = weapon[i+1];
-//            weapon[i] = temp2[k];
-//            weapon[i+2] = temp1[k];
-//            k++; 
-//        }
-//    }
-   return;
+    int max = 0;
+    int min = 0;
+    int k = 0;
+    vector<Weapon> temp1;
+    vector<Weapon> temp2;
+   for (int i = 0; i < weapons.size() / 2; i++)
+   {
+       if (weapons[i].getRarity() > weapons[i+1].getRarity())
+       {
+           temp1[k] = weapons[i];
+           temp2[k] = weapons[i+1];
+           weapons[i] = temp2[k];
+           weapons[i+2] = temp1[k];
+           k++; 
+       }
+   }
+   return weapons;
 }
 
 // addWeapon
@@ -123,10 +130,11 @@ void Mando::sortWeapons(vector<Weapon> weapon)
 4. If second step is not true, returns -2
 */
 
-/*bool Mando::addWeapon(Weapon new_weapon)
+bool Mando::addWeapon(Weapon new_weapon)
 {
+    weapons.push_back(new_weapon);
     return true;
-} */
+} 
 
 // fightNPC()
 
@@ -147,14 +155,6 @@ int Mando::fightNPC(NPC dude)
 }
 
 // displayGalaxyMap()
-
-/*
-1. Create stream object
-2. Check if variable is open
-3. Use a while loop to go through each line of the galaxyMap file
-4. Check if the line is empty
-5. Print each line of the file
-*/
 
 
 void Mando::displayGalaxyMap()

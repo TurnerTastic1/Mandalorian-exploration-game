@@ -16,8 +16,15 @@ Weapon::Weapon()
     type = "";
     rarity = 0;
     damage = 0;
-    planet = "";
-    planetRegion = "";
+    // planet = "";
+    // planetRegion = "";
+}
+
+Weapon::Weapon(string name_, string type_, int rarity_, int damage_) {
+    name = name_;
+    type = type_;
+    rarity = rarity_;
+    damage = damage_;
 }
 
 // getName()
@@ -41,16 +48,16 @@ int Weapon::getDamage()
     return damage;
 }
 
-string Weapon::getPlanet()
-{
-    return planet;
-}
+// string Weapon::getPlanet()
+// {
+//     return planet;
+// }
 
-// getPlanetRegion
-string Weapon::getPlanetRegion()
-{
-    return planetRegion;
-}
+// // getPlanetRegion
+// string Weapon::getPlanetRegion()
+// {
+//     return planetRegion;
+// }
 
 // setName()
 void Weapon::setName(string name_)
@@ -75,12 +82,19 @@ void Weapon::setDamage(int damage_)
     damage = damage_;
 }
 // setPlanet()
-void Weapon::setPlanet(string planet_)
-{
-    planet = planet_;
-}
-//setPlanetRegion()
-void Weapon::setPlanetRegion(string planetRegion_)
-{
-    planetRegion = planetRegion_;
+// void Weapon::setPlanet(string planet_)
+// {
+//     planet = planet_;
+// }
+// //setPlanetRegion()
+// void Weapon::setPlanetRegion(string planetRegion_)
+// {
+//     planetRegion = planetRegion_;
+// }
+
+void Weapon::printWeapon() {
+    cout<<"Weapon name: "<<name<<endl;
+    cout<<"Rarity: "<<rarity<<endl;
+    cout<<"Damage: "<<damage<<endl;
+    return;
 }

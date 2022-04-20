@@ -13,6 +13,8 @@ In order to run this code, compile startGame.cpp and all the prospective .cpp fi
 
 */
 
+// Include to allow code to be delayed from: https://stackoverflow.com/questions/158585/how-do-you-add-a-timed-delay-to-a-c-program 
+#include<unistd.h>
 
 
 #include <iostream>
@@ -29,8 +31,6 @@ In order to run this code, compile startGame.cpp and all the prospective .cpp fi
 //#include "Weapon.h"
 
 using namespace std;
-using std::this_thread::sleep_for;
-using namespace std::literals::chrono_literals;
 
 
 // Helper functions, no story included
@@ -70,25 +70,40 @@ bool exploreRegion(Map myMap) {
 // BASELINE FUNCTION FOR ALL PLANETS NO STORY YET
 
 void tatooine(Mando myMando) {
+    // Arriving at planet
+    unsigned int microsecond = 1000000;
     Planet tatooine = Planet("Tatooine", "Terrestrial", 50);
-    if(tatooine.planetTravel(myMando)) {
+
+    // Sources for description should be wookiepedia and in the below order
+
+    string description = "\n Region: Outer Rim Territories \n Sector: Arkanis \n Class: Terrestrial \n Atmosphere: Breathable \n Power: Hutt Crime Family";
+    if(tatooine.planetTravel(myMando, description)) {
         cout<<"Welcome to Tatooine!"<<endl;
-        cout<<"You currently have "<<myMando.getCredits()<<" remaining."<<endl;
+        cout<<"You currently have "<<myMando.getCredits()<<" credits remaining."<<endl;
+        usleep(2*microsecond);
     } else {
         cout<<"Returning to the galaxy map."<<endl;
+        usleep(1*microsecond);
         return;
     }
 
-    //cout<<"Welcome to Tatooine!"<<endl;
+    // Player gets to read about story
+    cout<<"Story goes here"<<endl;
 
-
-    cout<<"Story goes here"<<endl; // must come after region map!
-    // Region maps
+    // Region maps created
     Map region1 = Map();
     Map region2 = Map();
     Map region3 = Map();
     Map region4 = Map();
     char regionChoice;
+
+    // Loop to go through the regions of each planet map
+    // NPC's are placed at random on the maps within a 1 - 11 x and y range
+    // Player can leave the planet should they choose to
+    // Player can choose to visit a region
+        // Player is then prompted with a map and allowed to roam
+        // If the player finds an NPC they may choose to interact with them via y/n question
+        // If the player interacts they will be taken to planet map and shown the interaction they had, ie fight, conversation, knowledge, etc.
 
     while(true) {
         tatooine.displayPlanetMap("RegionMap1.txt");
@@ -105,16 +120,20 @@ void tatooine(Mando myMando) {
                 cout<<"Now leaving Tattooine!"<<endl;
                 return;
             case '1': {
-                // Rename regions possibly?/create diff maps?
+                
+                // For polish: rename regions etc.
+
                 cout<<"Welcome to Region 1!"<<endl;
-                sleep_for(1000ms);
+                usleep(1*microsecond);
 
                 // stuff for each region here
 
-                // spawn an npc (will make it random)
-                cout<<xCoord<<" "<<yCoord<<endl;
+                // Spawns a random NPC
+                //cout<<xCoord<<" "<<yCoord<<endl; - testing for randomness
+
                 region1.spawnNPC(xCoord, yCoord);
                 region1.setNPC(true);
+
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region1);
 
@@ -125,85 +144,100 @@ void tatooine(Mando myMando) {
                 } else {
                     cout<<"No interaction"<<endl;
                 }
-
-                sleep_for(1000ms);
+                // Before the code breaks the player has some time to read what happened
+                usleep(2*microsecond);
                 break;
             }
             case '2': {
-                // Rename regions possibly?/create diff maps?
+                
+                // For polish: rename regions etc.
+
                 cout<<"Welcome to Region 2!"<<endl;
-                sleep_for(1000ms);
+                usleep(1*microsecond);
 
                 // stuff for each region here
 
-                // spawn an npc (will make it random)
-                cout<<xCoord<<" "<<yCoord<<endl;
+                // Spawns a random NPC
+                //cout<<xCoord<<" "<<yCoord<<endl; - testing for randomness
+
                 region2.spawnNPC(xCoord, yCoord);
                 region2.setNPC(true);
+
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region2);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
                     cout<<"Have an interaction ... "<<endl;
+                    // spawn NPC here and complete challenge *gulp*
                 } else {
                     cout<<"No interaction"<<endl;
                 }
-
-                sleep_for(1000ms);
+                // Before the code breaks the player has some time to read what happened
+                usleep(2*microsecond);
                 break;
             }
             case '3': {
-                // Rename regions possibly?/create diff maps?
+                
+                // For polish: rename regions etc.
+
                 cout<<"Welcome to Region 3!"<<endl;
-                sleep_for(1000ms);
+                usleep(1*microsecond);
 
                 // stuff for each region here
 
-                // spawn an npc (will make it random)
+                // Spawns a random NPC
+                //cout<<xCoord<<" "<<yCoord<<endl; - testing for randomness
 
                 region3.spawnNPC(xCoord, yCoord);
                 region3.setNPC(true);
+
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region3);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
                     cout<<"Have an interaction ... "<<endl;
+                    // spawn NPC here and complete challenge *gulp*
                 } else {
                     cout<<"No interaction"<<endl;
                 }
-
-                sleep_for(1000ms);
+                // Before the code breaks the player has some time to read what happened
+                usleep(2*microsecond);
                 break;
             }
             case '4': {
-                // Rename regions possibly?/create diff maps?
+                
+                // For polish: rename regions etc.
+
                 cout<<"Welcome to Region 4!"<<endl;
-                sleep_for(1000ms);
+                usleep(1*microsecond);
 
                 // stuff for each region here
 
-                // spawn an npc (will make it random)
+                // Spawns a random NPC
+                //cout<<xCoord<<" "<<yCoord<<endl; - testing for randomness
 
                 region4.spawnNPC(xCoord, yCoord);
                 region4.setNPC(true);
+
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region4);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
                     cout<<"Have an interaction ... "<<endl;
+                    // spawn NPC here and complete challenge *gulp*
                 } else {
                     cout<<"No interaction"<<endl;
                 }
-
-                sleep_for(1000ms);
+                // Before the code breaks the player has some time to read what happened
+                usleep(2*microsecond);
                 break;
             }
             default:
                 cout<<"Not a valid region!"<<endl;
-                sleep_for(1000ms);
+                usleep(2*microsecond);
                 break;
         }
     }
@@ -220,12 +254,16 @@ void tatooine(Mando myMando) {
 
 // startGame uses an outside library to delay code in order to give the game a better feeling and build
 void startGame() {
+    // https://stackoverflow.com/questions/158585/how-do-you-add-a-timed-delay-to-a-c-program 
+    unsigned int microsecond = 1000000;
+
+    // usleep(3*microsecond);//sleeps for 3 second
     // commented out to make testing easier
 
     // cout<<"Game startup..."<<endl;
-    // sleep_for(2000ms);
+    // usleep(2*microsecond);
     // cout<<"Loading..."<<endl;
-    // sleep_for(2000ms);
+    // usleep(2*microsecond);
     // cout<<"Game startup complete, continue? (y/n)"<<endl;
 
     // char choice;
@@ -245,11 +283,11 @@ void startGame() {
     Mando myMando = Mando(name);
         // Will change later for development of the story
     cout<<"Welcome! Printing the map of the Galaxy!"<<endl;
-    sleep_for(1000ms);
+    usleep(1*microsecond);
 
     cout<<"GAME STORY INTRO HERE"<<endl;
 
-    int planetCode = 0;
+    int planetCode = -1;
     while(true) {
         myMando.displayGalaxyMap();
         cout<<"Enter your choice(Planet #/code)"<<endl<<"or enter 0 to quit"<<endl;
@@ -261,7 +299,7 @@ void startGame() {
 
                 cout<<"Welcome back to space!"<<endl;
                 cout<<"Loading Galaxy Map..."<<endl;
-                sleep_for(1000ms);
+                usleep(1*microsecond);
                 break;
             case 0:
                 cout<<"Quitting the game"<<endl;
@@ -289,7 +327,6 @@ void PlanetTatooine()
 
 
 int main(){
-
     startGame();
 
     //Map myMap = Map();

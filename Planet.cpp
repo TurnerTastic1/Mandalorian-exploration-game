@@ -47,10 +47,13 @@ int Planet::getTravelCost()
 
 
 
-bool Planet::planetTravel(Mando &myMando) {
+bool Planet::planetTravel(Mando &myMando, string description) {
     char choice;
-    cout<<"Hello "<<myMando.getName()<<"."<<endl;
-    cout<<"You currently have "<<myMando.getCredits()<<" credits. Travel cost will be "<<travelCost<<" credits."<<endl;
+    cout<<"Greetings "<<myMando.getName()<<"."<<endl;
+    // Brief description about the planet
+    cout<<"Planet description: "<<description<<endl;
+    cout<<"You currently have "<<myMando.getCredits()<<" credits. To travel to "<<name<<" it will cost "<<travelCost<<" credits."<<endl;
+
     cout<<"Do you wish to travel to "<<name<<"? (y/n)"<<endl;
     cin >> choice;
     if ((choice == 'y') && (myMando.getCredits() >= travelCost)) {
@@ -60,18 +63,9 @@ bool Planet::planetTravel(Mando &myMando) {
     } else {
         return false;
     }
-    //return true;
 }
 
 // displayPlanetMap
-
-/*
-1. Create stream object
-2. Check if variable is open
-3. Use a while loop to go through each line of the displayPlanetMap file
-4. Check if the line is empty
-5. Print each line of the file
-*/
 
 void Planet::displayPlanetMap(string filename)
 {
