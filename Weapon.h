@@ -10,8 +10,13 @@
 
 #include "Mando.h"
 #include "NPC.h"
+<<<<<<< HEAD
 //#include "Planet.h"
 //#include "StormTrooper.h"
+=======
+#include "Planet.h"
+#include "StormTrooper.h"
+>>>>>>> 9a533520da024e75118b7811218322dd3a8314d0
 
 #ifndef WEAPON_H
 #define WEAPON_H
@@ -24,27 +29,32 @@ class Weapon{
         string type;
         int rarity; // Temp
         int damage;
-        string planet;
-        string planetRegion;
+        // string planet;
+        // string planetRegion;
 
     
     public:
         Weapon();
-        Weapon(string name_, string type_, int rarity_, int damage_, string planet_, string planetRegion_);
+        Weapon(string name_, string type_, int rarity_, int damage_);
+
+        //getters
         string getName();
         string getType();
         int getRarity(); // Temp
         int getDamage();
-        string getPlanet();
-        string getPlanetRegion();
+        // string getPlanet();
+        // string getPlanetRegion();
 
         //setters
         void setName(string name_);
         void setType(string type_);
         void setRarity(int rarity_); // Temp
         void setDamage(int damage_);
-        void setPlanet(string planet_);
-        void setPlanetRegion(string planetRegion_);
+        // void setPlanet(string planet_);
+        // void setPlanetRegion(string planetRegion_);
+
+        // member functions
+        void printWeapon();
 
 };
 

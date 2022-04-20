@@ -15,6 +15,8 @@
 
 using namespace std;
 
+class Weapon;
+
 class Mando {
     private:
         string name;
@@ -37,10 +39,11 @@ class Mando {
         void setCredits(int credits_);
         int getHonorLevel();
         int getSkillLevel();
+        void checkWeapons();
         
         // Personal functions
 
-        void sortWeapons(vector<Weapon> weapon_); // sort weapons by rarity best to least
+        vector<Weapon> sortWeapons(); // sort weapons by rarity best to least
         bool addWeapon(Weapon); // call sort function every time add weapon is called!!!
         int fightNPC(NPC dude);
         void displayGalaxyMap();

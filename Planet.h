@@ -29,7 +29,7 @@ class Planet {
         string getName();
         string getType();
         int getTravelCost();
-        bool planetTravel(Mando &myMando);
+        bool planetTravel(Mando &myMando, string description);
         void displayPlanetMap(string filename);
 
 };
