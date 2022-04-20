@@ -19,6 +19,16 @@ Weapon::Weapon()
     planet = "";
     planetRegion = "";
 }
+Weapon::Weapon(string name_, string type_, int rarity_, int damage_, string planet_, string planetRegion_)
+{
+    name = name_;
+    type = type_;
+    rarity = rarity_;
+    damage = damage_;
+    planet = planet_;
+    planetRegion = planetRegion_;
+
+}
 
 // getName()
 string Weapon::getName()
