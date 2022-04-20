@@ -132,6 +132,8 @@ void tatooine(Mando myMando) {
 
                 cout<<"Welcome to Region 1!"<<endl;
                 usleep(1*microsecond);
+                cout<<"Your ship sustained heavy damage from the fight with the stormtrooper."<<endl;
+                cout<<"Explore the region to find someone to help you repair it."<<endl;
 
                 // stuff for each region here
 
@@ -146,8 +148,20 @@ void tatooine(Mando myMando) {
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
-                    cout<<"Have an interaction ... "<<endl;
+                    char choice;
+                    cout<<"You have found a local spaceport engineer called Peli Motto."<<endl;
                     // spawn NPC here and complete challenge *gulp*
+                    cout<<"Would you like to ask her to repair your ship? (press y/n)" <<endl;
+                    cin>>choice;
+                    if (choice == 'y')
+                    {
+                        cout<< "Peli Motto: I will help you repair your ship but it will cost you ___ credits" <<endl;
+                        
+                    }
+                    else
+                    {
+
+                    }
                 } else {
                     cout<<"No interaction"<<endl;
                 }

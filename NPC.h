@@ -11,7 +11,7 @@
 #include <vector>
 
 #include "Weapon.h"
-#include "Mando.h"
+// #include "Mando.h"
 //#include "Planet.h"
 //#include "StormTrooper.h"
 
@@ -39,7 +39,7 @@ class NPC { // Use read movies/ read ratings to read sidechar from file
         int getCreditReward();
         int getSkillLevel();
         void getWeapon();
-       // vector<NPC> readNPC(string fileName);
+        vector<NPC> readNPC(string fileName);
 
 
 };

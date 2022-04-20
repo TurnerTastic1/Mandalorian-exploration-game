@@ -167,7 +167,7 @@ bool Mando::addWeapon(Weapon new_weapon)
 4. If second step is not true, returns -2
 */
 
-int Mando::fightNPC(NPC dude)
+int Mando::fightNPC(NPC newNPC)
 {
     return 0;
 }

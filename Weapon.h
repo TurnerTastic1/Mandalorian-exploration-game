@@ -9,7 +9,7 @@
 #include <vector>
 
 #include "Mando.h"
-#include "NPC.h"
+// #include "NPC.h"
 //#include "Planet.h"
 //#include "StormTrooper.h"
 
