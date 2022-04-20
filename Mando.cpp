@@ -80,6 +80,10 @@ int Mando::getSkillLevel()
 }
 
 void Mando::checkWeapons() {
+    if (weapons.size() == 0) {
+        cout<<"You currently have no weapons!"<<endl;
+        return;
+    }
     for (int i = 0; i < weapons.size(); i++) {
         weapons[i].printWeapon();
     }
@@ -102,23 +106,36 @@ void Mando::checkWeapons() {
 
 vector<Weapon> Mando::sortWeapons()
 {
-    int max = 0;
-    int min = 0;
-    int k = 0;
-    vector<Weapon> temp1;
-    vector<Weapon> temp2;
-   for (int i = 0; i < weapons.size() / 2; i++)
-   {
-       if (weapons[i].getRarity() > weapons[i+1].getRarity())
-       {
-           temp1[k] = weapons[i];
-           temp2[k] = weapons[i+1];
-           weapons[i] = temp2[k];
-           weapons[i+2] = temp1[k];
-           k++; 
-       }
-   }
-   return weapons;
+    Weapon temp = Weapon();
+    for (int i = 0; i < weapons.size() - 1; i++) {
+        for (int j = 0; j < weapons.size() - i - 1; j++) {
+            if (weapons[j].getRarity() < weapons[j + 1].getRarity()) {
+                temp = weapons[j];
+                weapons[j] = weapons[j+1];
+                weapons[j+1] = temp;
+            }
+        }
+    }
+    return weapons;
+
+// old code: still kinda works
+
+//     int max = 0;
+//     int min = 0;
+//     int k = 0;
+//     vector<Weapon> temp1;
+//     vector<Weapon> temp2;
+//    for (int i = 0; i < weapons.size() / 2; i++)
+//    {
+//        if (weapons[i].getRarity() > weapons[i+1].getRarity()) // neeeds to be less than
+//        {
+//            temp1[k] = weapons[i];
+//            temp2[k] = weapons[i+1];
+//            weapons[i] = temp2[k];
+//            weapons[i+2] = temp1[k];
+//            k++; 
+//        }
+//    }
 }
 
 // addWeapon
@@ -133,6 +150,7 @@ vector<Weapon> Mando::sortWeapons()
 bool Mando::addWeapon(Weapon new_weapon)
 {
     weapons.push_back(new_weapon);
+    sortWeapons();
     return true;
 } 
 

@@ -103,7 +103,7 @@ void Weapon::setDamage(int damage_)
 // }
 
 void Weapon::printWeapon() {
-    cout<<"Weapon name: "<<name<<endl;
+    cout<<"Name: "<<name<<endl;
     cout<<"Rarity: "<<rarity<<endl;
     cout<<"Damage: "<<damage<<endl;
     return;

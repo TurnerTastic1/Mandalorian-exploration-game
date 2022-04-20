@@ -20,16 +20,14 @@ NPC::NPC()
     species = "";
     planet = "";
     planetRegion = "";
-    // weapon
     hp = 0;
     friendly = true;
-    damage = 0;
     creditReward = 0;
-    description = "";
     skillLevel = 0;
+    Weapon weapon = Weapon("Gun", "Gun", 2, 3);
 
 }
-NPC::NPC(string name_, string species_, string planet_, string planetRegion_, int hp_, bool friendly_, int skillLevl_, int creditReward_, Weapon npcWeapon_)
+NPC::NPC(string name_, string species_, string planet_, string planetRegion_, int hp_, bool friendly_, int creditReward_, int skillLevel_, Weapon weapon_)
 {
     name = name_;
     species = species_;
@@ -37,11 +35,10 @@ NPC::NPC(string name_, string species_, string planet_, string planetRegion_, in
     planetRegion = planetRegion_;
     hp = hp_;
     friendly = friendly_;
-    damage = damage_;
     creditReward = creditReward_;
-    description = "temp description";
+    //description = "temp description";
     skillLevel = skillLevel_;
-    Weapon npcWeapon = npcWeapon_;
+    Weapon weapon = Weapon("Gun", "Gun", 2, 3);;
 }   
 // getName()
 string NPC::getName()
@@ -73,16 +70,7 @@ bool NPC::getFriendly()
 {
     return friendly;
 }
-// getDescription()
-string NPC::getDescription()
-{  
-    return description;
-}
-// getDamage()
-int NPC::getDamage()
-{
-    return damage;
-}
+
 // getCreditReward()
 int NPC::getCreditReward()
 {
@@ -93,4 +81,9 @@ int NPC::getCreditReward()
 int NPC::getSkillLevel()
 {
     return skillLevel;
+}
+
+void NPC::getWeapon() {
+    weapon.printWeapon();
+    return;
 }

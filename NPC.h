@@ -21,29 +21,25 @@ class NPC { // Use read movies/ read ratings to read sidechar from file
         string species;
         string planet;
         string planetRegion;
-        //Weapon weapon;
         int hp;
         bool friendly;
-        string description;
-        int damage;
         int creditReward;
         int skillLevel;
+        Weapon weapon;
 
     public:
         NPC();
-        NPC(string name_, string species_, string planet_, string planetRegion_, int hp_, bool friendly_, int damage_, int creditReward_, int skillLevel_, Weapon npcWeapon_);
+        NPC(string name_, string species_, string planet_, string planetRegion_, int hp_, bool friendly_, int creditReward_, int skillLevel_, Weapon weapon_);
         string getName();
         string getSpecies();
         string getPlanet();
         string getPlanetRegion();
-        //Weapon getWeapon();
         int getHP();
         bool getFriendly();
-        string getDescription();// player can pass this info
-        int getDamage();
         int getCreditReward();
         int getSkillLevel();
-        vector<NPC> readNPC(string fileName);
+        void getWeapon();
+       // vector<NPC> readNPC(string fileName);
 
 
 };

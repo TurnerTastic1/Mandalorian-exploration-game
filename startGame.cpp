@@ -28,7 +28,7 @@ In order to run this code, compile startGame.cpp and all the prospective .cpp fi
 //#include "NPC.h"
 #include "Planet.h"
 //#include "StormTrooper.h"
-//#include "Weapon.h"
+#include "Weapon.h"
 
 using namespace std;
 
@@ -36,18 +36,25 @@ using namespace std;
 // Helper functions, no story included
 
 // Allows us to condense code and for the player to have access to a menu of their mando functions
-void mandoMenu(Mando myMando) {
-
+void mandoStats(Mando myMando) {
+    unsigned int microsecond = 1000000;
+    cout<<"Mando Stats"<<endl;
+    cout<<"\n Health: "<<myMando.getHP()<<"\n Credits: "<<myMando.getCredits()<<"\n Honor: "<<myMando.getHonorLevel()<<"\n Skill: "<<myMando.getSkillLevel()<<endl;
+    cout<<"Weapons: "<<endl;
+    myMando.checkWeapons();
+    usleep(6*microsecond);
     return;
 }
 
 // Allows us to condense code and for the player to move freely around a region map
-bool exploreRegion(Map myMap) {
+bool exploreRegion(Map myMap, Mando myMando) {
     char move;
     while(true) {
         myMap.displayMap();
         if (myMap.isNPCLocation()) {
-            cout<<"You approach a stranger... Do you want to interact?(y/n)"<<endl;
+            cout<<"You approach a stranger..."<<endl<<"Here are your current stats..."<<endl;
+            mandoStats(myMando);
+            cout<<"Do you want to interact?(y/n)"<<endl;
             char choice;
             cin >> choice;
             if (choice == 'y') {
@@ -107,7 +114,7 @@ void tatooine(Mando myMando) {
 
     while(true) {
         tatooine.displayPlanetMap("RegionMap1.txt");
-        cout<<"What region would you like to visit?(1, 2, 3, 4, or '0' to leave tattoine)."<<endl;
+        cout<<"What region would you like to visit?('1', '2', '3', '4', '5' to view stats, or '0' to leave tattoine)."<<endl;
         cin >> regionChoice;
 
         // Random npc Coords
@@ -135,7 +142,7 @@ void tatooine(Mando myMando) {
                 region1.setNPC(true);
 
                 // allow player to explore the region and if so, interact w the npc
-                bool interact = exploreRegion(region1);
+                bool interact = exploreRegion(region1, myMando);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
@@ -164,7 +171,7 @@ void tatooine(Mando myMando) {
                 region2.setNPC(true);
 
                 // allow player to explore the region and if so, interact w the npc
-                bool interact = exploreRegion(region2);
+                bool interact = exploreRegion(region2, myMando);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
@@ -193,7 +200,7 @@ void tatooine(Mando myMando) {
                 region3.setNPC(true);
 
                 // allow player to explore the region and if so, interact w the npc
-                bool interact = exploreRegion(region3);
+                bool interact = exploreRegion(region3, myMando);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
@@ -222,7 +229,7 @@ void tatooine(Mando myMando) {
                 region4.setNPC(true);
 
                 // allow player to explore the region and if so, interact w the npc
-                bool interact = exploreRegion(region4);
+                bool interact = exploreRegion(region4, myMando);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
@@ -235,8 +242,12 @@ void tatooine(Mando myMando) {
                 usleep(2*microsecond);
                 break;
             }
+            case '5': {
+                mandoStats(myMando);
+                break;
+            }
             default:
-                cout<<"Not a valid region!"<<endl;
+                cout<<"Not a valid option!"<<endl;
                 usleep(2*microsecond);
                 break;
         }
@@ -281,8 +292,10 @@ void startGame() {
     cin >> name;
     // add a name for the mando later
     Mando myMando = Mando(name);
+    Weapon gun = Weapon("IB-94 blaster pistol", "Gun", 3, 3);
+    myMando.addWeapon(gun);
         // Will change later for development of the story
-    cout<<"Welcome! Printing the map of the Galaxy!"<<endl;
+    cout<<"Hello "<<myMando.getName()<<" and welcome! Printing the map of the Galaxy!"<<endl;
     usleep(1*microsecond);
 
     cout<<"GAME STORY INTRO HERE"<<endl;
@@ -290,20 +303,41 @@ void startGame() {
     int planetCode = -1;
     while(true) {
         myMando.displayGalaxyMap();
-        cout<<"Enter your choice(Planet #/code)"<<endl<<"or enter 0 to quit"<<endl;
+        cout<<"Welcome to the galaxy "<<myMando.getName()<<"! Select a planet by typing in it's planet code, check your stats(1), or quit the game(0)."<<endl;
         cin >> planetCode;
 
         switch (planetCode) {
-            case 145:
+            case 145: {
                 tatooine(myMando);
 
                 cout<<"Welcome back to space!"<<endl;
                 cout<<"Loading Galaxy Map..."<<endl;
                 usleep(1*microsecond);
                 break;
-            case 0:
+            }
+            case 346: {
+                cout<<"Planet not accessable yet"<<endl;
+                break;
+            }
+            case 457: {
+                cout<<"Planet not accessable yet"<<endl;
+                break;
+            }
+            case 789: {
+                cout<<"Planet not accessable yet"<<endl;
+                break;
+            }
+            case 0: {
                 cout<<"Quitting the game"<<endl;
                 return;
+            }
+            case 1: {
+                mandoStats(myMando);
+                break;
+            }
+            default:
+                cout<<"Not a valid input!"<<endl;
+                break;  
         }
     }
     return;
