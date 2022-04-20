@@ -2,12 +2,12 @@
 
 Stormtrooper, human, Navarro, region 1, 10, false, 5, 30, 5
 Peli Motto, human, Tatooine, region 1, 10, true, 0, 0, 2
-Soli Mel, human, Tatooine, region 2, 10, true, 0, 0, 2
+Soti Mel, human, Tatooine, region 2, 10, true, 0, 0, 2
 Hostages, human, Tatooine, region 2, 10, true, 0, 100, 2
 Tusken Raiders, tusken raiders, Tatooine, region 2, 10, false, 40, 0, 5
 Darro Anen, human, Tatooine, region 3, 10, true, 0, 0, 2
 Jabba the Hutt, Hutt, Tatooine, region 4, 10, true, 0, 0, 2
-Kuna Grandolph, Quarren, Tatooine, region 4, 10, false, 0, 100, 5
+Kuna Randlo, Quarren, Tatooine, region 4, 10, false, 0, 100, 5
 Shoan Madar, human, Tython, region 1, 10, true, 0, 50, 2
 Scerria Maden, human, Tython, region 2, 10, true, 0, 0, 2
 Holga Glagguul, gamorrean, Tython, region 2, 10, false, 60, 0, 6

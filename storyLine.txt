@@ -1,0 +1,318 @@
+
+////////////////////////// INTRO /////////////////////////////////
+Welcome to the Mandalorian Map Game!
+
+Game Summary: You are a Mandalorian and have discovered that the warlord Moff Gideon has the Dark Saber and is using it to wreck havock accross the galaxy.
+You will travel through out the galaxy gaining weapons and search for Moff Gideon in order to gain control over the Dark Saber
+Goal: Retrieve the dark saber from Moff Gideon 
+
+Would you like to play (click y/n)
+
+~start game powers up~
+////////////////////// START GAME /////////////////////////////////////
+
+Greetings Mandalorian!
+What should we call you?
+
+Hello ___ and welcome! Printing the map of the Galaxy!
+
+There are four planets that Moff Gideon is rumored to be on. 
+They are Tatooine(145), Tython (346), Trask(457), and Navarro(789).
+Each planet costs a certain amount of credits. You currently have _____ credits
+
+Where would you like to go first?
+Select a planet by typing in it's planet code, check your stats(1), or quit the game(0).
+
+//////////////////////// TATOOINE //////////////////////////////////////
+You have chosen Tatooine!
+~planet Travel function~
+    Description:
+    Tatooine is a is harsh desert world with four main regions. 
+    In the days of the Empire and the Republic, many settlers scratched out a living on moisture farms,
+    while spaceport cities such as Mos Eisley and Mos Espa served as home base for smugglers, criminals, and other rogues.
+
+Unfortunately, as before you entered light speed, a storm trooper spotted you and inflicted damage to your ship.
+Your ship will need to be repaired.
+There is a spaceport with a hangar on region 1. Your ship can be fixed there
+
+Would you like to go to region 1 (press y/n)?
+
+~yes~:
+
+~~~~~~~~~~~~~~~~~~~~~~REGION 1~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 1!
+You have landed near the hangar. 
+You can explore the map to find a ship engineer.
+
+~explore the map~
+
+You have encountered a local. 
+Would you like to engage with the local (y/n)?
+
+~yes~
+
+Character profile:
+Name: Peli Motto
+Species: human
+Planet: Tatooine
+Location: Region 1
+Friendly: true
+
+Peli Motto will repair your ship but it will cost ____ credits. 
+You have ____ credits
+If you find and capture Fennec Shand, you can gain ____ credits. 
+Would you like to accept this quest (y/n)?
+
+~yes~
+
+Explore the map to find Fennec Shand.
+
+~explore map~
+
+You have found Fennec Shand. Would you like to engage (y/n)?
+
+~yes~
+
+Character profile:
+Name: Fennec Shand
+Species: human
+Planet: Tatooine
+Location: Region 1
+Friendly: false
+
+Fennec Shand has challenged you to a fight. Do you accept (y/n)?
+
+~yes~
+fightNPC()
+
+if won:
+You have won the fight and have captured Fennec Shand. 
+You have gained ____ credits. 
+You can return to the hangar.
+
+~return to hangar~
+Peli Motto: You're back. I guess that means you captured Fennec Shand. Would you like to repair your ship for ___ credits?
+
+~yes~
+____ amount of credits have been deducted. 
+Your ship is now repaired. 
+Would you like to explore a different region of Tatooine?
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+
+~yes~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 2!
+You have landed in a town near the Dune Sea. 
+Some locals surround your ship and a leader approaches you. 
+
+Would you like to engage (y/n)?
+
+~yes~
+
+Character profile:
+Name: Soti Mel
+Species: human
+Planet: Tatooine
+Location: Region 2
+Friendly: true
+
+Soti Mel: Hello Mandalorian. I am sorry to bombard you this way. But my town desparately needs your help.
+Our townsleaders have been taken hostage by the Tusken Raiders. 
+We are not strong enough to go against them. Will you help us? We will pay you a _____ reward.
+
+Will you help (y/n)?
+
+~yes~
+Soti Mel: Thank you so much. Good luck.
+Explore the map to find the Tusken Raiders.
+
+*explore map*
+You have found the Tusken Raiders. 
+Would you like to engage (y/n)?
+
+~yes~
+Character profile:
+Name: Tusken Raiders
+Species: Tusken Raiders
+Planet: Tatooine
+Location: Region 2
+Friendly: false
+
+The Tusken Raiders have challenged you to a fight.
+Do you accept(y/n)?
+
+~yes~
+
+fightNPC();
+
+~If mando won~
+You have won the fight and have rescued the hostages. 
+You can return to the town. 
+
+~return to the town~
+Soti Mel: Thank you so much for rescuing our town leaders. Here are ______ credits.
+
+You have completed your quest.
+Would you like to explore a different region of Tatooine?
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~REGION 3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 3!
+You have landed near the desert town Mos Pelgo.
+Explore the region to find townspeople.
+
+*explore region*
+
+You have encountered a townsperson. Would you like to engage (y/n)?
+
+~yes~
+Character profile:
+Name: Darro Anen
+Species: human
+Planet: Tatooine
+Location: Region 3
+Friendly: true
+
+Darro Anen: Hello Mandalorian. My name is Darro Anen, but you can call me Darro. 
+I heard that you're looking for information about Moff Gideon and Jedis.
+Shocked? News travels fast 'round these parts. 
+
+I can help you but you're going to have to answer some of my questions first. 
+I have to make sure that you're not a separtist. 
+Do you accept this challenge (y/n)?
+
+~yes~
+Question 1:
+Where are the Tusken Raiders located?
+a.) Dune Sea ***
+b.) Coruscant
+c.) Mos Eisley
+d.) Jabba Palace
+
+if a:
+Correct.
+ 
+
+Question 2:
+What do farms in Tattoine harvest?
+a.) corn 
+b.) wheat
+c.) moisture ***
+d.) rocks
+
+
+if c.
+Correct
+
+Question 3:
+Who is the leader of the Hutts right now?
+a.) Greedo
+b.) Jabba ***
+c.) Lando
+d.) Jar Jar
+
+
+if b.)
+correct 
+
+if 3/3 questions correct give info below:
+
+Darro Anen: You have passed all my tests. Only someone who is not a separtist would be able to answer these questions.
+I don't have any information about Moff Gideon, but I have information about that squishy green thing next to you.
+I've heard that he is able to control things with his mind. I have a farmer friend who lives on the planet Tython. 
+He has told me of some dilapidated Jedi temples. His stories of the Jedi align with the powers that your friend has. 
+I would go to Tython to find out more. If you see my friend Shoan Madar, tell him hi for me. 
+
+That's all I have. Good luck. 
+
+Would you like to explore a different region of Tatooine?
+~yes~
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Region 4 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 4!
+You have landed near the Jabba's Palace and have been invited to visit Jabba the Hutt.
+Would you like to engage with Jabba the Hutt (y/n)?
+~yes~
+
+Character profile:
+Name: Jabba the Hutt
+Species: Hutt
+Planet: Tatooine
+Location: Region 4
+Friendly: true
+
+Jabba the Hutt: Hello Mandalorian. I see you've been helping out the other regions in this town. 
+I have a quest that I believe will be mutually helpful.
+
+How will it help you? I will let you have a more powerful weapon. 
+Also, if you refuse, you will be sent to the pit.
+
+What is the quest? I need you to capture this traitor. His name is Kuna Randlo and he has been turning my people against me. 
+Do you accept this quest (y/n)
+
+~yes~
+Explore the map to find the Kona Randlo.
+
+*explore map*
+You have found the Kona Randlo. 
+Would you like to engage (y/n)?
+
+~yes~
+Character profile:
+Name: Kona Randlo
+Species: Quarren
+Planet: Tatooine
+Location: Region 4
+Friendly: false
+
+Kona Randlo has challenged you to a fight. 
+Do you accept (y/n)?
+
+~yes~
+*fightNPC()*
+
+~if Mando wins~
+You have won the fight and have captured Kona Randlo. 
+You can return to Jabba's Palace.  
+
+*return to the palace*
+Jabba the Hutt: My deep gratitude for your help. 
+As promised, you have the choice of gaining a flamethrower or jetpack. 
+Which do you choose? (1. flamethrower, 2. jetpack);
+
+if 1:
+add flamethrower to weapon vector
+
+if 2.
+add jetpack to weapon vector
+
+Your weapon has been added. 
+
+Would you like to explore a different region of Tatooine?
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~yes~
+...
+~no~
+Would you like to travel to another planet?
+~yes~
+*display galaxy map*
+Where would you like to go next?
+Select a planet by typing in it's planet code, check your stats(1), or quit the game(0).
+
+
+
+//////////////////////////////////// TYTHON ///////////////////////////////////////////////////////////////////////////
+~yes~
+Ok. 
+*display galaxy map*
+Which planet would you like to go next
+Select a planet by typing in it's planet code, check your stats(1), or quit the game(0).
+
+
+
+
+
