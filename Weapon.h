@@ -10,13 +10,8 @@
 
 #include "Mando.h"
 #include "NPC.h"
-<<<<<<< HEAD
 //#include "Planet.h"
 //#include "StormTrooper.h"
-=======
-#include "Planet.h"
-#include "StormTrooper.h"
->>>>>>> 9a533520da024e75118b7811218322dd3a8314d0
 
 #ifndef WEAPON_H
 #define WEAPON_H
