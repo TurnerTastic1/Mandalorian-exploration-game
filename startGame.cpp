@@ -768,7 +768,7 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 // create NPC object for interaction based on NPC vector
                 NPC dude = NPC();
                 for (int i = 0; i < vec.size(); i++) {
-                    if (vec[i].getPlanetRegion() == " region 1") {
+                    if (vec[i].getPlanetRegion() == " region 2") {
                         dude = vec[i];
                         break;
                     }
@@ -804,7 +804,7 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 // create NPC object for interaction based on NPC vector
                 NPC dude = NPC();
                 for (int i = 0; i < vec.size(); i++) {
-                    if (vec[i].getPlanetRegion() == " region 1") {
+                    if (vec[i].getPlanetRegion() == " region 3") {
                         dude = vec[i];
                         break;
                     }
@@ -840,7 +840,7 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 // create NPC object for interaction based on NPC vector
                 NPC dude = NPC();
                 for (int i = 0; i < vec.size(); i++) {
-                    if (vec[i].getPlanetRegion() == " region 1") {
+                    if (vec[i].getPlanetRegion() == " region 4") {
                         dude = vec[i];
                         break;
                     }
@@ -982,7 +982,7 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                 // create NPC object for interaction based on NPC vector
                 NPC dude = NPC();
                 for (int i = 0; i < vec.size(); i++) {
-                    if (vec[i].getPlanetRegion() == " region 1") {
+                    if (vec[i].getPlanetRegion() == " region 2") {
                         dude = vec[i];
                         break;
                     }
@@ -1018,7 +1018,7 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                 // create NPC object for interaction based on NPC vector
                 NPC dude = NPC();
                 for (int i = 0; i < vec.size(); i++) {
-                    if (vec[i].getPlanetRegion() == " region 1") {
+                    if (vec[i].getPlanetRegion() == " region 3") {
                         dude = vec[i];
                         break;
                     }
@@ -1054,7 +1054,7 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                 // create NPC object for interaction based on NPC vector
                 NPC dude = NPC();
                 for (int i = 0; i < vec.size(); i++) {
-                    if (vec[i].getPlanetRegion() == " region 1") {
+                    if (vec[i].getPlanetRegion() == " region 4") {
                         dude = vec[i];
                         break;
                     }
@@ -1196,7 +1196,7 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
                 // create NPC object for interaction based on NPC vector
                 NPC dude = NPC();
                 for (int i = 0; i < vec.size(); i++) {
-                    if (vec[i].getPlanetRegion() == " region 1") {
+                    if (vec[i].getPlanetRegion() == " region 2") {
                         dude = vec[i];
                         break;
                     }
@@ -1232,7 +1232,7 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
                 // create NPC object for interaction based on NPC vector
                 NPC dude = NPC();
                 for (int i = 0; i < vec.size(); i++) {
-                    if (vec[i].getPlanetRegion() == " region 1") {
+                    if (vec[i].getPlanetRegion() == " region 3") {
                         dude = vec[i];
                         break;
                     }
@@ -1268,7 +1268,7 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
                 // create NPC object for interaction based on NPC vector
                 NPC dude = NPC();
                 for (int i = 0; i < vec.size(); i++) {
-                    if (vec[i].getPlanetRegion() == " region 1") {
+                    if (vec[i].getPlanetRegion() == " region 4") {
                         dude = vec[i];
                         break;
                     }
