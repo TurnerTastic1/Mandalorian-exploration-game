@@ -746,7 +746,7 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                     cout<<"You have found "<< dude.getName()<< " and he begins talking to you." <<endl;
                     cout<<" 'Hello. My name is Shoan Madar. You must be a Mandalorian; I can tell from your shiny armor.'" <<endl;
                     usleep(2*microsecond);
-                    cout<<" 'What are you doing on Tython?' \n Darro Anen sent you? It's been a while since I've seen him. I'm glad to know he's doing well " <<endl;
+                    cout<<" 'What are you doing on Tython?' \n Darro Anen sent you? It's been a while since I've seen him. I'm glad to know he's doing well' " <<endl;
                     usleep(2*microsecond);
                     cout<<" 'Well, he's right about one thing. I have information about the Jedi Order, but I need your help first.' " <<endl;
                     usleep(4*microsecond);
@@ -921,9 +921,8 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         }
                         cout<<"You pick up Grogu and continue on to the Jedi temple in Region 4" << endl;
                         usleep(3*microsecond);
+                        }
                     }
-                
-                    // spawn NPC here and complete challenge *gulp*
                 }
                 // Before the code breaks the player has some time to read what happened
                 usleep(2*microsecond);
@@ -1029,10 +1028,11 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 mandoStats(myMando);
                 break;
             }
-            default:
+            default: {
                 cout<<"Not a valid option!"<<endl;
                 usleep(2*microsecond);
                 break;
+            }
         }
     }
     
