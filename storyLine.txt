@@ -21,7 +21,7 @@ They are Tatooine(145), Tython (346), Trask(457), and Navarro(789).
 Each planet costs a certain amount of credits. You currently have _____ credits
 
 Where would you like to go first?
-Select a planet by typing in it's planet code, check your stats(1), or quit the game(0).
+Select a planet (by typing in it's planet code), check your stats(1), or quit the game(0).
 
 //////////////////////// TATOOINE //////////////////////////////////////
 You have chosen Tatooine!
@@ -223,7 +223,7 @@ Darro Anen: You have passed all my tests. Only someone who is not a separtist wo
 I don't have any information about Moff Gideon, but I have information about that squishy green thing next to you.
 I've heard that he is able to control things with his mind. I have a farmer friend who lives on the planet Tython. 
 He has told me of some dilapidated Jedi temples. His stories of the Jedi align with the powers that your friend has. 
-I would go to Tython to find out more. If you see my friend Shoan Madar, tell him hi for me. 
+I would go to Tython to find out more. If you see my friend, Shoan Madar, tell him hi for me. 
 
 That's all I have. Good luck. 
 
@@ -310,9 +310,59 @@ Select a planet by typing in it's planet code, check your stats(1), or quit the 
 Ok. 
 *display galaxy map*
 Which planet would you like to go next
-Select a planet by typing in it's planet code, check your stats(1), or quit the game(0).
+Select a planet (by typing in it's planet code), check your stats(1), or quit the game(0).
+
+You have chosen Tython!
+~planet Travel function~
+Darro Anen recommended going region 1 to find Shoan Madar. 
+Would you like to travel to region 1 (press y/n)?
+*Display region 1* 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Region 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You have landed in a grassy clearing. 
+You can explore the map to find a Shoan Madar.
+
+~explore the map~
+
+You have encountered a local. 
+Would you like to engage with the local (y/n)?
+
+~yes~
+
+Character profile:
+Name: Shoan Madar
+Species: human
+Planet: Tython
+Location: Region 1
+Friendly: true
+
+Shoan Madar: Hello. My name is Shoan Madar. You must be a Mandalorian; I can tell from your shiny armor. 
+What are you doing on Tython?
+Darro Anen sent you? It's been a while since I've seen him. I'm glad to know he's doing well
+
+Well, he's right about one thing. I have information about the Jedi Order, but I need your help first. 
+A storm blew over the fence for my livestock. Will you help me repair it?
+
+Do you accept the quest? It will cost you ___ credits for manual labor.
+
+~yes~
+*subtract coins*
+*wait some time*
+You have repaired the fence.
+
+Shoan Madar: Thank you for helping me. It would have taken me days to fix it by myself.
+Shoan Madar: Now for the information you are looking for. 
+Tython used to be home to the Jedi Order. The Jedi were an order of warrior monks who kept peace in the universe.
+They were so peaceful that they were able to connect the life force of the universe and use it to gain extrodinary powers and strength.
+One of the temples on Tython was used for training Jedi padawons. If you go to Region 3, you will find this temple. 
+If you bring your youngling there, he may strengthen his powers. 
+That is all I have. Good luck. 
+
+Would you like to explore a different region of Tatooine?
+~yes~
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
 
 
-
-
+~explore map~
 
