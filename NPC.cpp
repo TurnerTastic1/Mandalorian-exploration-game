@@ -87,3 +87,7 @@ void NPC::printWeapon() {
     weapon.printWeapon();
     return;
 }
+
+Weapon NPC::getWeapon() {
+    return weapon;
+}

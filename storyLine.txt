@@ -211,7 +211,7 @@ Who is the leader of the Hutts right now?
 a.) Greedo
 b.) Jabba ***
 c.) Lando
-d.) Jar Jar
+d.) Jar Jar Binks
 
 
 if b.)

@@ -25,8 +25,9 @@ class Mando {
         vector <Weapon> weapons;
         int honorLevel;
         int skillLevel;
+        bool alive;
         void setDefaultValues();
-        NPC newNPC = NPC();
+        // NPC newNPC = NPC();
 
     public:
         // Standard Functions
@@ -40,13 +41,18 @@ class Mando {
         void setCredits(int credits_);
         int getHonorLevel();
         int getSkillLevel();
+        void setSkillLevel(int skill);
+        bool getAlive();
+        void setAlive(bool boo);
         void checkWeapons();
+        vector<Weapon> getWeapons();
+        Weapon retrieveWeapon(int index);
         
         // Personal functions
 
         vector<Weapon> sortWeapons(); // sort weapons by rarity best to least
         bool addWeapon(Weapon); // call sort function every time add weapon is called!!!
-        int fightNPC(NPC); // cannot pass objects like that you need a pass by reference 
+        int fightNPC(NPC npc1, Weapon mandoWeapon); // cannot pass objects like that you need a pass by reference 
         void displayGalaxyMap();
 
 };

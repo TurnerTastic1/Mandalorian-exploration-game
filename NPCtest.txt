@@ -1,4 +1,7 @@
 Fennec Shand, Human, Tatooine, region 1, 10, false, 70, 4
+Tusken Raider, Tusken Raider, Tattoine, region 2, 10, false, 0, 3
+Darro Anen, Human, Tattoine, region 3, 10, true, 0, 2
+Kona Randlo, Quarren, Tattoine, region 4, 10, false, 45, 4
 Peli Motto, Human, Tython, region 1, 10, false, 0, 0
 Peli Motto, Human, Trask, region 1, 10, false, 0, 0
 Peli Motto, Human, Navarro, region 1, 10, false, 0, 0

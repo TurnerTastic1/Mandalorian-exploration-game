@@ -39,6 +39,7 @@ class NPC { // Use read movies/ read ratings to read sidechar from file
         int getCreditReward();
         int getSkillLevel();
         void printWeapon();
+        Weapon getWeapon();
         //vector<NPC> readNPC(string fileName);
 
 

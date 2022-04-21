@@ -8,7 +8,7 @@
 #include "Mando.h"
 #include "Planet.h"
 #include "Weapon.h"
-//#include "NPC.h"
+#include "NPC.h"
 
 #include <iostream>
 #include <fstream>
@@ -36,9 +36,12 @@ void Mando::setDefaultValues() {
     name = "";
     credits = 100;
     hp = 10;
-    vector<Weapon> weapons; // not sure how to do a default constructor for vectors
+    vector<Weapon> weapons;
+    // Weapon weapon1 = Weapon();
+    // weapons.push_back(weapon1);
     honorLevel = 100;
-    skillLevel = 10;
+    skillLevel = 5;
+    bool alive = true;
 }
 
 string Mando::getName() {
@@ -77,6 +80,27 @@ int Mando::getHonorLevel()
 int Mando::getSkillLevel()
 {
     return skillLevel;
+}
+
+void Mando::setSkillLevel(int skill) {
+    skillLevel = skill;
+}
+
+bool Mando::getAlive() {
+    return alive;
+}
+
+void Mando::setAlive(bool boo) {
+    alive = boo;
+    return;
+}
+
+vector<Weapon> Mando::getWeapons() {
+    return weapons;
+}
+
+Weapon Mando::retrieveWeapon(int index) {
+    return weapons[index];
 }
 
 void Mando::checkWeapons() {
@@ -167,8 +191,89 @@ bool Mando::addWeapon(Weapon new_weapon)
 4. If second step is not true, returns -2
 */
 
-int Mando::fightNPC(NPC newNPC)
-{
+int Mando::fightNPC(NPC npc1, Weapon mandoWeapon) {
+    // initialize variables
+    int mando_pt_counter = 0;
+    int npc_pt_counter = 0;
+
+    int mando_hp = hp;
+    int npc_hp = npc1.getHP();
+    int mando_weapon = mandoWeapon.getRarity();
+    int npc_weapon = npc1.getWeapon().getRarity();
+    int npc_skill = npc1.getSkillLevel();
+    int mando_skill = skillLevel;
+
+    // compare hp
+    if (mando_hp > npc_hp){
+        mando_pt_counter += 10;
+    }
+    else if (mando_hp == npc_hp)
+    {
+        mando_pt_counter += 0;
+    }
+    else
+    {
+        npc_pt_counter += 10;
+    }
+
+    // compare weapon rarity
+    if (mando_weapon > npc_weapon)
+    {
+        mando_pt_counter += (mando_weapon-npc_weapon);
+
+    }
+    else if (mando_hp == npc_hp)
+    {
+        mando_pt_counter += 0;
+    }
+    else
+    {
+        npc_pt_counter += (npc_weapon-mando_weapon);
+    }
+
+    // compare skill Level
+    if (mando_skill > npc_skill)
+    {
+        mando_pt_counter += (mando_skill - npc_skill);
+    }
+    else if (mando_skill == npc_skill)
+    {
+        mando_pt_counter += 0;
+    }
+    else 
+    {
+        npc_pt_counter += (npc_skill-mando_skill);
+    }
+
+    // fight is done
+    // compare the pt counters
+    // change mando hp?
+
+    if (mando_pt_counter > npc_pt_counter)
+    {
+        cout<<"You swiftly take down "<<npc1.getName()<<"."<<endl;
+        return 1;
+    }
+    else if (mando_pt_counter == npc_pt_counter)
+    {
+        // what happens if they tie? i think mando should win
+        cout<<"The two of you are almost evenly matched, your mysterious green friend helps you to defeat "<<npc1.getName()<<"."<<endl;
+        return 1;
+    }
+    else
+    {
+        // maybe need: srand(time(null));
+        int randIsBrokenBruh = rand();
+        int save = (((double)rand() / RAND_MAX) * 10) + 1;
+        if (save <= .3) {
+            cout<<"Baby Yoda has saved you and helps you to defeat "<<npc1.getName()<<"."<<endl;
+            return 1;
+        }
+        //mando_hp -= (npc_pt_counter - mando_pt_counter);
+        cout<<npc1.getName()<<" destroys you on the field of battle, leaving Moff Gideon to roam free..."<<endl;
+        alive = false;
+        return -3;
+    }
     return 0;
 }
 
