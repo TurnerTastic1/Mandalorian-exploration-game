@@ -291,6 +291,20 @@ add jetpack to weapon vector
 
 Your weapon has been added. 
 
+*display weapon*
+Weapon:
+name: flamethrower
+type: mid-range
+rarity: 3
+damage: 5
+
+*display weapon*
+Weapon:
+name: jetpack
+type: flight
+rarity: 1
+damage: 0
+
 Would you like to explore a different region of Tatooine?
 *display region map()*
 Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
@@ -306,8 +320,7 @@ Select a planet by typing in it's planet code, check your stats(1), or quit the 
 
 
 //////////////////////////////////// TYTHON ///////////////////////////////////////////////////////////////////////////
-~yes~
-Ok. 
+~yes~ 
 *display galaxy map*
 Which planet would you like to go next
 Select a planet (by typing in it's planet code), check your stats(1), or quit the game(0).
@@ -356,13 +369,208 @@ Tython used to be home to the Jedi Order. The Jedi were an order of warrior monk
 They were so peaceful that they were able to connect the life force of the universe and use it to gain extrodinary powers and strength.
 One of the temples on Tython was used for training Jedi padawons. If you go to Region 3, you will find this temple. 
 If you bring your youngling there, he may strengthen his powers. 
+If you want to learn more about your Mandalorian friends. I would suggest going to the planet Trask. The last visitor I met mentioned a gang of Mandalorians stirring up trouble there. 
 That is all I have. Good luck. 
 
 Would you like to explore a different region of Tatooine?
 ~yes~
 *display region map()*
 Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 2!
+You have landed at the edge of a forest.
+Explore the region.
 
+*explore region*
 
-~explore map~
+You have been ambushed by a group of scavengers.
+They won't let you pass through the region unless you defeat all of them.  
+The leader starts attacking you:
+*power up fightNPC*
 
+1.) if Mando wins:
+You have defeated the first challenger.
+Now you have another scavenger rushes at you.
+*power up fightNPC*
+
+1.) if mando looses:
+chance to revive using baby yoda
+otherwise game over
+
+*2. power up fightNPC*
+
+2.) If Mando wins:
+You have defeated the second challenger
+The last, strongest scavenger attacks.
+
+2.) if mando looses
+chance to revive using baby yoda
+otherwise game over
+
+3.) *power up fight NPC*
+
+3.) if Mando wins:
+You have defeated all of the scavengers. 
+You have gained a new weapon.
+
+*display weapon*
+Weapon:
+name: whistling bird
+type: short range
+rarity: 4
+damage: 7
+
+Would you like to explore a different region of Tatooine?
+~yes~
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 3~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 3!
+You have landed at the base of the mountain.
+Explore the region. 
+
+You have been ambushed by a Stormtrooper. 
+Entering fight scene.
+
+fightNPC()
+
+if Mando wins
+gains either flamethrower or jetpack depending on which user didn't have
+
+if mando looses
+chance for baby yoda to revive
+looses game?
+
+Would you like to explore a different region of Tatooine?
+~yes~
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 4!
+You have discovered the old Jedi temple.
+Explore the temple. 
+
+You discover a writing on a wall that says:
+
+If you want to train in the Jedi way,
+You have to do what I say,
+Answer four questions you must, 
+In order to gain the temple's trust,
+There will be no gain,
+if you answer in vain.
+
+Would you like to begin Grogu's training(y/n)?
+
+~yes~
+Question 1: Which Jedi had a purple lightsaber?
+a.) Yoda
+b.) Ahsoka Tano
+c.) Mace Windu ***
+c.) Obi-Wan Kenobi 
+
+Question 2: Who were the Jedi's sworn enemies
+a.) The Sith ***
+b.) The Wookies
+c.) The Mandalorian
+d.) The Gungans
+
+Question 3: Which Jedi ordered his sentences object-subject-verb?
+a.) Anakin Skywalker
+b.) Yoda ***
+c.) Obi-Wan Kenobi
+d.) Qui-Gon Jin
+
+Question 4: Who is Luke's Father?
+a.) Qui-Gon Jin
+b.) Mace Windu
+c.) Emperor Palpatine
+d.) Darth Vadar ***
+
+if they get all 4 questions right, grogu increases his power level
+
+end of region 4
+
+Would you like to explore a different region of Tatooine?
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~yes~
+...
+~no~
+Would you like to travel to another planet?
+~yes~
+*display galaxy map*
+Where would you like to go next?
+Select a planet by typing in it's planet code, check your stats(1), or quit the game(0).
+
+////////////////////////////// Trask ///////////////////////////////////////////////////////////////
+~yes~
+*display galaxy map*
+Which planet would you like to go next
+Select a planet (by typing in it's planet code), check your stats(1), or quit the game(0).
+
+You have chosen Trask!
+~planet Travel function~
+Shoan Madar recommended going region 1 to find Shoan Madar. 
+Would you like to travel to region 1 (press y/n)?
+*Display region 1* 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Region 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You have landed on a dock next to a vast ocean. 
+You can explore the map to find townspeople or Mandalorians.
+
+~explore the map~
+
+You have encountered a local. 
+Would you like to engage with the local (y/n)?
+
+~yes~
+
+Character profile:
+Name: Mitikk
+Species: quarren
+Planet: Trask
+Location: Region 1
+Friendly: true
+
+Mitikk: Hello Mandalorian. What do you want? We don't need anymore of your kind stirring up trouble around here y'know.
+Where are the other Mandalorian? They've been sighted in region two. Follow me.
+
+Do you follow Mitikk to region 2 (y/n)?
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 2!
+You've lost Mitikk somehow. 
+Explore the region to find him or the other Mandalorian.
+
+*explore region*
+
+It's a trap! You've been ambushed by a quarren sent by Mitikk.
+*fightNPC*
+
+1.) if Mando wins:
+You have defeated the first challenger. 
+
+1.) if mando looses:
+chance to revive using baby yoda
+otherwise game over
+
+A figure shouts to you. 
+Hello, there Mandalorian. I'm glad to see that you were able to defeat that spineless quarren.
+It'd be a shame if you weren't worthy of your Beskar.
+
+Do you want to interact with the figure (y/n)?
+
+~yes~
+Character profile:
+Name: Bo-Katan Kryze
+Species: mandalorian
+Planet: Trask
+Location: Region 2
+Friendly: true
+
+I need your help. My team is being attacked in Region 3. Will you help?
+I can tell you where Moff Gideon is.
+
+Do you follow Bo-Katan (y/n)
+
+~if yes~
