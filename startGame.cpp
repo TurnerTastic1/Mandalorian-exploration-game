@@ -327,7 +327,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
 
                         // fight sequence, use for most fights but alter slightly if needed
                         Weapon mandoWeap = chooseWeapon(myMando);
-                        int fightRV = myMando.fightNPC(dude, mandoWeap);
+                        int fightRV = myMando.fightNPC(dude, mandoWeap, 5);
                         if (fightRV == -3) {
                             ultraBreak = true;
                             break;
@@ -410,7 +410,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
                         
                         // fight sequence, use for most fights but alter slightly if needed
                         Weapon mandoWeap = chooseWeapon(myMando);
-                        int fightRV = myMando.fightNPC(dude, mandoWeap);
+                        int fightRV = myMando.fightNPC(dude, mandoWeap, 5);
                         if (fightRV == -3) {
                             ultraBreak = true;
                             break;
@@ -593,7 +593,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
                     if (interact) {
                         // fight sequence, use for most fights but alter slightly if needed
                         Weapon mandoWeap = chooseWeapon(myMando);
-                        int fightRV = myMando.fightNPC(dude, mandoWeap);
+                        int fightRV = myMando.fightNPC(dude, mandoWeap, 5);
                         if (fightRV == -3) {
                             ultraBreak = true;
                             break;
@@ -677,7 +677,6 @@ Mando tython(Mando myMando, vector<NPC> vec) {
     }
 
     // Player gets to read about story
-    cout<<"Story goes here"<<endl;
 
     // Region maps created
     Map region1 = Map();
@@ -702,6 +701,7 @@ Mando tython(Mando myMando, vector<NPC> vec) {
         }
         bool ultraBreak = false;
         tython.displayPlanetMap("tythonRegion.txt");
+        cout<<"Darro Anen recommended going to Region 1 to find Shoan Madar."<<endl;
         cout<<"What region would you like to visit?('1', '2', '3', '4', '5' to view stats, or '0' to leave Tython)."<<endl;
         cin >> regionChoice;
 
@@ -718,9 +718,6 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 
                 // For polish: rename regions etc. if needed
 
-                cout<<"Welcome to Region 1!"<<endl;
-                usleep(1*microsecond);
-
                 // stuff for each region here
 
                 // Spawns a random NPC
@@ -736,13 +733,61 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
-
+                cout<<"Welcome to Region 1!"<<endl;
+                cout<<"You have landed in a grassy clearing."<<endl;
+                usleep(1*microsecond);
+                cout<<"You can explore the map to find Shaon Madar."<<endl;
+                usleep(1*microsecond);
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region1, myMando);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
-                    cout<<"Have an interaction ... "<<endl;
+                    cout<<"You have found "<< dude.getName()<< " and he begins talking to you." <<endl;
+                    cout<<" 'Hello. My name is Shoan Madar. You must be a Mandalorian; I can tell from your shiny armor.'" <<endl;
+                    usleep(2*microsecond);
+                    cout<<" 'What are you doing on Tython?' \n Darro Anen sent you? It's been a while since I've seen him. I'm glad to know he's doing well " <<endl;
+                    usleep(2*microsecond);
+                    cout<<" 'Well, he's right about one thing. I have information about the Jedi Order, but I need your help first.' " <<endl;
+                    usleep(4*microsecond);
+                    cout<< " 'A storm blew over the fence for my livestock. Will you help me repair it?' " <<endl;
+                    usleep(4*microsecond);
+                    cout<< "Do you accept his request? It will cost you 20 credits for manual labor." << endl;
+                    cout<< "Enter your choice (y/n)" <<endl;
+
+                    char questChoice;
+                    cin >> questChoice;
+                    if (questChoice == 'y') {
+                        myMando.setCredits(myMando.getCredits() - 20);
+                        //image of fence
+                        cout<<"=|===|===|(=)|===|==="<<endl;
+                        usleep(1*microsecond);
+                        cout<<"=|===|===|`='|===|==="<<endl;
+                        usleep(1*microsecond);
+                        cout<<"You have repaired the fence."<<endl;
+                        cout<<"You now have " << myMando.getCredits()<<endl;
+                        usleep(2*microsecond);
+                        cout<< "Shoan thanks you and says, 'Thank you for helping me. It would have taken me days to fix it by myself.'" <<endl;
+                        cout<< "'Now for the information you are looking for'" << endl;
+                        usleep(4*microsecond);
+                        cout<< "'Tython used to be home to the Jedi Order. The Jedi were an order of warrior monks who kept peace in the universe.'" << endl;
+                        cout<< "'They were so reverant that they were able to connect the life force of the universe and use it to gain extrodinary powers and strength.'" << endl;
+                        usleep(4*microsecond);
+                        cout<< "'One of the temples on Tython was used for training Jedi padawons. If you go to Region 3, you will find this temple.'" << endl;
+                        cout<< "'If you bring your youngling there, he may strengthen his powers.'" << endl;
+                        usleep(4*microsecond);
+                        cout<< "'If you want to learn more about your Mandalorian friends. I would suggest going to region 1 of the planet Trask.\n The last visitor I met mentioned a gang of Mandalorians stirring up trouble there.'" << endl;
+                        usleep(2*microsecond);
+                        cout<< "'That is all I have. Good luck.'" << endl;
+                        usleep(2*microsecond);
+
+                    }
+                    else
+                    {
+                        cout<< "You have declined the task and have chosen to leave the area."<<endl;
+                    }
+
+                    //cout<<"'"
                     // spawn NPC here and complete challenge *gulp*
                 }
 
@@ -751,7 +796,7 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 break;
             }
             case '2': {
-                
+            
                 // For polish: rename regions etc.
 
                 cout<<"Welcome to Region 2!"<<endl;
@@ -773,16 +818,41 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+                cout<<"You have landed at the edge of a forest."<<endl;
+                usleep(2*microsecond);
+                cout<<"You do not see anyone. Explore the region"<<endl;
+                usleep(2*microsecond);
 
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region2, myMando);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
-                    cout<<"Have an interaction ... "<<endl;
+                    cout<<"You have been ambushed by a group of scavengers."<<endl;
+                    cout<<"They won't let you pass through the region unless you defeat the leader."<<endl;
+                    usleep(2*microsecond);
+                    cout<<"The leader rushes at you with a sharp machete."<<endl;
+                    usleep(2*microsecond);
                     // spawn NPC here and complete challenge *gulp*
+                    // fight sequence, use for most fights but alter slightly if needed
+                    Weapon mandoWeap = chooseWeapon(myMando);
+                    int fightRV = myMando.fightNPC(dude, mandoWeap, 5);
+                    if (fightRV == -3) {
+                        ultraBreak = true;
+                        break;
+                    } else if (fightRV == 1) {
+                        cout<<"You successfully defeated the "<<dude.getName()<<endl;
+                        cout<<"You have gained a new weapon called whistling birds"<<endl;
+                        Weapon whistlingBirds = Weapon("Flamethrower", "short-range", 2, 7);
+                        whistlingBirds.printWeapon();
+                        myMando.addWeapon(whistlingBirds);
+                        usleep(3*microsecond);
+                        cout<<"The whistling birds weapon was successfully added to your arsenal! Check your weapons in the stat menu!"<<endl;
+                        break;
+                    }
                 }
                 // Before the code breaks the player has some time to read what happened
+                cout<<"The scanvengers allow you to pass through the rest of this area." << endl;
                 usleep(2*microsecond);
                 break;
             }
@@ -809,13 +879,50 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+                cout<<"You have landed at the base of the mountain.\nExplore the region"<<endl;
 
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region3, myMando);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
-                    cout<<"Have an interaction ... "<<endl;
+                    cout<<"*PEWWW PEW PEW*"<<endl;
+                    cout<<"You quickly dodge the plasma hurling towards you and see a Stormtrooper trying to attack you."<<endl;
+                    usleep(3*microsecond);
+                    Weapon mandoWeap = chooseWeapon(myMando);
+                    int fightRV = myMando.fightNPC(dude, mandoWeap, 5);
+                    if (fightRV == -3) {
+                        ultraBreak = true;
+                        break;
+                    } else if (fightRV == 1) {
+                        int choice;
+                        Weapon flameThrower = Weapon("Flamethrower", "Flamethrower", 5, 4);
+                        cout<<"You successfully defeated the "<<dude.getName() <<"."<<endl;
+                        cout<<"You can add a weapon to add to your arsenal. You have two choices. Pick the weapon you are lacking."<<endl;
+                        cout<<"#1"<<endl;
+                        flameThrower.printWeapon();
+                        cout<<"#2"<<endl;
+                        cout<<"The Jetpack gives the Mandalorian more agility and improves your skill level."<<endl;
+                        while(true) {
+                        cout<<"Choose a weapon by inputting the number or 0 to choose none."<<endl;
+                        cin >> choice;
+                        if (choice == 1) {
+                            myMando.addWeapon(flameThrower);
+                            cout<<"The flamethrower was successfully added to your arsenal! Check your weapons in the stat menu!"<<endl;
+                            break;
+                        } else if (choice == 2) {
+                            myMando.setSkillLevel(myMando.getSkillLevel() + 2);
+                            cout<<"You have attained the jetpack successfully and your skill has been increased by 2."<<endl;
+                            break;
+                        } else if (choice == 0) {
+                            break;
+                        } else {
+                            cout<<"Not a valid choice"<<endl;
+                        }
+                        cout<<"You pick up Grogu and continue on to the Jedi temple in Region 4" << endl;
+                        usleep(3*microsecond);
+                    }
+                
                     // spawn NPC here and complete challenge *gulp*
                 }
                 // Before the code breaks the player has some time to read what happened
@@ -848,10 +955,70 @@ Mando tython(Mando myMando, vector<NPC> vec) {
 
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region4, myMando);
-
+                cout<<"You have discovered the old Jedi temple."<<endl;
+                usleep(2*microsecond);
+                cout<<"Explore the temple."<<endl;
+                usleep(2*microsecond);
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
-                    cout<<"Have an interaction ... "<<endl;
+                    cout<<"You have discovered a writing on a wall that says:"<<endl;
+                    usleep(2*microsecond);
+                    cout<<"'If you want to train in the Jedi way,'"<<endl;
+                    cout<<"'You have to do what I say,'\n 'Answer four questions you must,'"<<endl;
+                    cout<<"'In order to gain the temple's trust,'\n 'There will be no gain,'"<<endl;
+                    cout<<"'if you answer in vain.'" <<endl;
+                    usleep(4*microsecond);
+                    cout<<"Would you like to begin Grogu's training(y/n)?"<<endl;
+                    char chalChoice;
+                    cin>>chalChoice;
+                    if (chalChoice == 'y') {
+                        char quest1;
+                        char quest2;
+                        char quest3;
+                        char quest4;
+                        cout<<"Question 1: Which Jedi had a purple lightsaber? \na.) Yoda \nb.) Ahsoka Tano \nc.) Mace Windu \nd.) Obi-Wan Kenobi"<<endl;
+                        usleep(1*microsecond);
+                        cout<<"Give the answer..."<<endl;
+                        cin >> quest1;
+                        if (quest1 != 'c') {
+                            cout<<"Traitor, leave this planet at once! \n The temple will not strengthen your youngling."<<endl;
+                            break;
+                        }
+
+                        cout<<"Question 2: Who were the Jedi's sworn enemies? \na.) The Sith \nb.) The Wookies \nc.) The Mandalorians \nd.) The Gungans"<<endl;
+                        usleep(1*microsecond);
+                        cout<<"Give the answer..."<<endl;
+                        cin >> quest2;
+                        if (quest2 != 'a') {
+                            cout<<"Traitor, leave this planet at once! \n The temple will not strengthen your youngling."<<endl;
+                            break;
+                        }
+
+                        cout<<"Question 3: Which Jedi ordered his sentences object-subject-verb? \na.) Anakin Skywalker \nb.) Yoda \nc.) Obi-Wan Kenobi \nd.) Qui-Gon Jin"<<endl;
+                        usleep(1*microsecond);
+                        cout<<"Give the answer..."<<endl;
+                        cin >> quest3;
+                        if (quest3 != 'b') {
+                            cout<<"Traitor, leave this planet at once! \n The temple will not strengthen your youngling."<<endl;
+                            break;
+                        }
+                        cout<<"Question 4: Who is Luke Skywalkers' Father? \na.) Qui-Gon Jin \nb.) Mace Windu \nc.) Emperor Palpatine \nd.) Darth Vadar"<<endl;
+                        usleep(1*microsecond);
+                        cout<<"Give the answer..."<<endl;
+                        cin >> quest4;
+                        if (quest4 != 'd') {
+                            cout<<"Traitor, leave this planet at once! \n The temple will not strengthen your youngling."<<endl;
+                            break;
+                        }
+                        cout<<"You watch in wonder as a beam of light surrounds Grogu"<<endl;
+                        cout<<"~*~~* <´(• ﻌ •)`> *~~*~" <<endl;
+                        cout<<""<<endl;
+                        cout<<""<<endl;
+                        cout<<"Grogu's powers have increased x2."<<endl;
+                        usleep(1*microsecond);
+                        cout<<"You leave the temple and may return to your ship"<<endl;
+
+                    }
                     // spawn NPC here and complete challenge *gulp*
                 }
                 // Before the code breaks the player has some time to read what happened

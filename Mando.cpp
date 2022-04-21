@@ -191,7 +191,7 @@ bool Mando::addWeapon(Weapon new_weapon)
 4. If second step is not true, returns -2
 */
 
-int Mando::fightNPC(NPC npc1, Weapon mandoWeapon) {
+int Mando::fightNPC(NPC npc1, Weapon mandoWeapon, int groguPowers) {
     // initialize variables
     int mando_pt_counter = 0;
     int npc_pt_counter = 0;
