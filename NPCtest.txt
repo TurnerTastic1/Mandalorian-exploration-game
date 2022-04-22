@@ -3,10 +3,13 @@ Tusken Raider, Tusken Raider, Tattoine, region 2, 10, false, 0, 3
 Darro Anen, Human, Tattoine, region 3, 10, true, 0, 2
 Kona Randlo, Quarren, Tattoine, region 4, 10, false, 45, 4
 Shoan Madar, Human, Tython, region 1, 10, true, 0, 2
-Holga Glagguul, Gamorrean, Tython, region 2, 10, false, 60, 0, 6
-Stormtrooper, Human, Tython, region 3, 10, false, 4, 30, 5
+Holga Glagguul, Gamorrean, Tython, region 2, 10, false, 60, 6
+Stormtrooper, Human, Tython, region 3, 10, false, 30, 5
 Wall writing, Text, Tython, region 4, 10, true, 0, 0
-Mitikk, Quarren, Trask, region 1, 10, true, 0, 0, 2
-Wuglugh, Gamorrean, Trask, region 3, 10, false, 80, 150, 8
-Pana Shulo, Quarren, Trask, region 4, 10, true, 0, 0, 8
-Peli Motto, Human, Navarro, region 1, 10, false, 0, 0
+Mitikk, Quarren, Trask, region 1, 10, true, 0, 2
+Wuglugh, Gamorrean, Trask, region 3, 10, false, 80, 8
+Pana Shulo, Quarren, Trask, region 4, 10, true, 0, 8
+Nenk Krag, Mandalorian, Navarro, region 1, 10, true, 0, 6
+Click, Clone, Navarro, region 2, 10, true, 0, 5
+Moff Gideon, Human, Navarro, region 3, 9, false, 200, 7
+

@@ -42,6 +42,7 @@ void Mando::setDefaultValues() {
     honorLevel = 100;
     skillLevel = 5;
     bool alive = true;
+    int babyYoda = 3;
 }
 
 string Mando::getName() {
@@ -84,6 +85,14 @@ int Mando::getSkillLevel()
 
 void Mando::setSkillLevel(int skill) {
     skillLevel = skill;
+}
+
+int Mando::getBabyYoda() {
+    return babyYoda;
+}
+
+void Mando::setBabyYoda(int prob) {
+    babyYoda = prob;
 }
 
 bool Mando::getAlive() {
@@ -191,7 +200,7 @@ bool Mando::addWeapon(Weapon new_weapon)
 4. If second step is not true, returns -2
 */
 
-int Mando::fightNPC(NPC npc1, Weapon mandoWeapon, int groguPowers) {
+int Mando::fightNPC(NPC npc1, Weapon mandoWeapon) {
     // initialize variables
     int mando_pt_counter = 0;
     int npc_pt_counter = 0;
@@ -264,8 +273,8 @@ int Mando::fightNPC(NPC npc1, Weapon mandoWeapon, int groguPowers) {
     {
         // maybe need: srand(time(null));
         int randIsBrokenBruh = rand();
-        int save = (((double)rand() / RAND_MAX) * 10) + 1;
-        if (save <= .3) {
+        int save = (((double)rand() / RAND_MAX) * 10);
+        if (save <= babyYoda) {
             cout<<"Baby Yoda has saved you and helps you to defeat "<<npc1.getName()<<"."<<endl;
             return 1;
         }

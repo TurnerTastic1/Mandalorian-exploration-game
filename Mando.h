@@ -25,6 +25,7 @@ class Mando {
         vector <Weapon> weapons;
         int honorLevel;
         int skillLevel;
+        int babyYoda;
         bool alive;
         void setDefaultValues();
         // NPC newNPC = NPC();
@@ -41,6 +42,8 @@ class Mando {
         void setCredits(int credits_);
         int getHonorLevel();
         int getSkillLevel();
+        int getBabyYoda();
+        void setBabyYoda(int prob);
         void setSkillLevel(int skill);
         bool getAlive();
         void setAlive(bool boo);
@@ -52,7 +55,7 @@ class Mando {
 
         vector<Weapon> sortWeapons(); // sort weapons by rarity best to least
         bool addWeapon(Weapon); // call sort function every time add weapon is called!!!
-        int fightNPC(NPC npc1, Weapon mandoWeapon, int groguPowers); // cannot pass objects like that you need a pass by reference 
+        int fightNPC(NPC npc1, Weapon mandoWeapon); // cannot pass objects like that you need a pass by reference 
         void displayGalaxyMap();
 
 };

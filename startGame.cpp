@@ -181,6 +181,7 @@ void mandoStats(Mando myMando) {
 
 // Allows us to condense code and for the player to move freely around a region map
 bool exploreRegion(Map myMap, Mando myMando) {
+    unsigned int microsecond = 1000000;
     char move;
     cout<<"Map Legend: x = 'YOU', A = 'NPC'"<<endl;
     while(true) {
@@ -188,7 +189,8 @@ bool exploreRegion(Map myMap, Mando myMando) {
         if (myMap.isNPCLocation()) {
             cout<<"You approach a stranger..."<<endl<<"Here are your current stats..."<<endl;
             mandoStats(myMando);
-            cout<<"Do you want to interact?(y/n)"<<endl;
+
+            cout<<endl<<"Do you want to interact?(y/n)"<<endl;
             char choice;
             cin >> choice;
             if (choice == 'y') {
@@ -197,7 +199,10 @@ bool exploreRegion(Map myMap, Mando myMando) {
         }
         cout<<"Enter a move(w, a, s, d), or 'x' to quit."<<endl;
         cin >> move;
-        if (move == 'x') {
+        if ((move != 'x') || (move != 'w') || (move != 'a') || (move != 's') || (move != 'd')) {
+            cout<<"Not a valid move!"<<endl;
+            usleep(2*microsecond);
+        } else if (move == 'x') {
             break;
         } else {
             myMap.executeMove(move); // if ((move == "w") || (move == "a") || (move == "s") || (move == "d")) (if needed)
@@ -228,7 +233,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
 
     // Sources for description should be wookiepedia and in the below order
 
-    string description = "\n Region: Outer Rim Territories \n Sector: Arkanis \n Class: Terrestrial \n Atmosphere: Breathable \n Affiliation: Hutt Crime Family \n Species: Jawa, Tusken Raider, Human, Hutt, Rodian...";
+    string description = "\nRegion: Outer Rim Territories \nSector: Arkanis \nClass: Terrestrial \nAtmosphere: Breathable \nAffiliation: Hutt Crime Family \nSpecies: Jawa, Tusken Raider, Human, Hutt, Rodian...";
     if(tatooine.planetTravel(myMando, description)) {
         cout<<"Welcome to Tatooine!"<<endl;
         cout<<"You currently have "<<myMando.getCredits()<<" credits remaining."<<endl;
@@ -294,12 +299,11 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
                 
 
                 // story
-                cout<<"Welcome to Region 1!"<<endl;
                 cout<<"You have landed in a hangar owned by a ship engineer named Peli Motto."<<endl;
                 usleep(2*microsecond);
                 cout<<"Your ship has been dealt its usual wear and tear, reparing it would be a good idea."<<endl;
                 usleep(2*microsecond);
-                cout<<"Peli Motto offers to repair the Razor Crest for 25 credits."<<"It is a fair deal, so you accept."<<endl;
+                cout<<"Peli Motto offers to repair the Razor Crest for 25 credits. "<<"It is a fair deal, so you accept."<<endl;
                 usleep(2*microsecond);
                 myMando.setCredits(myMando.getCredits() - 25);
                 
@@ -327,7 +331,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
 
                         // fight sequence, use for most fights but alter slightly if needed
                         Weapon mandoWeap = chooseWeapon(myMando);
-                        int fightRV = myMando.fightNPC(dude, mandoWeap, 5);
+                        int fightRV = myMando.fightNPC(dude, mandoWeap);
                         if (fightRV == -3) {
                             ultraBreak = true;
                             break;
@@ -410,7 +414,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
                         
                         // fight sequence, use for most fights but alter slightly if needed
                         Weapon mandoWeap = chooseWeapon(myMando);
-                        int fightRV = myMando.fightNPC(dude, mandoWeap, 5);
+                        int fightRV = myMando.fightNPC(dude, mandoWeap);
                         if (fightRV == -3) {
                             ultraBreak = true;
                             break;
@@ -430,7 +434,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
                     cout<<"As you return, the towns people greet you."<<endl;
                     usleep(2*microsecond);
                     cout<<"'Thank you so much for rescuing our town leaders. Here are your 50 credits.' says Soti Mel"<<endl;
-                    mymando.setCredits(myMando.getCredits()+50);
+                    myMando.setCredits(myMando.getCredits()+50);
                     usleep(2*microsecond);
                     cout<<"Without saying much more, you return to your ship and continue on your journey."<<endl;
                     usleep(2*microsecond);
@@ -594,7 +598,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
                     if (interact) {
                         // fight sequence, use for most fights but alter slightly if needed
                         Weapon mandoWeap = chooseWeapon(myMando);
-                        int fightRV = myMando.fightNPC(dude, mandoWeap, 5);
+                        int fightRV = myMando.fightNPC(dude, mandoWeap);
                         if (fightRV == -3) {
                             ultraBreak = true;
                             break;
@@ -666,7 +670,7 @@ Mando tython(Mando myMando, vector<NPC> vec) {
 
     // Sources for description should be wookiepedia and in the below order
 
-    string description = "\n Region: Deep Core \n Sector: Unknown \n Class: Terrestrial \n Atmosphere: Breathable \n Affiliation: Jedi Order \n Species: Human";
+    string description = "\nRegion: Deep Core \nSector: Unknown \nClass: Terrestrial \nAtmosphere: Breathable \nAffiliation: Jedi Order \nSpecies: Human";
     if(tython.planetTravel(myMando, description)) {
         cout<<"Welcome to Tython!"<<endl;
         cout<<"You currently have "<<myMando.getCredits()<<" credits remaining."<<endl;
@@ -733,11 +737,10 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
-                cout<<"Welcome to Region 1!"<<endl;
                 cout<<"You have landed in a grassy clearing."<<endl;
                 usleep(1*microsecond);
                 cout<<"You can explore the map to find Shaon Madar."<<endl;
-                usleep(1*microsecond);
+                usleep(3*microsecond);
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region1, myMando);
 
@@ -799,8 +802,6 @@ Mando tython(Mando myMando, vector<NPC> vec) {
             
                 // For polish: rename regions etc.
 
-                cout<<"Welcome to Region 2!"<<endl;
-                usleep(1*microsecond);
 
                 // stuff for each region here
 
@@ -836,18 +837,20 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                     // spawn NPC here and complete challenge *gulp*
                     // fight sequence, use for most fights but alter slightly if needed
                     Weapon mandoWeap = chooseWeapon(myMando);
-                    int fightRV = myMando.fightNPC(dude, mandoWeap, 5);
+                    int fightRV = myMando.fightNPC(dude, mandoWeap);
                     if (fightRV == -3) {
                         ultraBreak = true;
                         break;
                     } else if (fightRV == 1) {
                         cout<<"You successfully defeated the "<<dude.getName()<<endl;
+                        usleep(2*microsecond);
                         cout<<"You have gained a new weapon called whistling birds"<<endl;
-                        Weapon whistlingBirds = Weapon("Whistling Birds", "short-range", 2, 7);
+                        Weapon whistlingBirds = Weapon("Whistling Birds", "short-range", 5, 6);
                         whistlingBirds.printWeapon();
                         myMando.addWeapon(whistlingBirds);
                         usleep(3*microsecond);
                         cout<<"The whistling birds weapon was successfully added to your arsenal! Check your weapons in the stat menu!"<<endl;
+                        usleep(2*microsecond);
                         break;
                     }
                 }
@@ -857,13 +860,6 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 break;
             }
             case '3': {
-                
-                // For polish: rename regions etc.
-
-                cout<<"Welcome to Region 3!"<<endl;
-                usleep(1*microsecond);
-
-                // stuff for each region here
 
                 // Spawns a random NPC
                 //cout<<xCoord<<" "<<yCoord<<endl; - testing for randomness
@@ -880,6 +876,7 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                     }
                 }
                 cout<<"You have landed at the base of the mountain.\nExplore the region"<<endl;
+                usleep(2*microsecond);
 
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region3, myMando);
@@ -890,7 +887,7 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                     cout<<"You quickly dodge the plasma hurling towards you and see a Stormtrooper trying to attack you."<<endl;
                     usleep(3*microsecond);
                     Weapon mandoWeap = chooseWeapon(myMando);
-                    int fightRV = myMando.fightNPC(dude, mandoWeap, 5);
+                    int fightRV = myMando.fightNPC(dude, mandoWeap);
                     if (fightRV == -3) {
                         ultraBreak = true;
                         break;
@@ -929,13 +926,6 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 break;
             }
             case '4': {
-                
-                // For polish: rename regions etc.
-
-                cout<<"Welcome to Region 4!"<<endl;
-                usleep(1*microsecond);
-
-                // stuff for each region here
 
                 // Spawns a random NPC
                 //cout<<xCoord<<" "<<yCoord<<endl; - testing for randomness
@@ -952,14 +942,14 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                     }
                 }
 
-                // allow player to explore the region and if so, interact w the npc
-                bool interact = exploreRegion(region4, myMando);
-                cout<<"You have discovered the old Jedi temple."<<endl;
-                usleep(2*microsecond);
-                cout<<"Explore the temple."<<endl;
-                usleep(2*microsecond);
-                // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
-                if (interact) {
+                // // allow player to explore the region and if so, interact w the npc
+                // bool interact = exploreRegion(region4, myMando);
+                // cout<<"You have discovered the old Jedi temple."<<endl;
+                // usleep(2*microsecond);
+                // cout<<"Explore the temple."<<endl;
+                // usleep(2*microsecond);
+                // // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
+                if (true) {
                     cout<<"You have discovered a writing on a wall that says:"<<endl;
                     usleep(2*microsecond);
                     cout<<"'If you want to train in the Jedi way,'"<<endl;
@@ -980,7 +970,7 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         cout<<"Give the answer..."<<endl;
                         cin >> quest1;
                         if (quest1 != 'c') {
-                            cout<<"Traitor, leave this planet at once! \n The temple will not strengthen your youngling."<<endl;
+                            cout<<"Traitor, leave this planet at once! \nThe temple will not strengthen your youngling."<<endl;
                             break;
                         }
 
@@ -989,34 +979,34 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         cout<<"Give the answer..."<<endl;
                         cin >> quest2;
                         if (quest2 != 'a') {
-                            cout<<"Traitor, leave this planet at once! \n The temple will not strengthen your youngling."<<endl;
+                            cout<<"Traitor, leave this planet at once! \nThe temple will not strengthen your youngling."<<endl;
                             break;
                         }
 
-                        cout<<"Question 3: Which Jedi ordered his sentences object-subject-verb? \na.) Anakin Skywalker \nb.) Yoda \nc.) Obi-Wan Kenobi \nd.) Qui-Gon Jin"<<endl;
+                        cout<<"Question 3: Which Jedi has a weird way of speaking? \na.) Anakin Skywalker \nb.) Yoda \nc.) Obi-Wan Kenobi \nd.) Qui-Gon Jin"<<endl;
                         usleep(1*microsecond);
                         cout<<"Give the answer..."<<endl;
                         cin >> quest3;
                         if (quest3 != 'b') {
-                            cout<<"Traitor, leave this planet at once! \n The temple will not strengthen your youngling."<<endl;
+                            cout<<"Traitor, leave this planet at once! \nThe temple will not strengthen your youngling."<<endl;
                             break;
                         }
-                        cout<<"Question 4: Who is Luke Skywalkers' Father? \na.) Qui-Gon Jin \nb.) Mace Windu \nc.) Emperor Palpatine \nd.) Darth Vadar"<<endl;
+                        cout<<"Question 4: Who is Luke Skywalker's Father? \na.) Qui-Gon Jin \nb.) Mace Windu \nc.) Emperor Palpatine \nd.) Darth Vadar"<<endl;
                         usleep(1*microsecond);
                         cout<<"Give the answer..."<<endl;
                         cin >> quest4;
                         if (quest4 != 'd') {
-                            cout<<"Traitor, leave this planet at once! \n The temple will not strengthen your youngling."<<endl;
+                            cout<<"Traitor, leave this planet at once! \nThe temple will not strengthen your youngling."<<endl;
                             break;
                         }
                         cout<<"You watch in wonder as a beam of light surrounds Grogu"<<endl;
                         cout<<"~*~~* <´(• ﻌ •)`> *~~*~" <<endl;
                         cout<<""<<endl;
                         cout<<""<<endl;
-                        cout<<"Grogu's powers have increased x2."<<endl;
+                        myMando.setBabyYoda(5);
+                        cout<<"Grogu's powers have increased x2 and he now has a higher chance of saving you."<<endl;
                         usleep(1*microsecond);
-                        cout<<"You leave the temple and may return to your ship"<<endl;
-
+                        cout<<"You leave the temple and return to your ship"<<endl;
                     }
                     // spawn NPC here and complete challenge *gulp*
                 }
@@ -1046,7 +1036,7 @@ Mando trask(Mando myMando, vector<NPC> vec) {
 
     // Sources for description should be wookiepedia and in the below order
 
-    string description = "\n Region: Outer Rim Territories \n Sector: Arkanis \n Class: Ocean \n Atmosphere: Breathable \n Affiliation: Unknown \n Species: Human, Mon Calamari, Quarren, Unidentified Anthropoid";
+    string description = "\nRegion: Outer Rim Territories \nSector: Arkanis \nClass: Ocean \nAtmosphere: Breathable \nAffiliation: Unknown \nSpecies: Human, Mon Calamari, Quarren, Unidentified Anthropoid";
     if(trask.planetTravel(myMando, description)) {
         cout<<"Welcome to Trask!"<<endl;
         cout<<"You currently have "<<myMando.getCredits()<<" credits remaining."<<endl;
@@ -1142,10 +1132,6 @@ Mando trask(Mando myMando, vector<NPC> vec) {
             }
             case '2': {
                 
-                // For polish: rename regions etc.
-
-                cout<<"Welcome to Region 2!"<<endl;
-                usleep(1*microsecond);
 
                 // stuff for each region here
 
@@ -1176,7 +1162,7 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                     cout<<"You have to fight!"<<endl;
                     usleep(3*microsecond);
                     Weapon mandoWeap = chooseWeapon(myMando);
-                    int fightRV = myMando.fightNPC(dude, mandoWeap, 10);
+                    int fightRV = myMando.fightNPC(dude, mandoWeap);
                     if (fightRV == -3) {
                         ultraBreak = true;
                         break;
@@ -1193,12 +1179,6 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                 break;
             }
             case '3': {
-                
-                // For polish: rename regions etc.
-
-                cout<<"Welcome to Region 3!"<<endl;
-                usleep(1*microsecond);
-
                 // stuff for each region here
 
                 // Spawns a random NPC
@@ -1237,7 +1217,7 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                     cout<<"You spot Wuglugh and begin shooting at him from behind a barrel."<<endl;
                     usleep(2*microsecond);
                     Weapon mandoWeap = chooseWeapon(myMando);
-                    int fightRV = myMando.fightNPC(dude, mandoWeap, 10);
+                    int fightRV = myMando.fightNPC(dude, mandoWeap);
                     if (fightRV == -3) {
                         ultraBreak = true;
                         break;
@@ -1265,11 +1245,6 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                 break;
             }
             case '4': {
-                
-                // For polish: rename regions etc.
-
-                cout<<"Welcome to Region 4!"<<endl;
-                usleep(1*microsecond);
 
                 // stuff for each region here
 
@@ -1301,7 +1276,7 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                     cout<<"'I can help you. I have enough money to craft you a Beskar spear, but it will cost you a lot.'"<<endl;
                     cout<<"'It will cost you 50 credits.'"<<endl;
                     usleep(4*microsecond);
-                    cout<<"Do you pay the 50 credits? You currently have "<< myMando.getCredits()<<"credits."<<endl;
+                    cout<<"Do you pay the 50 credits? You currently have "<< myMando.getCredits()<<" credits."<<endl;
                     cout<<"Enter your choice (y/n):"<<endl;
                     cin >>choice1;
                     if(choice1 == 'y')
@@ -1315,7 +1290,7 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                             cout<<"===============>>>>>" <<endl;
                             usleep(3*microsecond);
                             cout<<"Pana Shulo: 'Your weapon is complete. Thank you for your business'"<<endl;
-                            Weapon spear = Weapon("Beskar spear", "short-range", 4, 4);
+                            Weapon spear = Weapon("Beskar spear", "short-range", 7, 8);
                             myMando.addWeapon(spear);
                             cout<<"The Beskar spear was successfully added to your arsenal! Check your weapons in the stat menu!"<<endl;
                             break;
@@ -1364,7 +1339,7 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
 
     // Sources for description should be wookiepedia and in the below order
 
-    string description = "\n Region: Outer Rim Territories \n Sector: Nevarro's sector \n Class: Terrestrial \n Atmosphere: Breathable \n Power: Galactic Empire \n Species: Humans, Jawas, Rodians, Trandoshans, Twi'leks, Zabraks...";
+    string description = "\nRegion: Outer Rim Territories \nSector: Nevarro's sector \nClass: Terrestrial \nAtmosphere: Breathable \nPower: Galactic Empire \nSpecies: Humans, Jawas, Rodians, Trandoshans, Twi'leks, Zabraks...";
     if(nevarro.planetTravel(myMando, description)) {
         cout<<"Welcome to Nevarro!"<<endl;
         cout<<"You currently have "<<myMando.getCredits()<<" credits remaining."<<endl;
@@ -1382,7 +1357,6 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
     Map region1 = Map();
     Map region2 = Map();
     Map region3 = Map();
-    Map region4 = Map();
     char regionChoice;
 
     // NPC's are taken in and configured to their regions
@@ -1400,8 +1374,8 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
             return myMando;
         }
         bool ultraBreak = false;
-        nevarro.displayPlanetMap("tatooineRegion.txt");
-        cout<<"What region would you like to visit?('1', '2', '3', '4', '5' to view stats, or '0' to leave Tattoine)."<<endl;
+        nevarro.displayPlanetMap("nevarroRegion.txt");
+        cout<<"What region would you like to visit?('1', '2', '3', '4' to view stats, or '0' to leave Nevarro)"<<endl;
         cin >> regionChoice;
 
         // Random npc Coords
@@ -1411,16 +1385,9 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
 
         switch(regionChoice) {
             case '0':
-                cout<<"Now leaving Tattooine!"<<endl;
+                cout<<"Now leaving Nevarro!"<<endl;
                 return myMando;
             case '1': {
-                
-                // For polish: rename regions etc. if needed
-
-                cout<<"Welcome to Region 1!"<<endl;
-                usleep(1*microsecond);
-
-                // stuff for each region here
 
                 // Spawns a random NPC
 
@@ -1436,14 +1403,24 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
                     }
                 }
 
-                // allow player to explore the region and if so, interact w the npc
-                bool interact = exploreRegion(region1, myMando);
+                 // For polish: rename regions etc. if needed
 
-                // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
-                if (interact) {
-                    cout<<"Have an interaction ... "<<endl;
-                    // spawn NPC here and complete challenge *gulp*
-                }
+                cout<<"You have landed near the Mandalorian settlement."<<endl;
+                usleep(2*microsecond);
+                // mando covert not cohert ------------
+                cout<<"You explore and find the Mandalorian covert. "<<dude.getName()<<"sees you and approaches"<<endl;
+                usleep(2*microsecond);
+
+                cout<<"'Mando! You're back. I'm glad to see your safe.' says "<<dude.getName()<<endl;
+                usleep(2*microsecond);
+                cout<<"I know why you came back to Navarro. You're searching for Moff Gideon."<<endl;
+                usleep(2*microsecond);
+                cout<<"That's not going to be an easy task. He is currently hiding out somewhere in the southern part of the planet."<<endl;
+                usleep(2*microsecond);
+                cout<<"I have heard some rumors coming from region 2 of the planet about his whearabouts, you might want to check there."<<endl;
+                usleep(2*microsecond);
+                cout<<"In order to defeat him, you will need to use your most powerful weapons. Good luck Mando."<<endl;
+                usleep(2*microsecond);
 
                 // Before the code breaks the player has some time to read what happened
                 usleep(2*microsecond);
@@ -1452,9 +1429,6 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
             case '2': {
                 
                 // For polish: rename regions etc.
-
-                cout<<"Welcome to Region 2!"<<endl;
-                usleep(1*microsecond);
 
                 // stuff for each region here
 
@@ -1473,27 +1447,36 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
                     }
                 }
 
+                cout<<"You have landed in region 2 but do not see anyone so decide to walk around."<<endl;
+                usleep(2*microsecond);
+
                 // allow player to explore the region and if so, interact w the npc
                 bool interact = exploreRegion(region2, myMando);
 
                 // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
                 if (interact) {
-                    cout<<"Have an interaction ... "<<endl;
+                    cout<<"The stranger appears to be an old clone..."<<endl;
+                    usleep(2*microsecond);
+                    cout<<"Hey, Tinny. Yeah, you. What are you doing way out here?"<<endl;
+                    usleep(2*microsecond);
+                    cout<<"You dont respond. 'Ahhh, you're looking for Moff Gideon?'"<<endl;
+                    usleep(2*microsecond);
+                    cout<<"'That's not going to be an easy battle, but it's important for you to win.'"<<endl;
+                    usleep(2*microsecond);
+                    cout<<"'With a weapon like the Dark Sabar in Moff Gideon's hand, civilizations will be conquered and entire planets will descend into chaos.'"<<endl;
+                    usleep(2*microsecond);
+                    cout<<"He is in region 3, south of here."<<endl;
+                    usleep(2*microsecond);
+                    cout<<"You are now ready to fight Moff Gideon."<<endl;
                     // spawn NPC here and complete challenge *gulp*
+                } else {
+                    cout<<"You wisely choose to leave the area"<<endl;
                 }
                 // Before the code breaks the player has some time to read what happened
                 usleep(2*microsecond);
                 break;
             }
             case '3': {
-                
-                // For polish: rename regions etc.
-
-                cout<<"Welcome to Region 3!"<<endl;
-                usleep(1*microsecond);
-
-                // stuff for each region here
-
                 // Spawns a random NPC
                 //cout<<xCoord<<" "<<yCoord<<endl; - testing for randomness
 
@@ -1508,56 +1491,47 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+                Weapon darkSaber = Weapon("Dark Saber", "Light Saber Variant", 10, 9);
+                dude.setWeapon(darkSaber);
 
-                // allow player to explore the region and if so, interact w the npc
-                bool interact = exploreRegion(region3, myMando);
+                cout<<"You land in region 3 of Nevarro."<<endl;
+                usleep(2*microsecond);
+                cout<<"You leave your ship, and begin the search for Moff Gideon."<<endl;
+                usleep(2*microsecond);
+                cout<<"Suddenly, a strange ignition noise sounds and Moff Gideon himself steps in front of you."<<endl;
+                usleep(2*microsecond);
+                cout<<"'So, you are the Mandalorian. You're work has not gone unnoticed.' says Moff Gideon"<<endl;
+                usleep(2*microsecond);
+                cout<<"You stare into the Moff's eyes, waiting for his move. Not wanting to waste time with small talk, you refuse to talk."<<endl;
+                usleep(2*microsecond);
 
-                // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
-                if (interact) {
-                    cout<<"Have an interaction ... "<<endl;
-                    // spawn NPC here and complete challenge *gulp*
+                // fight sequence, use for most fights but alter slightly if needed
+                Weapon mandoWeap = chooseWeapon(myMando);
+                int fightRV = myMando.fightNPC(dude, mandoWeap);
+                if (fightRV == -3) {
+                    ultraBreak = true;
+                    cout<<"Moff Gideon has defeated you..."<<endl;
+                    break;
+                } else if (fightRV == 1) {
+                    cout<<"Congratulations!!"<<endl;
+
+                    myMando.setCredits(myMando.getCredits() + dude.getCreditReward());
+                    cout<<"For defeating Moff Gideon, you are rewarded "<<dude.getCreditReward()<<" credits."<<endl;
+                    usleep(3*microsecond);
+                    myMando.addWeapon(darkSaber);
+                    cout<<"You also earn the Dark Saber by law as you defeated it previous owner in combat."<<endl;
+                    usleep(3*microsecond);
+                    cout<<"You have freed the Galaxy and are now free to meet new character or explore the maps."<<endl;
+                    usleep(4*microsecond);
+                } else {
+                    cout<<"Moff Gideon has defeated you..."<<endl;
                 }
+                
                 // Before the code breaks the player has some time to read what happened
                 usleep(2*microsecond);
                 break;
             }
             case '4': {
-                
-                // For polish: rename regions etc.
-
-                cout<<"Welcome to Region 4!"<<endl;
-                usleep(1*microsecond);
-
-                // stuff for each region here
-
-                // Spawns a random NPC
-                //cout<<xCoord<<" "<<yCoord<<endl; - testing for randomness
-
-                region4.spawnNPC(xCoord, yCoord);
-                region4.setNPC(true);
-
-                // create NPC object for interaction based on NPC vector
-                NPC dude = NPC();
-                for (int i = 0; i < vec.size(); i++) {
-                    if (vec[i].getPlanetRegion() == " region 4") {
-                        dude = vec[i];
-                        break;
-                    }
-                }
-
-                // allow player to explore the region and if so, interact w the npc
-                bool interact = exploreRegion(region4, myMando);
-
-                // if the player chooses to interact w/ NPC they will be taken back to this point and fed cout statements
-                if (interact) {
-                    cout<<"Have an interaction ... "<<endl;
-                    // spawn NPC here and complete challenge *gulp*
-                }
-                // Before the code breaks the player has some time to read what happened
-                usleep(2*microsecond);
-                break;
-            }
-            case '5': {
                 mandoStats(myMando);
                 break;
             }
@@ -1679,7 +1653,7 @@ void startGame() {
     // commented out to make testing easier
 
     // Prints the intro ascii graphics!
-    //introGraphic();
+    introGraphic();
 
     cout<<"Your goal..."<<endl;
     usleep(2*microsecond);
@@ -1754,38 +1728,28 @@ void startGame() {
         switch (planetCode) {
             case 145: {
                 myMando = tatooine(myMando, tatooineNPC);
-
-                cout<<"Welcome back to space!"<<endl;
-                cout<<"Loading Galaxy Map..."<<endl;
-                usleep(1*microsecond);
+                usleep(2*microsecond);
                 break;
             }
             case 346: {
                 myMando = tython(myMando, tythonNPC);
-
-                cout<<"Welcome back to space!"<<endl;
-                cout<<"Loading Galaxy Map..."<<endl;
-                usleep(1*microsecond);
+                usleep(2*microsecond);
                 break;
             }
             case 457: {
                 myMando = trask(myMando, traskNPC);
-
-                cout<<"Welcome back to space!"<<endl;
-                cout<<"Loading Galaxy Map..."<<endl;
-                usleep(1*microsecond);
+                usleep(2*microsecond);
                 break;
             }
             case 789: {
                 myMando = nevarro(myMando, nevarroNPC);
-
-                cout<<"Welcome back to space!"<<endl;
-                cout<<"Loading Galaxy Map..."<<endl;
-                usleep(1*microsecond);
+                usleep(2*microsecond);
                 break;
             }
             case 0: {
-                cout<<"Quitting the game"<<endl;
+                cout<<"Thank you for playing the 'Star Wars Mandalorian Exploration' game!"<<endl;
+                usleep(2*microsecond);
+                cout<<"You did a great job!"<<endl;
                 return;
             }
             case 1: {
@@ -1796,6 +1760,16 @@ void startGame() {
                 cout<<"Not a valid input!"<<endl;
                 break;  
         }
+        if(myMando.getAlive() == false) {
+            cout<<"You have chosen to face the perils of the galaxy, but have sadly perished."<<endl;
+            usleep(2*microsecond);
+            cout<<"You were so close! Try again but make sure to explore some easier planets like Tatooine and Tython in order to get better weaponry!"<<endl;
+            usleep(4*microsecond);
+                
+            return;
+        }
+        cout<<"Welcome back to space!"<<endl;
+        cout<<"Loading Galaxy Map..."<<endl;
         myMando.displayGalaxyMap();
         cout<<"Select a planet by typing in it's planet code, check your stats(1), or quit the game(0)."<<endl;
     }

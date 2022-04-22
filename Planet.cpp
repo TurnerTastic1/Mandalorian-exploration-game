@@ -2,8 +2,11 @@
 #include <iostream>
 #include <fstream>
 
+// Discussed in StartGame.cpp
+#include<unistd.h>
+
 #include "Mando.h"
-//#include "Weapon.h"
+#include "Weapon.h"
 #include "Planet.h"
 #include "map.h"
 
@@ -48,12 +51,14 @@ int Planet::getTravelCost()
 
 
 bool Planet::planetTravel(Mando &myMando, string description) {
+    unsigned int microsecond = 1000000;
     char choice;
     cout<<"Greetings "<<myMando.getName()<<"."<<endl;
     // Brief description about the planet
-    cout<<"Planet description: "<<description<<endl;
+    cout<<"Planet description: "<<description<<endl<<endl;
+    usleep(2*microsecond);
     cout<<"You currently have "<<myMando.getCredits()<<" credits. To travel to "<<name<<" it will cost "<<travelCost<<" credits."<<endl;
-
+    usleep(2*microsecond);
     cout<<"Do you wish to travel to "<<name<<"? (y/n)"<<endl;
     cin >> choice;
     if ((choice == 'y') && (myMando.getCredits() >= travelCost)) {
