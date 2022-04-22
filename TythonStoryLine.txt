@@ -1,0 +1,456 @@
+//////////////////////////////////// TYTHON ///////////////////////////////////////////////////////////////////////////
+~yes~
+Ok. 
+*display galaxy map*
+Which planet would you like to go next
+Select a planet (by typing in it's planet code), check your stats(1), or quit the game(0).
+
+You have chosen Tython!
+~planet Travel function~
+Darro Anen recommended going region 1 to find Shoan Madar. 
+Would you like to travel to region 1 (press y/n)?
+*Display region 1* 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Region 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You have landed in a grassy clearing. 
+You can explore the map to find a Shoan Madar.
+
+~explore the map~
+
+You have encountered a local. 
+Would you like to engage with the local (y/n)?
+
+~yes~
+
+Character profile:
+Name: Shoan Madar
+Species: human
+Planet: Tython
+Location: Region 1
+Friendly: true
+
+Shoan Madar: Hello. My name is Shoan Madar. You must be a Mandalorian; I can tell from your shiny armor. 
+What are you doing on Tython?
+Darro Anen sent you? It's been a while since I've seen him. I'm glad to know he's doing well
+
+Well, he's right about one thing. I have information about the Jedi Order, but I need your help first. 
+A storm blew over the fence for my livestock. Will you help me repair it?
+
+Do you accept the quest? It will cost you ___ credits for manual labor.
+
+~yes~
+*subtract coins*
+*wait some time*
+You have repaired the fence.
+
+Shoan Madar: Thank you for helping me. It would have taken me days to fix it by myself.
+Shoan Madar: Now for the information you are looking for. 
+Tython used to be home to the Jedi Order. The Jedi were an order of warrior monks who kept peace in the universe.
+They were so peaceful that they were able to connect the life force of the universe and use it to gain extrodinary powers and strength.
+One of the temples on Tython was used for training Jedi padawons. If you go to Region 3, you will find this temple. 
+If you bring your youngling there, he may strengthen his powers. 
+If you want to learn more about your Mandalorian friends. I would suggest going to region 1 of the planet Trask . The last visitor I met mentioned a gang of Mandalorians stirring up trouble there. 
+That is all I have. Good luck. 
+
+Would you like to explore a different region of Tatooine?
+~yes~
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 2!
+You have landed at the edge of a forest.
+Explore the region.
+
+*explore region*
+
+You have been ambushed by a group of scavengers.
+They won't let you pass through the region unless you defeat all of them.  
+The leader starts attacking you:
+*power up fightNPC*
+
+1.) if Mando wins:
+You have defeated the first challenger.
+Now you have another scavenger rushes at you.
+*power up fightNPC*
+
+1.) if mando looses:
+chance to revive using baby yoda
+otherwise game over
+
+*2. power up fightNPC*
+
+2.) If Mando wins:
+You have defeated the second challenger
+The last, strongest scavenger attacks.
+
+2.) if mando looses
+chance to revive using baby yoda
+otherwise game over
+
+3.) *power up fight NPC*
+
+3.) if Mando wins:
+You have defeated all of the scavengers. 
+You have gained a new weapon.
+
+*display weapon*
+Weapon:
+name: whistling bird
+type: short range
+rarity: 4
+damage: 7
+
+Would you like to explore a different region of Tatooine?
+~yes~
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 3~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 3!
+You have landed at the base of the mountain.
+Explore the region. 
+
+You have been ambushed by a Stormtrooper. 
+Entering fight scene.
+
+fightNPC()
+
+if Mando wins
+gains either flamethrower or jetpack depending on which user didn't have
+
+if mando looses
+chance for baby yoda to revive
+looses game?
+
+Would you like to explore a different region of Tatooine?
+~yes~
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 4!
+You have discovered the old Jedi temple.
+Explore the temple. 
+
+You discover a writing on a wall that says:
+
+If you want to train in the Jedi way,
+You have to do what I say,
+Answer four questions you must, 
+In order to gain the temple's trust,
+There will be no gain,
+if you answer in vain.
+
+Would you like to begin Grogu's training(y/n)?
+
+~yes~
+Question 1: Which Jedi had a purple lightsaber?
+a.) Yoda
+b.) Ahsoka Tano
+c.) Mace Windu ***
+c.) Obi-Wan Kenobi 
+
+Question 2: Who were the Jedi's sworn enemies
+a.) The Sith ***
+b.) The Wookies
+c.) The Mandalorian
+d.) The Gungans
+
+Question 3: Which Jedi ordered his sentences object-subject-verb?
+a.) Anakin Skywalker
+b.) Yoda ***
+c.) Obi-Wan Kenobi
+d.) Qui-Gon Jin
+
+Question 4: Who is Luke's Father?
+a.) Qui-Gon Jin
+b.) Mace Windu
+c.) Emperor Palpatine
+d.) Darth Vadar ***
+
+if they get all 4 questions right, grogu increases his power level
+
+end of region 4
+
+Would you like to explore a different region of Tatooine?
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~yes~
+...
+~no~
+Would you like to travel to another planet?
+~yes~
+*display galaxy map*
+Where would you like to go next?
+Select a planet by typing in it's planet code, check your stats(1), or quit the game(0).
+
+////////////////////////////// Trask ///////////////////////////////////////////////////////////////
+~yes~
+*display galaxy map*
+Which planet would you like to go next
+Select a planet (by typing in it's planet code), check your stats(1), or quit the game(0).
+
+You have chosen Trask!
+~planet Travel function~
+Shoan Madar recommended going region 1 to find Shoan Madar. 
+Would you like to travel to region 1 (press y/n)?
+*Display region 1* 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Region 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You have landed on a dock next to a vast ocean. 
+You can explore the map to find townspeople or Mandalorians.
+
+~explore the map~
+
+You have encountered a local. 
+Would you like to engage with the local (y/n)?
+
+~yes~
+
+Character profile:
+Name: Mitikk
+Species: quarren
+Planet: Trask
+Location: Region 1
+Friendly: true
+
+Mitikk: Hello, Mandalorian. What do you want? We don't need anymore of your kind stirring up trouble around here y'know.
+Where are the other Mandalorian? They've been sighted in region two. Follow me.
+
+Do you follow Mitikk to region 2 (y/n)?
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 2!
+You've lost Mitikk somehow. 
+Explore the region to find him or the other Mandalorian.
+
+*explore region*
+
+It's a trap! You've been ambushed by a quarren sent by Mitikk.
+*fightNPC*
+
+1.) if Mando wins:
+You have defeated the first challenger. 
+
+1.) if mando looses:
+chance to revive using baby yoda
+otherwise game over
+
+A figure shouts to you. 
+Hello, there Mandalorian. I'm glad to see that you were able to defeat that spineless quarren.
+It'd be a shame if you weren't worthy of your Beskar.
+
+Do you want to interact with the figure (y/n)?
+
+~yes~
+Character profile:
+Name: Bo-Katan Kryze
+Species: mandalorian
+Planet: Trask
+Location: Region 2
+Friendly: true
+
+I need your help. My team is being attacked in Region 3. Will you help?
+I can tell you where Moff Gideon is.
+
+Do you follow Bo-Katan (y/n)
+
+~if yes~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 3~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 3!
+You have entered an intense rooftop fight. 
+loading fightNPC()
+
+if Mando wins:
+Bo-Katan: Thanks for your help. Now for the information you are looking for. 
+Moff Gideon is currently hiding out on Navarro and is trying to destroy the Mandalorian clan there.
+He currently possesses the Dark Saber. You know the rules, if you want to be able to wield the Dark Saber, you must defeat him in battle.
+That not be an easy task. 
+You don't seem to have all of your weapons. I would go to the blacksmith, Pana Shulo, in Region 4.
+She will make you what you need.
+
+Do you go to region 4 (y/n)?
+~yes~ 
+go to region 4
+
+
+Would you like to explore a different region of Tatooine?
+
+~no~
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 4!
+Explore the region to find the blacksmith. 
+
+You have found the blacksmith, Pana Shulo. Would you like to engage with her (y/n)?
+if yes:
+
+Character profile:
+Name: Pana Shulo
+Species: quarren
+Planet: Trask
+Location: Region 4
+Friendly: true
+
+Pana Shulo: Hello Mandalorian. Bo-Katan told me you would come visit.
+I can help you. I have enough money to craft you a Beskar spear, but it will cost you a lot.
+It will cost you _____ credits.
+
+Do you pay the ____ credits (y/n)? You currently have ____ credits.
+~yes~
+the weapon has been added. 
+*display weapon*
+Weapon:
+name: Beskar spear
+type: short range
+rarity: 4
+damage: 4
+
+
+end of region 4
+
+Would you like to explore a different region of Tatooine?
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~yes~
+...
+~no~
+Would you like to travel to another planet?
+~yes~
+*display galaxy map*
+Where would you like to go next?
+Select a planet by typing in it's planet code, check your stats(1), or quit the game(0).
+
+////////////////////////////// Navarro ///////////////////////////////////////////////////////////////
+
+~yes~
+*display galaxy map*
+Which planet would you like to go next
+Select a planet (by typing in it's planet code), check your stats(1), or quit the game(0).
+
+You have chosen Trask!
+~planet Travel function~
+Which region would you like to visit (Region 1, Region 2, Region 3, or Region 4)? (enter 1,2,3,4)
+*Display region 1* 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Region 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You have landed near the Mandalorian settlement. 
+You can explore the map to find townspeople or Mandalorians.
+~explore the map~
+
+You have found the Mandalorian cohert. 
+Would you like to engage with the local (y/n)?
+
+~yes~
+
+Character profile:
+Name: Nenk Krag
+Species: mandalorian
+Planet: Navarro
+Location: Region 1
+Friendly: true
+
+Nenk: Mando! You're back. I'm glad to see your safe. Here, let me restore your health.
+*restore health (setHP)*
+I know why you came back to Navarro. You're searching for Moff Gideon in order to gain control of the Dark Saber.
+That's not going to be an easy task. He is currently located in region 3. 
+In order to defeat him, you will need to use your most powerful weapons. 
+Good luck. 
+
+Would you like to explore a different region of Navarro?
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 2!
+You don't see anyone. 
+Explore the region to find townspeople or Mandalorian
+
+*explore region*
+You have encountered an old clone. Would you like to interact with him(y/n)?
+
+~yes~
+Character profile:
+Name: Click
+Species: clone
+Planet: Trask
+Location: Region 2
+Friendly: true
+
+Click: Hey, Tinny. Yeah, you. What are you doing way out here? 
+Ahhh, you're looking for Moff Gideon? He's in Region 4. I would go there.
+That's not going to be an easy battle, but it's vitally important for the entire galaxy for you to win.
+With a weapon like the Dark Sabar in Moff Gideon's hand, civilizations will be conquered and entire planets will descend into chaos.
+You must stop him!
+
+I can't offer you much except for a safe place for you to rest before your fight. 
+You are going to need all of your energy to be able to fight Moff Gideon.
+
+Do you want to rest before the fight? (y/n)
+~yes~
+sleep() function
+
+~no~
+You are now ready to fight Moff Gideon. 
+Go to Region 3. 
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 3~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 4!
+You have entered at the edge of a lava field. You do not see Moff Gideon.
+
+~explore region~
+You see Moff Gideon in front of you and begin to stalk him. 
+loading fightNPC()
+
+if Mando wins:
+You have defeated the mighty Moff Gideo and have restored peace to the galaxy. 
+You now gain control of the Darksabre and, with that honor, you are the rightful leader of Mandalore.
+
+*display weapon*
+Weapon:
+name: Beskar spear
+type: short range
+rarity: 4
+damage: 4
+
+
+
+Do you go to region 4 (y/n)?
+~yes~ 
+go to region 4
+
+~no~
+*display region map()*
+Which region would you like to visit Region 1, Region 2, Region 3, or Region 4 (enter 1,2,3,4)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ REGION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Welcome to Region 4!
+Your ship has been damaged. 
+Explore the region to find a ship repair engineer. 
+
+You have found the engineer. Would you like to engage with her (y/n)?
+if yes:
+
+Character profile:
+Name: Kai Tu'Sei
+Species: human
+Planet: Navarro
+Location: Region 4
+Friendly: true
+
+Kai Tu'Sei: Hello Mandalorian. Congrats on beating Moff Gideon. You have saved us all.
+It's a good thing you came to me. Your recent travel around the galaxy has left your ship severly damaged.
+Usually, I would charge you for the repairs, but you defeated that tyrant, Moff Gideon. So you will be spared the charge.
+
+sleep function() to wait
+Kai Tu'Sei: Your ship has been repaired. It's almost as good as new.
+Now that you've defeated Moff Gideon, where will you go? 
+
+To be continued ....
+
+end of region 4
+
+////////////////////////////////END GAME//////////////////////////////////////////////
+Write to file:
+Congrats to *name*! You have beaten the game!
+
