@@ -12,4 +12,3 @@ Pana Shulo, Quarren, Trask, region 4, 10, true, 0, 8
 Nenk Krag, Mandalorian, Navarro, region 1, 10, true, 0, 6
 Click, Clone, Navarro, region 2, 10, true, 0, 5
 Moff Gideon, Human, Navarro, region 3, 9, false, 200, 7
-

@@ -1,15 +1,9 @@
-// starGame.cpp
-// CSCI 1300 Spring 2022
-// Author: Caroline Scheidt, Turner naef
-// Recitation: 202 - TA Alexander Ray
-// Project 3
-
-
-
 /*
 General notes/ comments:
 
 In order to run this code, compile startGame.cpp and all the prospective .cpp files for the below 'include' statements
+
+Visit the README.md for more information!
 
 */
 
@@ -27,11 +21,11 @@ In order to run this code, compile startGame.cpp and all the prospective .cpp fi
 #include "map.h"
 #include "NPC.h"
 #include "Planet.h"
-//#include "StormTrooper.h"
 #include "Weapon.h"
 
 // Colors!!!
-//the following are UBUNTU/LINUX, and MacOS ONLY terminal color codes.
+// The following are UBUNTU/LINUX, and MacOS ONLY terminal color codes.
+// Obtained from: https://stackoverflow.com/questions/9158150/colored-output-in-c 
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"      /* Black */
 #define RED     "\033[31m"      /* Red */
@@ -219,7 +213,7 @@ void mandoStats(Mando myMando) {
     cout<<"Health: "<<myMando.getHP()<<"\nCredits: "<<myMando.getCredits()<<"\nHonor: "<<myMando.getHonorLevel()<<"\nSkill: "<<myMando.getSkillLevel()<<endl;
     cout<<"Weapons: "<<endl;
     myMando.checkWeapons();
-    usleep(6*microsecond);
+    usleep(4*microsecond);
     return;
 }
 
@@ -361,6 +355,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+                dude.setName("Fennec Shand");
                     
                 // For polish: rename regions etc. if needed
                 
@@ -446,6 +441,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+                dude.setName("Tusken Raider");
 
                 cout<<"You have landed in a town near the Dune Sea."<<endl;
                 usleep(2*microsecond);
@@ -529,6 +525,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+                dude.setName("Darro Anen");
 
                 // Outline:
                 // cout<<""<<endl;
@@ -637,6 +634,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+                dude.setName("Kona Randlo");
 
                 cout<<"You have landed near the Jabba's Palace and have been invited to visit Jabba the Hutt."<<endl;
                 usleep(2*microsecond);
@@ -804,6 +802,9 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+
+                dude.setName("Shoan Madar");
+
                 cout<<"You have landed in a grassy clearing."<<endl;
                 usleep(1*microsecond);
                 cout<<"You can explore the map to find Shaon Madar."<<endl;
@@ -886,6 +887,9 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+
+                dude.setName("Holga Glagguul");
+
                 cout<<"You have landed at the edge of a forest."<<endl;
                 usleep(2*microsecond);
                 cout<<"You do not see anyone. Explore the region"<<endl;
@@ -942,6 +946,9 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+
+                dude.setName("Stormtrooper");
+
                 cout<<"You have landed at the base of the mountain.\nExplore the region"<<endl;
                 usleep(2*microsecond);
 
@@ -1012,6 +1019,8 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                     }
                 }
 
+                dude.setName("Wall writing");
+
                 // // allow player to explore the region and if so, interact w the npc
                 // bool interact = exploreRegion(region4, myMando);
                 // cout<<"You have discovered the old Jedi temple."<<endl;
@@ -1023,10 +1032,10 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                     cout<<"You have discovered a writing on a wall that says:"<<endl;
                     usleep(2*microsecond);
                     cout<<" ================================================================="<<endl;
-                    cout<<"| 'If you want to train in the Jedi way,'                          |"<<endl;
-                    cout<<"| 'You have to do what I say,'\n'Answer four questions you must,'  |"<<endl;
-                    cout<<"| 'In order to gain the temple's trust,'\n'There will be no gain,' |"<<endl;
-                    cout<<"| 'if you answer in vain.'                                         |" <<endl; 
+                    cout<<"'If you want to train in the Jedi way,'"<<endl;
+                    cout<<"'You have to do what I say,'\n'Answer four questions you must,'"<<endl;
+                    cout<<"'In order to gain the temple's trust,'\n'There will be no gain,'"<<endl;
+                    cout<<"'if you answer in vain.'" <<endl; 
                     cout<<" ================================================================== "<<endl;
                     usleep(4*microsecond);
                     cout<<"Would you like to begin Grogu's training(y/n)?"<<endl;
@@ -1175,6 +1184,8 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+
+                dude.setName("Mitikk");
                 cout<<"Welcome to Region 1!"<<endl;
                 usleep(3*microsecond);
                 cout<<"You have landed on a dock next to a vast ocean."<<endl;
@@ -1221,6 +1232,8 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+
+
                 cout<<"You have lost Mitikk somehow."<<endl;
                 usleep(3*microsecond);
                 cout<<"Explore the region to find him or the other Mandalorian."<<endl;
@@ -1268,6 +1281,7 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                     }
                 }
                 
+                dude.setName("Wuglugh");
 
                 // allow player to explore the region and if so, interact w the npc
                 cout<<"You have been dropped off at the scene of an intense fight."<<endl;
@@ -1334,6 +1348,9 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+                
+                dude.setName("Pana Shulo");
+
                 cout<<"Explore the region to find the blacksmith."<<endl;
                 usleep(2*microsecond);
                 // allow player to explore the region and if so, interact w the npc
@@ -1478,6 +1495,8 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
                     }
                 }
 
+                dude.setName("Nenk Krag");
+
                  // For polish: rename regions etc. if needed
 
                 cout<<"You have landed near the Mandalorian settlement."<<endl;
@@ -1521,6 +1540,8 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+
+                dude.setName("Click");
 
                 cout<<"You have landed in region 2 but do not see anyone so decide to walk around."<<endl;
                 usleep(2*microsecond);
@@ -1566,6 +1587,8 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
                         break;
                     }
                 }
+
+                dude.setName("Moff Gideon");
                 Weapon darkSaber = Weapon("Dark Saber", "Light Saber Variant", 10, 9);
                 dude.setWeapon(darkSaber);
 
@@ -1666,7 +1689,7 @@ void introGraphic() {
     }
     fin1.close();
 
-    genSpace(5);
+    genSpace(3);
 
     // font = stick letters
     ifstream fin2;
@@ -1682,7 +1705,7 @@ void introGraphic() {
     }
     fin2.close();
 
-    genSpace(7);
+    genSpace(5);
 
     // font = stick letters
     ifstream fin3;
@@ -1698,7 +1721,7 @@ void introGraphic() {
     }
     fin3.close();
 
-    genSpace(7);
+    genSpace(5);
 
     // font = stick letters
     ifstream fin4;
@@ -1714,7 +1737,7 @@ void introGraphic() {
     }
     fin4.close();
 
-    genSpace(7);
+    genSpace(5);
     
     return;
 }
@@ -1853,31 +1876,26 @@ void startGame() {
 
 
 int main(){
-    //introGraphic();
     startGame();
 
     ofstream newFile;
     newFile.open ("endFile.txt");
     newFile << "Thank you for playing our game.\n Please recommend us to your friends :) \n Goodbye";
     newFile.close();
+    // Mando myMando = Mando("Dave");
+    // Weapon myWeap = Weapon();
+    // myMando.addWeapon(myWeap);
 
-    //Map myMap = Map();
-    //myMap.displayMap();
+    // vector<NPC> vec = readNPC("NPCtest.txt");
+    // for(int i = 0; i < vec.size(); i++) {
+    //     cout<<vec[i].getPlanetRegion()<<endl;
+    // }
+    // cout<<vec.size()<<endl;
 
-    // char move;
-    // while(true) {
-    //     myMap.displayMap();
-    //     cout<<"Enter a move(w, a, s, d), or 'x' to quit."<<endl;
-    //     cin >> move;
-    //     if (move == 'x') {
-    //         break;
-    //     } else {
-    //         myMap.executeMove(move); // if ((move == "w") || (move == "a") || (move == "s") || (move == "d")) (if needed)
-    //     } 
-    // }  
-
-    // Planet tatooine = Planet();
-    // tatooine.displayPlanetMap("RegionMap1.txt");
+    // NPC dude = vec[1];
+    // Weapon mandoWeap = chooseWeapon(myMando);
+    // int fightRV = myMando.fightNPC(dude, mandoWeap);
+    // cout<<dude.getName();
 
     return 0;
 }

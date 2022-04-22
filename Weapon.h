@@ -1,17 +1,9 @@
-// Weapon.h
-// CSCI 1300 Spring 2022
-// Author: Caroline Scheidt, Turner Naef
-// Recitation: 202 - TA Alexander Ray
-// Project 3
-
-
 #include <iostream>
 #include <vector>
 
 #include "Mando.h"
-// #include "NPC.h"
-//#include "Planet.h"
-//#include "StormTrooper.h"
+#include "NPC.h"
+#include "Planet.h"
 
 #ifndef WEAPON_H
 #define WEAPON_H

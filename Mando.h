@@ -1,8 +1,3 @@
-// Mando.cpp
-// CSCI 1300 Spring 2022
-// Author: Caroline Scheidt, Turner Naef
-// Recitation: 202 - TA Alexander Ray
-// Project 3
 #ifndef MANDO_H
 #define MANDO_H 
 

@@ -1,9 +1,3 @@
-// NPC.cpp
-// CSCI 1300 Spring 2022
-// Author: Caroline Scheidt, Turner naef
-// Recitation: 202 - TA Alexander Ray
-// Project 3
-
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -44,6 +38,10 @@ NPC::NPC(string name_, string species_, string planet_, string planetRegion_, in
 string NPC::getName()
 {
     return name;
+}
+
+void NPC::setName(string name_) {
+    name = name_;
 }
 // getSpecies()
 string NPC::getSpecies()

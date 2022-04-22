@@ -5,10 +5,9 @@
 #include <iostream>
 #include <vector>
 
-//#include "Weapon.h"
+#include "Weapon.h"
 #include "NPC.h"
 #include "Mando.h"
-#include "StormTrooper.h"
 #include "map.h"
 
 using namespace std;
