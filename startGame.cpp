@@ -1022,12 +1022,12 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 if (true) {
                     cout<<"You have discovered a writing on a wall that says:"<<endl;
                     usleep(2*microsecond);
-                    cout<<" ================================================================="
+                    cout<<" ================================================================="<<endl;
                     cout<<"| 'If you want to train in the Jedi way,'                          |"<<endl;
                     cout<<"| 'You have to do what I say,'\n'Answer four questions you must,'  |"<<endl;
                     cout<<"| 'In order to gain the temple's trust,'\n'There will be no gain,' |"<<endl;
                     cout<<"| 'if you answer in vain.'                                         |" <<endl; 
-                    cout<<" ================================================================== "
+                    cout<<" ================================================================== "<<endl;
                     usleep(4*microsecond);
                     cout<<"Would you like to begin Grogu's training(y/n)?"<<endl;
                     char chalChoice;
