@@ -289,6 +289,16 @@ Weapon chooseWeapon(Mando myMando) {
     return myMando.retrieveWeapon(choice-1);
 }
 
+/**
+*Algorithm: a massive function with the Tatooine story line in it
+*1. Creates four regions.
+*2. Each region has its own NPCs and side quests
+*3. In order to gain more credits and weapons, Mando has to travel to different regions
+*4. Often, NPCs will give hints on where to get information on Moff Gideon or other characters. 
+Parameters: myMando(Mando object), vec (vector of NPC objects) 
+Returns: Returns myMando(Mando object)
+**/
+
 Mando tatooine(Mando myMando, vector<NPC> vec) {
 
     // tests
@@ -336,7 +346,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
         }
         bool ultraBreak = false;
         tatooine.displayPlanetMap("tatooineRegion.txt");
-        cout<<"What region would you like to visit?('1', '2', '3', '4', '5' to view stats, or '0' to leave Tattoine)."<<endl;
+        cout<<"What region would you like to visit?('1', '2', '3', '4', '5' to view stats, or '0' to leave Tatooine)."<<endl;
         cin >> regionChoice;
 
         // Random npc Coords
@@ -346,7 +356,7 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
 
         switch(regionChoice) {
             case '0':
-                cout<<"Now leaving Tattooine!"<<endl;
+                cout<<"Now leaving Tatooine!"<<endl;
                 return myMando;
             case '1': {
 
@@ -730,6 +740,16 @@ Mando tatooine(Mando myMando, vector<NPC> vec) {
     return myMando;
 }
 
+/**
+*Algorithm: a massive function with the Tython story line in it
+*1. Creates four regions.
+*2. Each region has its own NPCs and side quests
+*3. In order to gain more credits and weapons, Mando has to travel to different regions
+*4. Often, NPCs will give hints on where to get information on Moff Gideon or other characters. 
+Parameters: myMando(Mando object), vec (vector of NPC objects) 
+Returns: Returns myMando(Mando object)
+**/
+
 Mando tython(Mando myMando, vector<NPC> vec) {
     // Arriving at planet
     unsigned int microsecond = 1000000;
@@ -1101,6 +1121,16 @@ Mando tython(Mando myMando, vector<NPC> vec) {
     return myMando;
 }
 
+/**
+*Algorithm: a massive function with the Trask story line in it
+*1. Creates four regions.
+*2. Each region has its own NPCs and side quests
+*3. In order to gain more credits and weapons, Mando has to travel to different regions
+*4. Often, NPCs will give hints on where to get information on Moff Gideon or other characters. 
+Parameters: myMando(Mando object), vec (vector of NPC objects) 
+Returns: Returns myMando(Mando object)
+**/
+
 Mando trask(Mando myMando, vector<NPC> vec) {
     // Arriving at planet
     unsigned int microsecond = 1000000;
@@ -1297,7 +1327,7 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                         cout<<"You successfully defeated the "<<dude.getName()<<endl;
                         usleep(4*microsecond);
                         cout<<"Bo-Katan approaches you and says, 'Thanks for your help.'"<<endl;
-                        cout<<"'Moff Gideon is currently hiding out on Navarro and is trying to destroy the Mandalorian clan there.'"<<endl;
+                        cout<<"'Moff Gideon is currently hiding out on Nevarro and is trying to destroy the Mandalorian clan there.'"<<endl;
                         usleep(4*microsecond);
                         cout<<"'He currently possesses the Dark Saber.'"<<endl;
                         cout<<"'You know the rules, if you want to be able to wield the Dark Saber, you must defeat him in battle.'"<<endl;
@@ -1407,6 +1437,17 @@ Mando trask(Mando myMando, vector<NPC> vec) {
     return myMando;
 }
 
+/**
+*Algorithm: a massive function with the Nevarro story line in it
+*1. Creates four regions.
+*2. Each region has its own NPCs and side quests
+*3. In order to gain more credits and weapons, Mando has to travel to different regions
+*4. Often, NPCs will give hints on where to get information on Moff Gideon or other characters. 
+*5. Nevarro is the last planet and has the boss fight in region 3.
+Parameters: myMando(Mando object), vec (vector of NPC objects) 
+Returns: Returns myMando(Mando object)
+**/
+
 Mando nevarro(Mando myMando, vector<NPC> vec) {
     // Arriving at planet
     unsigned int microsecond = 1000000;
@@ -1488,7 +1529,7 @@ Mando nevarro(Mando myMando, vector<NPC> vec) {
 
                 cout<<"'Mando! You're back. I'm glad to see your safe.' says "<<dude.getName()<<endl;
                 usleep(2*microsecond);
-                cout<<"I know why you came back to Navarro. You're searching for Moff Gideon."<<endl;
+                cout<<"I know why you came back to Nevarro. You're searching for Moff Gideon."<<endl;
                 usleep(2*microsecond);
                 cout<<"That's not going to be an easy task. He is currently hiding out somewhere in the southern part of the planet."<<endl;
                 usleep(2*microsecond);
@@ -1785,7 +1826,7 @@ void startGame() {
     usleep(1*microsecond);
     cout<<"There are four planets that Moff Gideon is rumored to be on."<<endl;
     usleep(3*microsecond);
-    cout<<"They are Tatooine(145), Tython (346), Trask(457), and Navarro(789)."<<endl;
+    cout<<"They are Tatooine(145), Tython (346), Trask(457), and Nevarro(789)."<<endl;
     usleep(3*microsecond);
     cout<<"Planet travel costs a certain amount of credits. You currently have "<<myMando.getCredits()<<" credits."<<endl;
     usleep(3*microsecond);
