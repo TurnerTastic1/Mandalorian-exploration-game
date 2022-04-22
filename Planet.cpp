@@ -48,6 +48,18 @@ int Planet::getTravelCost()
     return travelCost;
 }
 
+/*Algorithm: this function checks if Mando can travel to the correct planet
+*1. Prints a greeting and the Mando's username
+*2. Prints the planet description
+*3. Prints the current amount of credits Mando has
+*4. Checks if Mando wants to travel to a certain planet
+*5. If yes, then the correct amount of credits are deducted as the travel cost.
+    * Prints "Making the jump to hyperspace!"
+*6 If no, or Mando does not have enough credits to travel, Mando cannot travel to planet
+Parameters: &myMando (Mando object), description (string)
+Returns: true if Mando travels to planet, returns false if Mando cannot travel to the planet
+**/
+
 
 
 bool Planet::planetTravel(Mando &myMando, string description) {
@@ -71,6 +83,17 @@ bool Planet::planetTravel(Mando &myMando, string description) {
 }
 
 // displayPlanetMap
+
+/*Algorithm: this function displays the planet map
+*1. Creates an ifstream variable
+*2. Opens the given file
+*3. Creates a temporary line variable.
+*4  Checks if the file is open. 
+    *if it isn't, print that the map is not available
+    *if it is, print each line of the file
+Parameters: fileName (string)
+Returns: void function
+*/
 
 void Planet::displayPlanetMap(string filename)
 {

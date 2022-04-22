@@ -173,15 +173,17 @@ vector<Weapon> Mando::sortWeapons()
 
 // addWeapon
 
-/*
-1. Call this function everytime Mando gains a new weapon
-2. Checks if the weapon being entered is a valid weapon/string
-3. If second step is true, adds the new weapon name(string) to vector<Weapon> vector using weapon.push_back(); Returns 1;
-4. If second step is not true, returns -2
+/*Algorithm: adds a new weapon to the weapon vector
+*1. Call this function everytime Mando gains a new weapon
+*2. Adds the weapon to the weapon vector
+*3. sorts Weapons.
+Parameters: new_weapon (Weapon)
+Returns: true
 */
 
 bool Mando::addWeapon(Weapon new_weapon)
 {
+    // adds a new weapon to the weapon vector
     weapons.push_back(new_weapon);
     sortWeapons();
     return true;
@@ -191,13 +193,13 @@ bool Mando::addWeapon(Weapon new_weapon)
 
 // ~~ do I have to go into the super specifics of how we are determining if Mando wins or not=-09/8
 
-/*
-1. Call this function when fighting a side character
-2. Compares the sideCharacters stats(weapon ranking, hP level, damage) to Mando/main character's values
-3. If Mando's weapon ranking is less than side character's weapon ranking, subtract 5 from Mando's hP level. Else, add 5 to Mando's hp Level.
-4. If Mando's hP level is less than side character's hP level,
-5. If Mando's damage level
-4. If second step is not true, returns -2
+/*Algorithm: this function determines the winner of a battle between Mando and the NPC
+*1. Call this function when fighting a side character
+*2. Compares the NPC's stats(hP level, weapon rarity, skill) to Mando/main character's values
+*3. Compare the stats and designate points to whichever character wins the comparison
+*4. If Mando looses the fight, he has the chance to be revived by Grogu 
+Parameters: npc1 (NPC object), mandoWeapon (Weapon object), groguPowers(int)
+Returns: 1 if Mando won, returns -3 if Mando looses and dies 
 */
 
 int Mando::fightNPC(NPC npc1, Weapon mandoWeapon) {
@@ -286,9 +288,16 @@ int Mando::fightNPC(NPC npc1, Weapon mandoWeapon) {
     return 0;
 }
 
-// displayGalaxyMap()
-
-
+/*Algorithm: this function displays the galaxy map
+*1. Creates an ifstream variable
+*2. Opens the GalaxyMap.txt file
+*3. Creates a temporary line variable.
+*4  Checks if the file is open. 
+    *if it isn't, print that the map is not available
+    *if it is, print each line of the file
+Parameters: none
+Returns: void function
+*/
 void Mando::displayGalaxyMap()
 {
     ifstream fin;

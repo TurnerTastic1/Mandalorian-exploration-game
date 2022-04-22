@@ -61,14 +61,33 @@ using namespace std;
 // The following three functions are used to read in a file of NPC's
 // The NPC's have differing attributes and will be sorted into their prospective functions based on their planet variables
 
+/*Algorithm: this takes a string and makes the string all lowercase
+*1. Create a for loop to go through the string
+*2. check if the current character of the string is uppercase
+    * if it is, replace the character with the lowercase letter (using ascii values)
+Parameters: s (string)
+Returns: the all-lowercase version of the string s 
+**/
+
 string toLower(string s) {
     for (int i = 0; i < s.length(); i++) {
         if ((int(s[i]) >= 65) && (int(s[i]) <= 90)) {
             s[i] = char(int(s[i]) + 32);
         }
     }
+    // return new lowercase string
     return s;
 }
+
+/**
+*Algorithm: takes a string and splits it at every occurence of a delimiter
+    * then populates an array of strings with the split pieces, up to the provided maximum number of pieces
+* Checks if the string is empty
+* Creates a for loop that goes through each character of a string and checks if it is the delimiter
+* Then, creates substrings between each delimiter and adds the substring to an array
+Parameters: inputString (string), separator (char), arr (string), size(int)
+Returns: the number of pieces the input text string was split into (int)
+*/
 
 int split(string inputString, char separator, string arr[], int size) {
     if (inputString == "") {
@@ -130,6 +149,20 @@ int split(string inputString, char separator, string arr[], int size) {
     return 0;
 }
 
+/*Algorithm: this function takes a file of NPC characters and creates a vector of NPC objects
+*1. Creates an ifstream variable
+*2. Opens the given file
+*3. Creates a temporary line variable.
+*4.  Checks if the file is open. 
+    *if it isn't, print that the map is not available
+    *if it is, continue through the steps
+*5. Create a temporary string array and fill the array with the split values of each line
+*6. Use the array to create a NPC object
+*7. Add that object to a vector of NPC objects
+Parameters: fileName (string)
+Returns: myNPCs (a vector of NPC objects)
+*/
+
 vector<NPC> readNPC(string fileName) {
 
     vector<NPC> myNPCs;
@@ -168,6 +201,17 @@ vector<NPC> readNPC(string fileName) {
     return myNPCs;
 }
 
+/**
+*Algorithm: prints the Mando's current stats when the function is called
+*1. Create a microsecond integer
+*2. Print "Mando stats and all of the stats associated with him
+    * Health, Credits, Honor, Skill, Weapons
+*3. Pause the compiler of the game
+* Then, creates substrings between each delimiter and adds the substring to an array
+Parameters: myMando (Mando object)
+Returns: nothing (void)
+**/
+
 // Allows us to condense code and for the player to have access to a menu of their mando functions
 void mandoStats(Mando myMando) {
     unsigned int microsecond = 1000000;
@@ -178,6 +222,19 @@ void mandoStats(Mando myMando) {
     usleep(6*microsecond);
     return;
 }
+
+/**
+*Algorithm: allows a character to move through a 2D map
+*1. create a character move
+*2. Prints a 2D map
+*3. User moves through map until the user encounters an NPC
+*4. When the user encounters NPC
+    * if the user wants to interact with the NPC, then return true. 
+    * if the user wants to leave the map, it returns false
+Parameters: myMap (Map object), myMando(Mando obje)
+Returns: if the user wants to interact with the NPC, then return true. 
+        * if the user wants to leave the map, it returns false
+**/
 
 // Allows us to condense code and for the player to move freely around a region map
 bool exploreRegion(Map myMap, Mando myMando) {
@@ -199,7 +256,7 @@ bool exploreRegion(Map myMap, Mando myMando) {
         }
         cout<<"Enter a move(w, a, s, d), or 'x' to quit."<<endl;
         cin >> move;
-        if ((move != 'x') || (move != 'w') || (move != 'a') || (move != 's') || (move != 'd')) {
+        if ((move != 'x') && (move != 'w') && (move != 'a') && (move != 's') && (move != 'd')) {
             cout<<"Not a valid move!"<<endl;
             usleep(2*microsecond);
         } else if (move == 'x') {
@@ -211,6 +268,16 @@ bool exploreRegion(Map myMap, Mando myMando) {
     cout<<"Leaving the map"<<endl;
     return false;
 }
+
+/**
+*Algorithm: allows the user to choose which weapon they want to fight an NPC with
+*1. Create an int choice
+*2. Create a for loop that prints each weapon Mando can use and the weapon's stats
+*3. User enters which weapon to use. 
+*4. Returns the desired weapon
+Parameters: myMando(Mando obje)
+Returns: Returns the desired weapon
+**/
 
 Weapon chooseWeapon(Mando myMando) {
     int choice;
@@ -831,9 +898,9 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 if (interact) {
                     cout<<"You have been ambushed by a group of scavengers."<<endl;
                     cout<<"They won't let you pass through the region unless you defeat the leader."<<endl;
-                    usleep(2*microsecond);
+                    usleep(3*microsecond);
                     cout<<"The leader rushes at you with a sharp machete."<<endl;
-                    usleep(2*microsecond);
+                    usleep(3*microsecond);
                     // spawn NPC here and complete challenge *gulp*
                     // fight sequence, use for most fights but alter slightly if needed
                     Weapon mandoWeap = chooseWeapon(myMando);
@@ -896,10 +963,13 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                         Weapon flameThrower = Weapon("Flamethrower", "Flamethrower", 5, 4);
                         cout<<"You successfully defeated the "<<dude.getName() <<"."<<endl;
                         cout<<"You can add a weapon to add to your arsenal. You have two choices. Pick the weapon you are lacking."<<endl;
+                        usleep(3*microsecond);
                         cout<<"#1"<<endl;
                         flameThrower.printWeapon();
+                        usleep(3*microsecond);
                         cout<<"#2"<<endl;
                         cout<<"The Jetpack gives the Mandalorian more agility and improves your skill level."<<endl;
+                        usleep(3*microsecond);
                         while(true) {
                         cout<<"Choose a weapon by inputting the number or 0 to choose none."<<endl;
                         cin >> choice;
@@ -952,10 +1022,12 @@ Mando tython(Mando myMando, vector<NPC> vec) {
                 if (true) {
                     cout<<"You have discovered a writing on a wall that says:"<<endl;
                     usleep(2*microsecond);
-                    cout<<"'If you want to train in the Jedi way,'"<<endl;
-                    cout<<"'You have to do what I say,'\n'Answer four questions you must,'"<<endl;
-                    cout<<"'In order to gain the temple's trust,'\n'There will be no gain,'"<<endl;
-                    cout<<"'if you answer in vain.'" <<endl;
+                    cout<<" ================================================================="
+                    cout<<"| 'If you want to train in the Jedi way,'                          |"<<endl;
+                    cout<<"| 'You have to do what I say,'\n'Answer four questions you must,'  |"<<endl;
+                    cout<<"| 'In order to gain the temple's trust,'\n'There will be no gain,' |"<<endl;
+                    cout<<"| 'if you answer in vain.'                                         |" <<endl; 
+                    cout<<" ================================================================== "
                     usleep(4*microsecond);
                     cout<<"Would you like to begin Grogu's training(y/n)?"<<endl;
                     char chalChoice;
@@ -1285,9 +1357,12 @@ Mando trask(Mando myMando, vector<NPC> vec) {
                             myMando.setCredits(myMando.getCredits()-50);
                             cout<<"You have paid Pana Shulo. You now have "<<myMando.getCredits() <<endl;
                             cout<<"You wait as she makes your spear"<<endl;
+                            usleep(3*microsecond);
                             cout<<""<<endl;
                             cout<<""<<endl;
                             cout<<"===============>>>>>" <<endl;
+                            cout<<""<<endl;
+                            cout<<""<<endl;
                             usleep(3*microsecond);
                             cout<<"Pana Shulo: 'Your weapon is complete. Thank you for your business'"<<endl;
                             Weapon spear = Weapon("Beskar spear", "short-range", 7, 8);
@@ -1777,25 +1852,14 @@ void startGame() {
 }
 
 
-
-
-// functions to go to differtent planets
-/*
--maybe we should send credits in? otherwise does it have a certain value for credits?
-void PlanetTatooine()
-{
-    
-
-}
-
-
-*/
-
-
-
 int main(){
     //introGraphic();
     startGame();
+
+    ofstream newFile;
+    newFile.open ("endFile.txt");
+    newFile << "Thank you for playing our game.\n Please recommend us to your friends :) \n Goodbye";
+    newFile.close();
 
     //Map myMap = Map();
     //myMap.displayMap();
